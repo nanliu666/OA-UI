@@ -4,7 +4,7 @@
     id="app"
     :class="{ 'is-component': isComponent }"
   >
-    <!-- <main-header v-if="lang !== 'play'" /> -->
+    <main-header />
     <div class="main-cnt">
       <router-view />
     </div>
