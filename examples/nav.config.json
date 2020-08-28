@@ -1,0 +1,24 @@
+[
+  {
+    "name": "组件",
+    "groups": [
+      {
+        "groupName": "Basic",
+        "list": [
+          {
+            "path": "/table",
+            "title": "表格"
+          },
+          {
+            "path": "/form",
+            "title": "表单"
+          },
+          {
+            "path": "/lazy-select",
+            "title": "分页下拉选择器"
+          }
+        ]
+      }
+    ]
+  }
+]

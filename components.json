@@ -1,0 +1,5 @@
+{
+	"form": "./packages/form/index.js",
+	"table": "./packages/table/index.js",
+	"lazy-select": "./packages/lazy-select/index.js"
+}
