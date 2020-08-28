@@ -12,11 +12,7 @@
     <el-option
       v-for="item in optionList"
       :key="optionProps.key ? item[optionProps.key] : item[optionProps.value]"
-      :label="
-        optionProps.formatter
-          ? optionProps.formatter(item)
-          : item[optionProps.label]
-      "
+      :label="optionProps.formatter ? optionProps.formatter(item) : item[optionProps.label]"
       :value="item[optionProps.value]"
     />
     <div
@@ -42,18 +38,32 @@
   </el-select>
 </template>
 <script>
-import Emitter from "main/mixins/elFormEmitter"
+import Emitter from 'main/mixins/elFormEmitter'
 export default {
-  name: "MgLazySelect",
+  name: 'MgLazySelect',
+  directives: {
+    loadmore: {
+      bind(el, binding) {
+        // 获取element-ui定义好的scroll盒子
+        const SELECTWRAP_DOM = el.querySelector('.el-select-dropdown .el-select-dropdown__wrap')
+        SELECTWRAP_DOM.addEventListener('scroll', function() {
+          const CONDITION = this.scrollHeight - this.scrollTop <= this.clientHeight
+          if (CONDITION) {
+            binding.value()
+          }
+        })
+      }
+    }
+  },
   mixins: [Emitter],
   model: {
-    prop: "value",
-    event: "change"
+    prop: 'value',
+    event: 'change'
   },
   props: {
     value: {
       type: [String, Boolean],
-      default: ""
+      default: ''
     },
     /** 默认选项
      * 解决初始已选中的值没有被翻译的问题
@@ -69,13 +79,13 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "请选择"
+      default: '请选择'
     },
     optionProps: {
       type: Object,
       default: () => ({
-        label: "label",
-        value: "value",
+        label: 'label',
+        value: 'value',
         key: null
       })
     },
@@ -94,7 +104,7 @@ export default {
       loading: false,
       noMore: false,
       pageNo: 1,
-      search: ""
+      search: ''
     }
   },
   created() {
@@ -102,14 +112,14 @@ export default {
   },
   methods: {
     visibleChange(visible) {
-      if (visible === false && this.searchable && this.search !== "") {
-        this.search = ""
+      if (visible === false && this.searchable && this.search !== '') {
+        this.search = ''
         this.loadOptionData(true)
       }
     },
     handleChange(value) {
-      this.$emit("change", value)
-      this.dispatch("ElFormItem", "el.form.change", value)
+      this.$emit('change', value)
+      this.dispatch('ElFormItem', 'el.form.change', value)
     },
     loadOptionData(refresh = false) {
       if ((this.noMore && !refresh) || this.loading) {
@@ -127,14 +137,12 @@ export default {
         pageSize: this.pageSize,
         search: this.search
       })
-        .then(res => {
+        .then((res) => {
           this.pageNo += 1
           if (firstOption) {
             this.optionList.push(
               ...res.data.filter(
-                item =>
-                  item[this.optionProps.value] !==
-                  firstOption[this.optionProps.value]
+                (item) => item[this.optionProps.value] !== firstOption[this.optionProps.value]
               )
             )
           } else {
@@ -146,7 +154,7 @@ export default {
           } else {
             this.noMore = false
           }
-          this.$emit("update:optionList", this.optionList)
+          this.$emit('update:optionList', this.optionList)
         })
         .finally(() => {
           this.loading = false
