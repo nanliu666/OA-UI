@@ -84,8 +84,8 @@
 <script>
 import { elTableAttrs } from './config'
 import { get } from 'main/utils/util'
-import tableColumn from './tableColumn'
-import tablePagination from './tablePagination'
+import tableColumn from './table-column'
+import tablePagination from './table-pagination'
 
 export default {
   name: 'MgTable',
