@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { elPageAttrs } from "./config"
+import { elPageAttrs } from './config'
 
 export default {
   props: {
@@ -36,13 +36,13 @@ export default {
       return Object.assign(
         {
           pageSizes: [10, 20, 30, 50, 100],
-          layout: "total,prev,pager,next,sizes,jumper,->"
+          layout: 'total,prev,pager,next,sizes,jumper,->'
         },
         this.pageConfig
       )
     },
     customClassName() {
-      return this._pageConfig.customClassName || ""
+      return this._pageConfig.customClassName || ''
     },
     elAttrs() {
       const copy = {}
@@ -56,10 +56,10 @@ export default {
   },
   methods: {
     handleCurrentChange(val) {
-      this.$emit("current-change", val)
+      this.$emit('current-change', val)
     },
     handleSizeChange(val) {
-      this.$emit("size-change", val)
+      this.$emit('size-change', val)
     }
   }
 }

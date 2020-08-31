@@ -201,14 +201,14 @@
   </div>
 </template>
 <script>
-import bus from "../bus"
+import bus from '../bus'
 
 export default {
   props: {
     data: Array,
     base: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   data() {
@@ -223,31 +223,31 @@ export default {
     navStyle() {
       const style = {}
       if (this.isSmallScreen) {
-        style.paddingBottom = "60px"
+        style.paddingBottom = '60px'
       }
-      style.opacity = this.isFade ? "0.5" : "1"
+      style.opacity = this.isFade ? '0.5' : '1'
       return style
     }
   },
   watch: {
-    "$route.path"() {
+    '$route.path'() {
       this.handlePathChange()
     },
     isFade(val) {
-      bus.$emit("navFade", val)
+      bus.$emit('navFade', val)
     }
   },
   created() {
-    bus.$on("fadeNav", () => {
+    bus.$on('fadeNav', () => {
       this.isFade = true
     })
   },
   mounted() {
     this.handleResize()
-    window.addEventListener("resize", this.handleResize)
+    window.addEventListener('resize', this.handleResize)
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.handleResize)
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     handleResize() {
@@ -261,22 +261,22 @@ export default {
       }
       this.$nextTick(() => {
         this.hideAllMenu()
-        let activeAnchor = this.$el.querySelector("a.active")
+        let activeAnchor = this.$el.querySelector('a.active')
         let ul = activeAnchor.parentNode
-        while (ul.tagName !== "UL") {
+        while (ul.tagName !== 'UL') {
           ul = ul.parentNode
         }
-        ul.style.height = "auto"
+        ul.style.height = 'auto'
       })
     },
     hideAllMenu() {
-      [].forEach.call(this.$el.querySelectorAll(".pure-menu-list"), ul => {
-        ul.style.height = "0"
+      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), ul => {
+        ul.style.height = '0'
       })
     },
     expandAllMenu() {
-      [].forEach.call(this.$el.querySelectorAll(".pure-menu-list"), ul => {
-        ul.style.height = "auto"
+      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), ul => {
+        ul.style.height = 'auto'
       })
     },
     expandMenu(event) {
@@ -284,11 +284,11 @@ export default {
       let target = event.currentTarget
       if (
         !target.nextElementSibling ||
-        target.nextElementSibling.tagName !== "UL"
+        target.nextElementSibling.tagName !== 'UL'
       )
         return
       this.hideAllMenu()
-      event.currentTarget.nextElementSibling.style.height = "auto"
+      event.currentTarget.nextElementSibling.style.height = 'auto'
     }
   }
 }

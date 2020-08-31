@@ -42,18 +42,18 @@
   </el-select>
 </template>
 <script>
-import Emitter from "main/mixins/elFormEmitter"
+import Emitter from 'main/mixins/elFormEmitter'
 export default {
-  name: "MgLazySelect",
+  name: 'MgLazySelect',
   mixins: [Emitter],
   model: {
-    prop: "value",
-    event: "change"
+    prop: 'value',
+    event: 'change'
   },
   props: {
     value: {
       type: [String, Boolean],
-      default: ""
+      default: ''
     },
     /** 默认选项
      * 解决初始已选中的值没有被翻译的问题
@@ -69,13 +69,13 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "请选择"
+      default: '请选择'
     },
     optionProps: {
       type: Object,
       default: () => ({
-        label: "label",
-        value: "value",
+        label: 'label',
+        value: 'value',
         key: null
       })
     },
@@ -94,7 +94,7 @@ export default {
       loading: false,
       noMore: false,
       pageNo: 1,
-      search: ""
+      search: ''
     }
   },
   created() {
@@ -102,14 +102,14 @@ export default {
   },
   methods: {
     visibleChange(visible) {
-      if (visible === false && this.searchable && this.search !== "") {
-        this.search = ""
+      if (visible === false && this.searchable && this.search !== '') {
+        this.search = ''
         this.loadOptionData(true)
       }
     },
     handleChange(value) {
-      this.$emit("change", value)
-      this.dispatch("ElFormItem", "el.form.change", value)
+      this.$emit('change', value)
+      this.dispatch('ElFormItem', 'el.form.change', value)
     },
     loadOptionData(refresh = false) {
       if ((this.noMore && !refresh) || this.loading) {
@@ -146,7 +146,7 @@ export default {
           } else {
             this.noMore = false
           }
-          this.$emit("update:optionList", this.optionList)
+          this.$emit('update:optionList', this.optionList)
         })
         .finally(() => {
           this.loading = false

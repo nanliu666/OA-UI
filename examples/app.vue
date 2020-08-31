@@ -13,10 +13,10 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   computed: {
     isComponent() {
-      return /^component-/.test(this.$route.name || "")
+      return /^component-/.test(this.$route.name || '')
     }
   }
 }

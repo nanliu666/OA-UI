@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { elTableColumnAttrs } from "./config"
+import { elTableColumnAttrs } from './config'
 
 export default {
   props: {
