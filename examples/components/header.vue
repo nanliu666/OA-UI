@@ -11,7 +11,7 @@
         >
         <img
           class="system-image"
-          :src="imgModules.GuidelinesSystem"
+          :src="imgModules.title"
         >
       </div>
     </header>
@@ -28,7 +28,7 @@ export default {
   },
   created() {
     this.imgModules = improtAllFiles(
-      require.context("../assets/images", false, /\.png$/),
+      require.context("../assets/images/header", false, /\.png$/),
       ".png"
     )
   },
