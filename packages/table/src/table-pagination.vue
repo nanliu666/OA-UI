@@ -6,7 +6,7 @@
       :total="page.total"
       :page-sizes="_pageConfig.pageSizes"
       :layout="_pageConfig.layout"
-      v-bind="elAttrs"
+      v-bind="elProps"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { elPageAttrs } from './config'
+import { EL_PAGE_PROPS } from './config'
 
 export default {
   props: {
@@ -44,10 +44,10 @@ export default {
     customClassName() {
       return this._pageConfig.customClassName || ''
     },
-    elAttrs() {
+    elProps() {
       const copy = {}
       for (const key in this._pageConfig) {
-        if (elPageAttrs.includes(key)) {
+        if (EL_PAGE_PROPS.includes(key)) {
           copy[key] = this._pageConfig[key]
         }
       }

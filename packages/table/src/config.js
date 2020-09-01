@@ -1,7 +1,7 @@
 /*
   注释掉的字段将从其他位置传入
 */
-export const elTableAttrs = [
+export const EL_TABLE_PROPS = [
   // 'data',
   'size',
   'width',
@@ -39,7 +39,7 @@ export const elTableAttrs = [
   'load'
 ]
 
-export const elTableColumnAttrs = [
+export const EL_TABLE_COLUMN_PROPS = [
   'type',
   'label',
   'className',
@@ -71,7 +71,7 @@ export const elTableColumnAttrs = [
   'sortOrders'
 ]
 
-export const elPageAttrs = [
+export const EL_PAGE_PROPS = [
   // 'pageSize',
   'small',
   // 'total',
@@ -86,4 +86,15 @@ export const elPageAttrs = [
   'background',
   'disabled',
   'hideOnSinglePage'
+]
+
+export const EL_TABLE_METHODS = [
+  'toggleRowSelection',
+  'toggleAllSelection',
+  'toggleRowExpansion',
+  'setCurrentRow',
+  'clearSort',
+  'clearFilter',
+  'doLayout',
+  'sort'
 ]

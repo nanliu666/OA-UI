@@ -27,7 +27,7 @@
       ref="table"
       v-loading="loading"
       :data="data"
-      v-bind="elAttrs"
+      v-bind="elProps"
       v-on="listeners"
     >
       <el-table-column
@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { elTableAttrs } from './config'
+import { EL_TABLE_PROPS, EL_TABLE_METHODS } from './config'
 import { get } from 'main/utils/util'
 import tableColumn from './table-column'
 import tablePagination from './table-pagination'
@@ -144,10 +144,10 @@ export default {
       )
     },
     // el-table组件属性
-    elAttrs() {
+    elProps() {
       const copy = {}
       for (const key in this._config) {
-        if (elTableAttrs.includes(key)) {
+        if (EL_TABLE_PROPS.includes(key)) {
           copy[key] = this._config[key]
         }
       }
@@ -238,30 +238,12 @@ export default {
       this.selection = []
       this.$refs['table'].clearSelection()
     },
-    toggleRowSelection() {
-      return this.$refs['table'].toggleRowSelection(...arguments)
-    },
-    toggleAllSelection() {
-      return this.$refs['table'].toggleAllSelection(...arguments)
-    },
-    toggleRowExpansion() {
-      return this.$refs['table'].toggleRowExpansion(...arguments)
-    },
-    setCurrentRow() {
-      return this.$refs['table'].setCurrentRow(...arguments)
-    },
-    clearSort() {
-      return this.$refs['table'].clearSort(...arguments)
-    },
-    clearFilter() {
-      return this.$refs['table'].clearFilter(...arguments)
-    },
-    doLayout() {
-      return this.$refs['table'].doLayout(...arguments)
-    },
-    sort() {
-      return this.$refs['table'].sort(...arguments)
-    }
+    ...EL_TABLE_METHODS.reduce((acc, method) => {
+      acc[method] = function() {
+        return this.$refs['table'][method](...arguments)
+      }
+      return acc
+    }, {})
   }
 }
 </script>
