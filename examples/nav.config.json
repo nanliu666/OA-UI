@@ -14,6 +14,10 @@
             "title": "表单"
           },
           {
+            "path": "/tree-select",
+            "title": "树形选择器"
+          },
+          {
             "path": "/lazy-select",
             "title": "分页下拉选择器"
           }
