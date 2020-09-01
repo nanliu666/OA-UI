@@ -9,8 +9,7 @@ import MainHeader from './components/header'
 import SideNav from "./components/side-nav"
 import MageUI from "main"
 import "element-ui/lib/theme-chalk/index.css"
-import "./assets/styles/common.scss"
-console.log(routes)
+import "./assets/styles/index.scss"
 Vue.use(Element)
 Vue.use(VueRouter)
 Vue.use(MageUI)
