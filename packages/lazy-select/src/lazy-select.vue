@@ -38,7 +38,7 @@
   </el-select>
 </template>
 <script>
-import Emitter from 'main/mixins/elFormEmitter'
+import Emitter from 'element-ui/src/mixins/emitter'
 export default {
   name: 'MgLazySelect',
   directives: {
