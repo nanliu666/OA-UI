@@ -31,7 +31,7 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
   iconColor="red"
   title="这是一段内容确定删除吗？"
   :isShowChecked='isShowChecked'
-  @onTipsChange="onTipsChange"
+  @onTipsChecked="onTipsChecked"
 >
   <el-button slot="reference">删除</el-button>
 </mg-popconfirm>
@@ -44,8 +44,8 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
       };
     },
     methods: {
-      onTipsChange() {
-        console.log('tips-change, 请在此次修改不再提示此mg-popconfirm')
+      onTipsChecked() {
+        console.log('tips-checked')
       }
     }
   };
@@ -76,4 +76,4 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
 | ------------ | ------------------ | -------- |
 | onConfirm    | 点击确认按钮时触发 | —        |
 | onCancel     | 点击取消按钮时触发 | —        |
-| onTipsChange | 点击不再提示时触发 | —        |
+| onTipsChecked | 点击不再提示时触发 | —        |

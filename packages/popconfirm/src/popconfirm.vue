@@ -112,7 +112,8 @@ export default {
       this.$emit("onCancel")
     },
     tipsChange() {
-      this.$emit("onTipsChange")
+      if(!this.tipsChecked) return
+      this.$emit("onTipsChecked")
     }
   }
 }
