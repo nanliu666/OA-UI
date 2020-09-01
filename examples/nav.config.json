@@ -3,7 +3,7 @@
     "name": "组件",
     "groups": [
       {
-        "groupName": "Basic",
+        "groupName": "Data",
         "list": [
           {
             "path": "/table",
@@ -16,6 +16,35 @@
           {
             "path": "/lazy-select",
             "title": "分页下拉选择器"
+          },
+          {
+            "path": "/avatar",
+            "title": "Avatar 头像"
+          }
+        ]
+      },
+      {
+        "groupName": "Others",
+        "list": [
+          {
+            "path": "/timeline",
+            "title": "Timeline 时间线"
+          },
+          {
+            "path": "/card",
+            "title": "Card 卡片"
+          },       
+          {
+            "path": "/tooltip",
+            "title": "Tooltip 文字提示"
+          },
+          {
+            "path": "/popover",
+            "title": "Popover 弹出框"
+          },
+          {
+            "path": "/popconfirm",
+            "title": "Popconfirm 气泡确认框"
           }
         ]
       }
