@@ -4,6 +4,7 @@ import Form from '../packages/form/index.js'
 import Table from '../packages/table/index.js'
 import Avatar from '../packages/avatar/index.js'
 import Timeline from '../packages/timeline/index.js'
+import TimelineItem from '../packages/timeline-item/index.js'
 import Card from '../packages/card/index.js'
 import Popover from '../packages/popover/index.js'
 import Tooltip from '../packages/tooltip/index.js'
@@ -15,6 +16,7 @@ const components = [
   Table,
   Avatar,
   Timeline,
+  TimelineItem,
   Card,
   Popover,
   Tooltip,
@@ -39,6 +41,7 @@ export default {
   Table,
   Avatar,
   Timeline,
+  TimelineItem,
   Card,
   Popover,
   Tooltip,

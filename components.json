@@ -3,6 +3,7 @@
 	"table": "./packages/table/index.js",
 	"avatar": "./packages/avatar/index.js",
 	"timeline": "./packages/timeline/index.js",
+	"timeline-item": "./packages/timeline-item/index.js",
 	"card": "./packages/card/index.js",
 	"popover": "./packages/popover/index.js",
 	"tooltip": "./packages/tooltip/index.js",
