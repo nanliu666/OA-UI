@@ -1,0 +1,12 @@
+.action-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .el-checkbox__label {
+        padding-left: 4px;
+        color: #757C85;
+    }
+    .button-box {
+        padding-left: 20px;
+    }
+}

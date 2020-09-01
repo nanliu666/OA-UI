@@ -14,31 +14,28 @@
         />
         {{ title }}
       </p>
-      <div class="el-popconfirm__action">
-        <el-checkbox
-          v-if="isShowChecked"
-          v-model="tipsChecked"
-          class="no-tips"
-          @change="tipsChange"
+      <div v-if="!hideActionSlot">
+        <slot name="action" />
+      </div>
+
+      <div
+        v-if="hideActionSlot"
+        class="el-popconfirm__action"
+      >
+        <el-button
+          size="mini"
+          :type="cancelButtonType"
+          @click="cancel"
         >
-          不再提示
-        </el-checkbox>
-        <div class="button-box">
-          <el-button
-            size="mini"
-            :type="cancelButtonType"
-            @click="cancel"
-          >
-            {{ cancelButtonText }}
-          </el-button>
-          <el-button
-            size="mini"
-            :type="confirmButtonType"
-            @click="confirm"
-          >
-            {{ confirmButtonText }}
-          </el-button>
-        </div>
+          {{ cancelButtonText }}
+        </el-button>
+        <el-button
+          size="mini"
+          :type="confirmButtonType"
+          @click="confirm"
+        >
+          {{ confirmButtonText }}
+        </el-button>
       </div>
     </div>
     <slot
@@ -59,9 +56,9 @@ export default {
     ElButton
   },
   props: {
-    isShowChecked: {
+    hideActionSlot: {
       type: Boolean,
-      default: false
+      default: true
     },
     title: {
       type: String,
@@ -98,8 +95,7 @@ export default {
   },
   data() {
     return {
-      visible: false,
-      tipsChecked: false,
+      visible: false
     }
   },
   methods: {
@@ -110,28 +106,7 @@ export default {
     cancel() {
       this.visible = false
       this.$emit("onCancel")
-    },
-    tipsChange() {
-      if(!this.tipsChecked) return
-      this.$emit("onTipsChecked")
     }
   }
 }
 </script>
-<style lang="scss">
-.el-popconfirm__action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .no-tips {
-        color: #757C85;
-        .el-checkbox__label {
-            font-size: 12px;
-        }
-    }
-    .button-box {
-      // align-self: flex-end;
-      flex: 1;
-    }
-}
-</style>
