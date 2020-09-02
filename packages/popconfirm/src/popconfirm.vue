@@ -46,11 +46,11 @@
 </template>
 
 <script>
-import MgPopover from "../../popover"
-import ElButton from "element-ui/packages/button"
+import MgPopover from '../../popover'
+import ElButton from 'element-ui/packages/button'
 
 export default {
-  name: "MgPopconfirm",
+  name: 'MgPopconfirm',
   components: {
     MgPopover,
     ElButton
@@ -62,31 +62,31 @@ export default {
     },
     title: {
       type: String,
-      default: ""
+      default: ''
     },
     confirmButtonText: {
       type: String,
-      default: "确定"
+      default: '确定'
     },
     cancelButtonText: {
       type: String,
-      default: "取消"
+      default: '取消'
     },
     confirmButtonType: {
       type: String,
-      default: "primary"
+      default: 'primary'
     },
     cancelButtonType: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     icon: {
       type: String,
-      default: "el-icon-question"
+      default: 'el-icon-question'
     },
     iconColor: {
       type: String,
-      default: "#f90"
+      default: '#f90'
     },
     hideIcon: {
       type: Boolean,
@@ -101,11 +101,11 @@ export default {
   methods: {
     confirm() {
       this.visible = false
-      this.$emit("onConfirm")
+      this.$emit('onConfirm')
     },
     cancel() {
       this.visible = false
-      this.$emit("onCancel")
+      this.$emit('onCancel')
     }
   }
 }
