@@ -4,9 +4,9 @@
   </div>
 </template>
 <script>
-import Emitter from "main/mixins/elFormEmitter"
+import Emitter from 'main/mixins/elFormEmitter'
 export default {
-  name: "MgList",
+  name: 'MgList',
   mixins: [Emitter],
   props: {
     bordered: {
@@ -15,22 +15,15 @@ export default {
     },
     itemLayout: {
       type: String,
-      default: 'vertical'  //vertical竖排 horizontal横排
+      default: 'vertical' //vertical竖排 horizontal横排
     }
   },
   data() {
-    return {
-  
-    }
+    return {}
   },
-  created() {
-  },
-  methods: {
-
-  }
+  created() {},
+  methods: {}
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

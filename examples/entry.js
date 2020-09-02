@@ -8,7 +8,8 @@ import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import MageUI from 'main'
-import './assets/styles/index.scss'
+import './assets/styles/common.scss'
+import './demo-styles/index.scss'
 console.log(routes)
 Vue.use(Element)
 Vue.use(VueRouter)
