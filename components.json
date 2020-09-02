@@ -1,5 +1,4 @@
 {
-  "form": "./packages/form/index.js",
   "table": "./packages/table/index.js",
   "avatar": "./packages/avatar/index.js",
   "timeline": "./packages/timeline/index.js",
