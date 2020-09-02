@@ -23,7 +23,7 @@
           },
           {
             "path": "/lazy-select",
-            "title": "分页下拉选择器"
+            "title": "LazySelect 分页下拉选择器"
           },
           {
             "path": "/tooltip",
@@ -43,11 +43,7 @@
           },
           {
             "path": "/tree-select",
-            "title": "树形选择器"
-          },
-          {
-            "path": "/lazy-select",
-            "title": "分页下拉选择器"
+            "title": "TreeSelect 树形选择器"
           },
           {
             "path": "/list",
