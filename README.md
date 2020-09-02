@@ -64,7 +64,7 @@
   
 * 然后在`examples/nav.config.json`中添加文档对应的路径和名称，注意这里对组件分了组，请添加在合适的组里
 
-* 在根目录的components.json中添加该组件对应的名称（不包含前缀）和路径
+* 在根目录的`components.json`中添加该组件对应的名称（不包含前缀）和路径
 ```
     {
       "form": "./packages/form/index.js",

@@ -16,39 +16,39 @@
 
 <script>
 export default {
-  name: "MgAvatar",
+  name: 'MgAvatar',
   props: {
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     shape: {
       type: String,
-      default: "circle"
+      default: 'circle'
     },
     srcSet: {
       type: String,
-      default: ""
+      default: ''
     },
     alt: {
       type: String,
-      default: ""
+      default: ''
     },
     size: {
       type: String,
-      default: "large"
+      default: 'large'
     },
     fit: {
       type: String,
-      default: "cover"
+      default: 'cover'
     },
     src: {
       type: String,
-      default: ""
+      default: ''
     },
     nickName: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   data() {
@@ -66,12 +66,12 @@ export default {
     },
     avatarName() {
         let showName = ''
-        if(this.src === "") {
+        if(this.src === '') {
             let reg =/[^\u4E00-\u9FA5]/
             // 规则第一个字符是不是中文开头，是取最后两个，不是取前两个
             showName =  reg.test(this.nickName.substr(0, 1)) ? this.nickName.substr(0, 2) : this.nickName.substring(this.nickName.length - 2)
         }
-      return this.src !== "" ? '' : showName
+      return this.src !== '' ? '' : showName
     }
   },
   created() {},

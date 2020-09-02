@@ -10,7 +10,7 @@ import SideNav from './components/side-nav'
 import MageUI from 'main'
 import './assets/styles/common.scss'
 import './demo-styles/index.scss'
-console.log(routes)
+
 Vue.use(Element)
 Vue.use(VueRouter)
 Vue.use(MageUI)
@@ -31,5 +31,4 @@ router.afterEach(() => {
   })
 })
 // eslint-disable-next-line
-// new Vue({ ...entry, router }).$mount("#app");
-new Vue({ el: '#app', render: h => h(entry), router })
+new Vue({ el: "#app", render: h => h(entry), router });
