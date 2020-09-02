@@ -67,16 +67,20 @@ export const get = (obj, path, defaultValue) => {
  * 对象数组扁平化
  * @param {{[props:string]:any, children: any[]}[]} target 要进行扁平化的对象数组
  * @param {String} children 对象的children属性
- * @returns {Iterable<any>} 扁平化后的数组
+ * @returns {Array} 扁平化后的数组
  */
-export function* flatten(target, children = 'children') {
-  for (const item of target) {
-    if (Array.isArray(item[children])) {
-      yield* [item, ...flatten(item[children])]
-    } else {
-      yield item
-    }
-  }
+export function flattenBy(target, children = 'children') {
+  return Array.from(
+    (function* f(target, children) {
+      for (const item of target) {
+        if (Array.isArray(item[children])) {
+          yield* [item, ...f(item[children], children)]
+        } else {
+          yield item
+        }
+      }
+    })(target, children)
+  )
 }
 
 /**

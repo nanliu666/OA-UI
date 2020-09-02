@@ -157,7 +157,7 @@
 <script>
 import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event'
 import { EL_TREE_PROPS, EL_TREE_PROPS_DEFAULT } from './config'
-import { flatten } from './util'
+import { flattenBy } from 'main/utils/util'
 import { getValueByPath, valueEquals, isIE, isEdge } from 'element-ui/src/utils/util'
 import { isKorean } from 'element-ui/src/utils/shared'
 import Clickoutside from 'element-ui/src/utils/clickoutside'
@@ -272,7 +272,7 @@ export default {
   computed: {
     options() {
       const { data, props } = this.$attrs
-      return Array.from(flatten(data, props.children)).map((item) => ({
+      return flattenBy(data, props.children).map((item) => ({
         currentLabel: item[props.label],
         value: item[props.value]
       }))
