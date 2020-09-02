@@ -19,7 +19,7 @@
 </template>
 
 <script type="text/babel">
-import { improtAllFiles } from "../util"
+import { improtAllFiles } from '../util'
 export default {
   data() {
     return {
@@ -28,8 +28,8 @@ export default {
   },
   created() {
     this.imgModules = improtAllFiles(
-      require.context("../assets/images/header", false, /\.png$/),
-      ".png"
+      require.context('../assets/images/header', false, /\.png$/),
+      '.png'
     )
   },
   methods: {}

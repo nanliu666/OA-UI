@@ -53,20 +53,6 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
