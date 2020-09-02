@@ -39,11 +39,20 @@ const webpackConfig = {
 
   module: {
     rules: [
-      // {
-      //   test: /\.(jsx?|babel|es6)$/,
-      //   include: process.cwd(),
-      //   loader: "babel-loader"
-      // },
+      {
+        enforce: 'pre',
+        test: /\.(vue|jsx?)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          quiet: true
+        }
+      },
+      {
+        test: /\.(jsx?|babel|es6)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -55,11 +64,7 @@ const webpackConfig = {
       },
       {
         test: /\.(scss|css)$/,
-        use: [
-          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.md$/,

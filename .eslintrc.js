@@ -3,14 +3,14 @@ module.exports = {
   env: {
     node: true
   },
-  plugins: ["html", "json"],
-  extends: ["eslint:recommended", "plugin:vue/recommended"],
+  plugins: ['html', 'json'],
+  extends: ['eslint:recommended', 'plugin:vue/recommended'],
   rules: {
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-prototype-builtins": "off",
-    semi: [2, "never"],
-    quotes: [1, "single"],
-    "max-len": [
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-prototype-builtins': 'off',
+    semi: [1, 'never'],
+    quotes: [1, 'single'],
+    'max-len': [
       1,
       {
         code: 120
@@ -18,6 +18,6 @@ module.exports = {
     ]
   },
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint'
   }
-};
+}
