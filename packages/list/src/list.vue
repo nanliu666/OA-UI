@@ -60,19 +60,11 @@ export default {
     bordered: {
       type: Boolean,
       default: false
-    },
-    itemLayout: {
-      type: String,
-      default: 'vertical' //vertical竖排 horizontal横排
     }
   },
   data() {
     return {}
   },
-  created() {
-    // console.log('dataSource==', this)
-  },
-  methods: {}
 }
 </script>
 
