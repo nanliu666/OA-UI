@@ -4,11 +4,27 @@ import './styles/common.scss'
 
 import Form from '../packages/form/index.js'
 import Table from '../packages/table/index.js'
+import Avatar from '../packages/avatar/index.js'
+import Timeline from '../packages/timeline/index.js'
+import TimelineItem from '../packages/timeline-item/index.js'
+import Card from '../packages/card/index.js'
+import Popover from '../packages/popover/index.js'
+import Tooltip from '../packages/tooltip/index.js'
+import Popconfirm from '../packages/popconfirm/index.js'
+import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
 
 const components = [
   Form,
   Table,
+  Avatar,
+  Timeline,
+  TimelineItem,
+  Card,
+  Popover,
+  Tooltip,
+  Popconfirm,
+  List,
   LazySelect,
 ]
 
@@ -27,5 +43,13 @@ export default {
   install,
   Form,
   Table,
+  Avatar,
+  Timeline,
+  TimelineItem,
+  Card,
+  Popover,
+  Tooltip,
+  Popconfirm,
+  List,
   LazySelect
 }
