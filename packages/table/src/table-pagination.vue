@@ -6,7 +6,7 @@
       :total="page.total"
       :page-sizes="_pageConfig.pageSizes"
       :layout="_pageConfig.layout"
-      v-bind="elAttrs"
+      v-bind="elProps"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { elPageAttrs } from "./config"
+import { EL_PAGE_PROPS } from './config'
 
 export default {
   props: {
@@ -36,18 +36,18 @@ export default {
       return Object.assign(
         {
           pageSizes: [10, 20, 30, 50, 100],
-          layout: "total,prev,pager,next,sizes,jumper,->"
+          layout: 'total,prev,pager,next,sizes,jumper,->'
         },
         this.pageConfig
       )
     },
     customClassName() {
-      return this._pageConfig.customClassName || ""
+      return this._pageConfig.customClassName || ''
     },
-    elAttrs() {
+    elProps() {
       const copy = {}
       for (const key in this._pageConfig) {
-        if (elPageAttrs.includes(key)) {
+        if (EL_PAGE_PROPS.includes(key)) {
           copy[key] = this._pageConfig[key]
         }
       }
@@ -56,10 +56,10 @@ export default {
   },
   methods: {
     handleCurrentChange(val) {
-      this.$emit("current-change", val)
+      this.$emit('current-change', val)
     },
     handleSizeChange(val) {
-      this.$emit("size-change", val)
+      this.$emit('size-change', val)
     }
   }
 }

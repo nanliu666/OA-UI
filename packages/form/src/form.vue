@@ -139,10 +139,10 @@ import {
   elFormItemAttrs,
   noneItemAttrs,
   defaultAttrs
-} from "./config"
+} from './config'
 
 export default {
-  name: "MgForm",
+  name: 'MgForm',
   components: {
     // elTreeSelect: () => import('@/components/elTreeSelect/elTreeSelect')
   },
@@ -167,8 +167,8 @@ export default {
     _config() {
       return Object.assign(
         {
-          labelPosition: "top",
-          size: "medium"
+          labelPosition: 'top',
+          size: 'medium'
         },
         this.config
       )
@@ -206,18 +206,18 @@ export default {
       return copy
     },
     inputNumber(value, column) {
-      this.model[column.prop] = value.replace(/[^\d]/g, "")
+      this.model[column.prop] = value.replace(/[^\d]/g, '')
     },
     getRules(column) {
       if (column.required) {
         let rules = [
           {
             required: true,
-            message: `请${column.itemType == "input" ? "输入" : "选择"}${
+            message: `请${column.itemType == 'input' ? '输入' : '选择'}${
               column.label
             }`,
             trigger: `${
-              column.itemType == "input" ? ["blur", "input"] : "change"
+              column.itemType == 'input' ? ['blur', 'input'] : 'change'
             }`
           },
           ...(column.rules ? column.rules : [])
@@ -229,7 +229,7 @@ export default {
     },
     validate() {
       return new Promise((resolve, reject) => {
-        this.$refs["form"].validate((pass, error) => {
+        this.$refs['form'].validate((pass, error) => {
           if (pass) {
             resolve(this.model)
             return
@@ -240,13 +240,13 @@ export default {
       })
     },
     clearValidate() {
-      return this.$refs["form"].clearValidate(...arguments)
+      return this.$refs['form'].clearValidate(...arguments)
     },
     resetField() {
-      return this.$refs["form"].resetField(...arguments)
+      return this.$refs['form'].resetField(...arguments)
     },
     validateField() {
-      return this.$refs["form"].validateField(...arguments)
+      return this.$refs['form'].validateField(...arguments)
     }
   }
 }

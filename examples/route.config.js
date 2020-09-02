@@ -1,4 +1,4 @@
-import navConfig from "./nav.config"
+import navConfig from './nav.config'
 
 const load = name => {
   return r => require.ensure([], () => r(require(`./pages/${name}.vue`)))
@@ -11,9 +11,9 @@ const loadDocs = name => {
 const registerRoute = navConfig => {
   let route = []
   route.push({
-    path: `/component`,
-    redirect: "/component/table",
-    component: load("component"),
+    path: '/component',
+    redirect: '/component/table',
+    component: load('component'),
     children: []
   })
 
@@ -41,7 +41,7 @@ const registerRoute = navConfig => {
         title: page.title || page.name,
         description: page.description
       },
-      name: "component-" + (page.title || page.name),
+      name: 'component-' + (page.title || page.name),
       component: component.default || component
     }
 
@@ -58,11 +58,11 @@ let route = registerRoute(navConfig)
 //   name: "play",
 //   component: require("./play/index.vue")
 // })
-let defaultPath = "/component"
+let defaultPath = '/component'
 route = route.concat([
-  { path: "/", redirect: defaultPath },
+  { path: '/', redirect: defaultPath },
   {
-    path: "*",
+    path: '*',
     redirect: defaultPath
   }
 ])

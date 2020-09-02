@@ -4,61 +4,61 @@
 export const elFormAttrs = [
   // "model",
   // "rules",
-  "labelPosition",
-  "labelWidth",
-  "labelSuffix",
-  "inline",
-  "inlineMessage",
-  "statusIcon",
-  "showMessage",
-  "size",
-  "disabled",
-  "validateOnRuleChange",
-  "hideRequiredAsterisk"
+  'labelPosition',
+  'labelWidth',
+  'labelSuffix',
+  'inline',
+  'inlineMessage',
+  'statusIcon',
+  'showMessage',
+  'size',
+  'disabled',
+  'validateOnRuleChange',
+  'hideRequiredAsterisk'
 ]
 
 export const elFormItemAttrs = [
   // 'label',
-  "labelWidth",
-  "prop",
+  'labelWidth',
+  'prop',
   // 'required',
   // 'rules',
-  "error",
-  "validateStatus",
-  "inlineMessage",
-  "showMessage",
-  "size"
+  'error',
+  'validateStatus',
+  'inlineMessage',
+  'showMessage',
+  'size'
 ]
 
 export const itemTypes = [
-  "input",
-  "select",
-  "radio",
-  "checkbox",
-  "cascader",
+  'input',
+  'select',
+  'radio',
+  'checkbox',
+  'cascader',
   // 'switch',
   // 'slider',
   // 'timePicker',
-  "datePicker", // 日期选择器
+  'datePicker', // 日期选择器
   // 'dateTimePicker', // 日期时间选择器
   // 'rate', // 评分
-  "slot"
+  'slot'
 ]
 
 export const noneItemAttrs = [
   ...elFormItemAttrs,
-  "span",
-  "offset",
-  "options",
-  "itemType",
-  "placeholder",
-  "onlyNumber",
-  "rules"
+  'span',
+  'offset',
+  'options',
+  'itemType',
+  'placeholder',
+  'onlyNumber',
+  'rules'
 ]
 
 // 表单组件默认属性
 export const defaultAttrs = {
   datePicker: {
-    valueFormat: "yyyy-MM-dd"
+    valueFormat: 'yyyy-MM-dd'
   }
 }

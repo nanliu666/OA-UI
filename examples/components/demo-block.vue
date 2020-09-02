@@ -178,15 +178,15 @@
 </style>
 
 <script type="text/babel">
-import { stripScript, stripStyle, stripTemplate } from "../util"
+import { stripScript, stripStyle, stripTemplate } from '../util'
 
 export default {
   data() {
     return {
       codepen: {
-        script: "",
-        html: "",
-        style: ""
+        script: '',
+        html: '',
+        style: ''
       },
       hovering: false,
       isExpanded: false,
@@ -198,49 +198,49 @@ export default {
   computed: {
     blockClass() {
       return `demo-${this.lang} demo-${this.$router.currentRoute.path
-        .split("/")
+        .split('/')
         .pop()}`
     },
 
     iconClass() {
-      return this.isExpanded ? "el-icon-caret-top" : "el-icon-caret-bottom"
+      return this.isExpanded ? 'el-icon-caret-top' : 'el-icon-caret-bottom'
     },
 
     controlText() {
-      return this.isExpanded ? "显示代码" : "隐藏代码"
+      return this.isExpanded ? '显示代码' : '隐藏代码'
     },
 
     codeArea() {
-      return this.$el.getElementsByClassName("meta")[0]
+      return this.$el.getElementsByClassName('meta')[0]
     },
 
     codeAreaHeight() {
-      if (this.$el.getElementsByClassName("description").length > 0) {
+      if (this.$el.getElementsByClassName('description').length > 0) {
         return (
-          this.$el.getElementsByClassName("description")[0].clientHeight +
-          this.$el.getElementsByClassName("highlight")[0].clientHeight +
+          this.$el.getElementsByClassName('description')[0].clientHeight +
+          this.$el.getElementsByClassName('highlight')[0].clientHeight +
           20
         )
       }
-      return this.$el.getElementsByClassName("highlight")[0].clientHeight
+      return this.$el.getElementsByClassName('highlight')[0].clientHeight
     }
   },
 
   watch: {
     isExpanded(val) {
-      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : "0"
+      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
       if (!val) {
         this.fixedControl = false
-        this.$refs.control.style.left = "0"
+        this.$refs.control.style.left = '0'
         this.removeScrollHandler()
         return
       }
       setTimeout(() => {
         this.scrollParent = document.querySelector(
-          ".page-component__scroll > .el-scrollbar__wrap"
+          '.page-component__scroll > .el-scrollbar__wrap'
         )
         this.scrollParent &&
-          this.scrollParent.addEventListener("scroll", this.scrollHandler)
+          this.scrollParent.addEventListener('scroll', this.scrollHandler)
         this.scrollHandler()
       }, 200)
     }
@@ -249,11 +249,11 @@ export default {
   created() {
     const highlight = this.$slots.highlight
     if (highlight && highlight[0]) {
-      let code = ""
+      let code = ''
       let cur = highlight[0]
-      if (cur.tag === "pre" && cur.children && cur.children[0]) {
+      if (cur.tag === 'pre' && cur.children && cur.children[0]) {
         cur = cur.children[0]
-        if (cur.tag === "code") {
+        if (cur.tag === 'code') {
           code = cur.children[0].text
         }
       }
@@ -267,10 +267,10 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      let highlight = this.$el.getElementsByClassName("highlight")[0]
-      if (this.$el.getElementsByClassName("description").length === 0) {
-        highlight.style.width = "100%"
-        highlight.borderRight = "none"
+      let highlight = this.$el.getElementsByClassName('highlight')[0]
+      if (this.$el.getElementsByClassName('description').length === 0) {
+        highlight.style.width = '100%'
+        highlight.borderRight = 'none'
       }
     })
   },
@@ -285,12 +285,12 @@ export default {
       this.fixedControl =
         bottom > document.documentElement.clientHeight &&
         top + 44 <= document.documentElement.clientHeight
-      this.$refs.control.style.left = this.fixedControl ? `${left}px` : "0"
+      this.$refs.control.style.left = this.fixedControl ? `${left}px` : '0'
     },
 
     removeScrollHandler() {
       this.scrollParent &&
-        this.scrollParent.removeEventListener("scroll", this.scrollHandler)
+        this.scrollParent.removeEventListener('scroll', this.scrollHandler)
     }
   }
 }

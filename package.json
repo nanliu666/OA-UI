@@ -7,7 +7,7 @@
     "build": "npm run build:file && vue-cli-service build --target lib --name mage --dest dist ./src/index.js",
     "build:file": "node build/bin/build-entry.js",
     "serve": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
-    "lint": "eslint --fix --ext .js examples/**/* packages/**/* build/**/*"
+    "lint": "eslint --fix --ext .js examples/**/* packages/**/* build/**/* src/**/*"
   },
   "dependencies": {
     "core-js": "^3.6.5"
@@ -26,6 +26,8 @@
     "cross-env": "^7.0.2",
     "element-ui": "^2.13.2",
     "eslint": "^6.7.2",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-vue": "^6.2.2",
     "highlight.js": "^10.1.2",
     "husky": "^4.2.5",
