@@ -2,18 +2,18 @@ const {
   stripScript,
   stripTemplate,
   genInlineComponentText
-} = require("./util")
-const md = require("./config")
+} = require('./util')
+const md = require('./config')
 
 module.exports = function(source) {
   const content = md.render(source)
 
-  const startTag = "<!--element-demo:"
+  const startTag = '<!--element-demo:'
   const startTagLen = startTag.length
-  const endTag = ":element-demo-->"
+  const endTag = ':element-demo-->'
   const endTagLen = endTag.length
 
-  let componenetsString = ""
+  let componenetsString = ''
   let id = 0 // demo 的 id
   let output = [] // 输出的内容
   let start = 0 // 字符串开始位置
@@ -45,7 +45,7 @@ module.exports = function(source) {
 
   // 仅允许在 demo 不存在时，才可以在 Markdown 中写 script 标签
   // todo: 优化这段逻辑
-  let pageScript = ""
+  let pageScript = ''
   if (componenetsString) {
     pageScript = `<script>
       export default {
@@ -55,9 +55,9 @@ module.exports = function(source) {
         }
       }
     </script>`
-  } else if (content.indexOf("<script>") === 0) {
+  } else if (content.indexOf('<script>') === 0) {
     // 硬编码，有待改善
-    start = content.indexOf("</script>") + "</script>".length
+    start = content.indexOf('</script>') + '</script>'.length
     pageScript = content.slice(0, start)
   }
 
@@ -65,7 +65,7 @@ module.exports = function(source) {
   return `
     <template>
       <section class="content element-doc">
-        ${output.join("")}
+        ${output.join('')}
       </section>
     </template>
     ${pageScript}

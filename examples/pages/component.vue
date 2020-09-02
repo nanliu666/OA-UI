@@ -157,9 +157,9 @@
   </el-scrollbar>
 </template>
 <script>
-import bus from "../bus"
-import navsData from "../nav.config.json"
-import { throttle } from "throttle-debounce"
+import bus from '../bus'
+import navsData from '../nav.config.json'
+import { throttle } from 'throttle-debounce'
 
 export default {
   data() {
@@ -178,7 +178,7 @@ export default {
     }
   },
   watch: {
-    "$route.path"() {
+    '$route.path'() {
       // 触发伪滚动条更新
       this.componentScrollBox.scrollTop = 0
       this.$nextTick(() => {
@@ -187,44 +187,44 @@ export default {
     }
   },
   created() {
-    bus.$on("navFade", val => {
+    bus.$on('navFade', val => {
       this.navFaded = val
     })
   },
   mounted() {
     this.componentScrollBar = this.$refs.componentScrollBar
     this.componentScrollBox = this.componentScrollBar.$el.querySelector(
-      ".el-scrollbar__wrap"
+      '.el-scrollbar__wrap'
     )
     this.throttledScrollHandler = throttle(300, this.handleScroll)
     this.componentScrollBox.addEventListener(
-      "scroll",
+      'scroll',
       this.throttledScrollHandler
     )
     this.renderAnchorHref()
     this.goAnchor()
-    document.body.classList.add("is-component")
+    document.body.classList.add('is-component')
   },
   destroyed() {
-    document.body.classList.remove("is-component")
+    document.body.classList.remove('is-component')
   },
   beforeDestroy() {
     this.componentScrollBox.removeEventListener(
-      "scroll",
+      'scroll',
       this.throttledScrollHandler
     )
   },
   methods: {
     renderAnchorHref() {
       if (/changelog/g.test(location.href)) return
-      const anchors = document.querySelectorAll("h2 a,h3 a,h4 a,h5 a")
+      const anchors = document.querySelectorAll('h2 a,h3 a,h4 a,h5 a')
       const basePath = location.href
-        .split("#")
+        .split('#')
         .splice(0, 2)
-        .join("#");
+        .join('#');
 
       [].slice.call(anchors).forEach(a => {
-        const href = a.getAttribute("href")
+        const href = a.getAttribute('href')
         a.href = basePath + href
       })
     },
@@ -251,7 +251,7 @@ export default {
         this.showHeader = true
       }
       if (!this.navFaded) {
-        bus.$emit("fadeNav")
+        bus.$emit('fadeNav')
       }
       this.scrollTop = scrollTop
     }

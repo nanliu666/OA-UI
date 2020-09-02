@@ -1,8 +1,8 @@
-const Config = require("markdown-it-chain")
-const anchorPlugin = require("markdown-it-anchor")
-const slugify = require("transliteration").slugify
-const containers = require("./containers")
-const overWriteFenceRule = require("./fence")
+const Config = require('markdown-it-chain')
+const anchorPlugin = require('markdown-it-anchor')
+const slugify = require('transliteration').slugify
+const containers = require('./containers')
+const overWriteFenceRule = require('./fence')
 
 const config = new Config()
 
@@ -10,7 +10,7 @@ config.options
   .html(true)
   .end()
 
-  .plugin("anchor")
+  .plugin('anchor')
   .use(anchorPlugin, [
     {
       level: 2,
@@ -21,7 +21,7 @@ config.options
   ])
   .end()
 
-  .plugin("containers")
+  .plugin('containers')
   .use(containers)
   .end()
 

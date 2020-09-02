@@ -27,7 +27,7 @@
       ref="table"
       v-loading="loading"
       :data="data"
-      v-bind="elAttrs"
+      v-bind="elProps"
       v-on="listeners"
     >
       <el-table-column
@@ -82,13 +82,13 @@
 </template>
 
 <script>
-import { elTableAttrs } from "./config"
-import { get } from "main/utils/util"
-import tableColumn from "./tableColumn"
-import tablePagination from "./tablePagination"
+import { EL_TABLE_PROPS, EL_TABLE_METHODS } from './config'
+import { get } from 'main/utils/util'
+import tableColumn from './table-column'
+import tablePagination from './table-pagination'
 
 export default {
-  name: "MgTable",
+  name: 'MgTable',
   components: {
     tableColumn,
     tablePagination
@@ -127,7 +127,7 @@ export default {
           handlerColumn: {},
           highlightSelect: true,
           showIndexColumn: false,
-          tooltipEffect: "dark"
+          tooltipEffect: 'dark'
         },
         this.config
       )
@@ -136,24 +136,24 @@ export default {
     handlerColumn() {
       return Object.assign(
         {
-          label: "操作",
+          label: '操作',
           minWidth: 100,
-          fixed: "right"
+          fixed: 'right'
         },
         this._config.handlerColumn
       )
     },
     // el-table组件属性
-    elAttrs() {
+    elProps() {
       const copy = {}
       for (const key in this._config) {
-        if (elTableAttrs.includes(key)) {
+        if (EL_TABLE_PROPS.includes(key)) {
           copy[key] = this._config[key]
         }
       }
       if (this._config.highlightSelect) {
         Object.assign(copy, {
-          "row-class-name": this.rowClassName
+          'row-class-name': this.rowClassName
         })
       }
       return copy
@@ -162,7 +162,7 @@ export default {
     listeners() {
       return Object.assign({}, this.$listeners, {
         select: this.handleSelect,
-        "select-all": this.handleSelectAll
+        'select-all': this.handleSelectAll
       })
     }
   },
@@ -177,7 +177,7 @@ export default {
                 item => this._getRowKey(item) === this._getRowKey(row)
               ) >= 0
             ) {
-              this.$refs["table"].toggleRowSelection(row, true)
+              this.$refs['table'].toggleRowSelection(row, true)
             }
           })
         }
@@ -187,19 +187,19 @@ export default {
   methods: {
     _getRowKey(row) {
       const config = this._config
-      if (typeof config.rowKey === "function") {
+      if (typeof config.rowKey === 'function') {
         return config.rowKey(row)
-      } else if (typeof config.rowKey === "string") {
+      } else if (typeof config.rowKey === 'string') {
         return get(row, config.rowKey)
       } else {
         return row.id
       }
     },
     handleCurrentChange(val) {
-      this.$emit("current-page-change", val)
+      this.$emit('current-page-change', val)
     },
     handleSizeChange(val) {
-      this.$emit("page-size-change", val)
+      this.$emit('page-size-change', val)
     },
     handleSelect(selection, row) {
       if (selection.includes(row)) {
@@ -207,7 +207,7 @@ export default {
       } else {
         this.selection.splice(this.selection.indexOf(row), 1)
       }
-      this.$emit("select", this.selection, row)
+      this.$emit('select', this.selection, row)
     },
     handleSelectAll(selection) {
       let index
@@ -223,45 +223,27 @@ export default {
           this.selection.splice(index, 1)
         }
       })
-      this.$emit("select-all", this.selection)
+      this.$emit('select-all', this.selection)
     },
     // 高亮当前选中行
     rowClassName({ row }) {
       for (let index = 0; index < this.selection.length; index++) {
         if (this.selection[index] === row) {
-          return "row__active"
+          return 'row__active'
         }
       }
-      return ""
+      return ''
     },
     clearSelection() {
       this.selection = []
-      this.$refs["table"].clearSelection()
+      this.$refs['table'].clearSelection()
     },
-    toggleRowSelection() {
-      return this.$refs["table"].toggleRowSelection(...arguments)
-    },
-    toggleAllSelection() {
-      return this.$refs["table"].toggleAllSelection(...arguments)
-    },
-    toggleRowExpansion() {
-      return this.$refs["table"].toggleRowExpansion(...arguments)
-    },
-    setCurrentRow() {
-      return this.$refs["table"].setCurrentRow(...arguments)
-    },
-    clearSort() {
-      return this.$refs["table"].clearSort(...arguments)
-    },
-    clearFilter() {
-      return this.$refs["table"].clearFilter(...arguments)
-    },
-    doLayout() {
-      return this.$refs["table"].doLayout(...arguments)
-    },
-    sort() {
-      return this.$refs["table"].sort(...arguments)
-    }
+    ...EL_TABLE_METHODS.reduce((acc, method) => {
+      acc[method] = function() {
+        return this.$refs['table'][method](...arguments)
+      }
+      return acc
+    }, {})
   }
 }
 </script>

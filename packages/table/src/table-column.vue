@@ -1,7 +1,7 @@
 <template>
   <el-table-column
     v-if="column.slot"
-    v-bind="elAttrs"
+    v-bind="elProps"
   >
     <slot
       slot-scope="scope"
@@ -21,12 +21,12 @@
   </el-table-column>
   <el-table-column
     v-else
-    v-bind="elAttrs"
+    v-bind="elProps"
   />
 </template>
 
 <script>
-import { elTableColumnAttrs } from "./config"
+import { EL_TABLE_COLUMN_PROPS } from './config'
 
 export default {
   props: {
@@ -39,10 +39,10 @@ export default {
     _column() {
       return Object.assign({ showOverflowTooltip: true }, this.column)
     },
-    elAttrs() {
+    elProps() {
       const copy = {}
       for (const key in this._column) {
-        if (elTableColumnAttrs.includes(key)) {
+        if (EL_TABLE_COLUMN_PROPS.includes(key)) {
           copy[key] = this._column[key]
         }
       }

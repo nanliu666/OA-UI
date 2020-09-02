@@ -1,39 +1,40 @@
-const path = require("path")
-const webpack = require("webpack")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const path = require('path')
+const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const ProgressBarPlugin = require("progress-bar-webpack-plugin")
-const VueLoaderPlugin = require("vue-loader/lib/plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const isProd = process.env.NODE_ENV === "production"
+const isProd = process.env.NODE_ENV === 'production'
 // const isPlay = !!process.env.PLAY_ENV;
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
-  entry: "./examples/entry.js",
+  entry: './examples/entry.js',
   output: {
-    path: path.resolve(process.cwd(), "./examples/dist/"),
-    publicPath: process.env.CI_ENV || "",
-    filename: "[name].[hash:7].js",
-    chunkFilename: isProd ? "[name].[hash:7].js" : "[name].js"
+    path: path.resolve(process.cwd(), './examples/dist/'),
+    publicPath: process.env.CI_ENV || '',
+    filename: '[name].[hash:7].js',
+    chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
   },
   resolve: {
-    extensions: [".js", ".vue", ".json"],
-    modules: ["node_modules"],
+    extensions: ['.js', '.vue', '.json'],
+    modules: ['node_modules'],
     alias: {
-      main: path.resolve(__dirname, "../src"),
-      packages: path.resolve(__dirname, "../packages"),
-      examples: path.resolve(__dirname, "../examples")
+      main: path.resolve(__dirname, '../src'),
+      packages: path.resolve(__dirname, '../packages'),
+      examples: path.resolve(__dirname, '../examples')
     }
   },
   devServer: {
-    host: "127.0.0.1",
+    host: '127.0.0.1',
     port: 8085,
-    publicPath: "/",
-    hot: true
+    publicPath: '/',
+    hot: true,
+    open: true
   },
 
   module: {
@@ -45,7 +46,7 @@ const webpackConfig = {
       // },
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           compilerOptions: {
             preserveWhitespace: false
@@ -55,16 +56,16 @@ const webpackConfig = {
       {
         test: /\.(scss|css)$/,
         use: [
-          isProd ? MiniCssExtractPlugin.loader : "style-loader",
-          "css-loader",
-          "sass-loader"
+          isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
         test: /\.md$/,
         use: [
           {
-            loader: "vue-loader",
+            loader: 'vue-loader',
             options: {
               compilerOptions: {
                 preserveWhitespace: false
@@ -72,17 +73,17 @@ const webpackConfig = {
             }
           },
           {
-            loader: path.resolve(__dirname, "./md-loader/index.js")
+            loader: path.resolve(__dirname, './md-loader/index.js')
           }
         ]
       },
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         // todo: 这种写法有待调整
         query: {
           limit: 10000,
-          name: path.posix.join("static", "[name].[hash:7].[ext]")
+          name: path.posix.join('static', '[name].[hash:7].[ext]')
         }
       }
     ]
@@ -90,9 +91,9 @@ const webpackConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: "./examples/index.tpl",
-      filename: "./index.html",
-      favicon: "./examples/favicon.ico"
+      template: './examples/index.tpl',
+      filename: './index.html',
+      favicon: './examples/favicon.ico'
     }),
     // new CopyWebpackPlugin([{ from: 'examples/versions.json' }]),
     new ProgressBarPlugin(),
@@ -111,18 +112,18 @@ const webpackConfig = {
   optimization: {
     minimizer: []
   },
-  devtool: "#eval-source-map"
+  devtool: '#eval-source-map'
 }
 
 if (isProd) {
   webpackConfig.externals = {
-    vue: "Vue",
-    "vue-router": "VueRouter",
-    "highlight.js": "hljs"
+    vue: 'Vue',
+    'vue-router': 'VueRouter',
+    'highlight.js': 'hljs'
   }
   webpackConfig.plugins.push(
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash:7].css"
+      filename: '[name].[contenthash:7].css'
     })
   )
   webpackConfig.optimization.minimizer.push(
@@ -138,8 +139,8 @@ if (isProd) {
     cacheGroups: {
       vendor: {
         test: /\/src\//,
-        name: "mage",
-        chunks: "all"
+        name: 'mage',
+        chunks: 'all'
       }
     }
   }
