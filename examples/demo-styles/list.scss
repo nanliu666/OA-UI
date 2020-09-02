@@ -1,0 +1,26 @@
+.mg-li-style {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  .desc-box {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    .title {
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      margin-bottom: 4px;
+      &:hover {
+        color: #409eff;
+      }
+    }
+    .desc {
+      color: rgba(0, 0, 0, 0.45);
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
