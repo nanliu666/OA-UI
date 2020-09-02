@@ -143,7 +143,11 @@
             ref="tree"
             v-bind="elTreeProps"
             @node-click="handleNodeClick"
-          />
+          >
+            <template v-if="$slots.default">
+              <slot />
+            </template>
+          </el-tree>
         </el-scrollbar>
       </el-select-menu>
     </transition>
