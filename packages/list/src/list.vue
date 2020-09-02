@@ -4,10 +4,8 @@
   </div>
 </template>
 <script>
-import Emitter from 'main/mixins/elFormEmitter'
 export default {
   name: 'MgList',
-  mixins: [Emitter],
   props: {
     bordered: {
       type: Boolean,
