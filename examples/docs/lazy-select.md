@@ -1,30 +1,71 @@
-示例代码
+## LazySelect 懒加载选择器
 
+当选项过多时,使用下拉菜单展示并选择内容,且且有懒加载功能,在处理长列表的时候,滚动到底部时触发加载行为
+
+### 基础用法
+
+适用广泛的基础单选
+:::demo `v-model`的值为当前被选中的`el-option`的 value 属性值
 ```html
-  <lazy-select  
-    v-model="form.userId"
-    :load="loadUser"
-    placeholder="请选择组织负责人"
-    :option-props="{
-      label:'name',
-      value:'userId',
-      key:'userId'
-    }"
-  />
-```
-```js
-  {
-    data(){
+<template>
+  <mg-lazy-select v-model="value" placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </mg-lazy-select>
+</template>
+
+<script>
+  export default {
+    data() {
       return {
-        form:{
-          userId:null
-        }
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
       }
-    },
-    methods:{
-      loadUser(params) {
-        return getUserWorkList(params)
-      },
     }
   }
+</script>
 ```
+:::
+
+### LazySelect Attributes
+| 参数            | 说明            | 类型                      | 可选值 | 默认值 |
+| --------------- | --------------- | ------------------------- | ------ | ------ |
+| value / v-model | 绑定值          | boolean / string / number | —      | —      |
+| first-option    | 第一个值        | object                    | —      | —      |
+| option-list     | select的options | Array                     | —      | []     |
+
+### LazySelect Events
+| 事件名称 | 说明                 | 回调参数     |
+| -------- | -------------------- | ------------ |
+| change   | 选中值发生变化时触发 | 目前的选中值 |
+
+### LazySelect Slots
+| name  | 说明           |
+| ----- | -------------- |
+| empty | 无选项时的列表 |
+
+### Methods
+| 方法名 | 说明                            | 参数                                             |
+| ------ | ------------------------------- | ------------------------------------------------ |
+| focus  | 使 input 获取焦点               | -                                                |
+| blur   | 使 input 失去焦点，并隐藏下拉框 | -                                                |
+| load   | 加载函数,滚动到底部的时候调用   | {pageNo:number, pageSize:number, search: string} |

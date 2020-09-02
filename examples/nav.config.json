@@ -16,7 +16,7 @@
           {
             "path": "/card",
             "title": "Card 卡片"
-          },   
+          },
           {
             "path": "/table",
             "title": "表格"
@@ -40,6 +40,14 @@
           {
             "path": "/form",
             "title": "表单"
+          },
+          {
+            "path": "/tree-select",
+            "title": "树形选择器"
+          },
+          {
+            "path": "/lazy-select",
+            "title": "分页下拉选择器"
           },
           {
             "path": "/list",
