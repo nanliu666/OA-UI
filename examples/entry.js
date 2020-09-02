@@ -5,16 +5,17 @@ import Element from 'element-ui'
 import hljs from 'highlight.js'
 import routes from './route.config'
 import demoBlock from './components/demo-block'
-// import MainHeader from './components/header'
+import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import MageUI from 'main'
 import './assets/styles/common.scss'
+import './demo-styles/index.scss'
 console.log(routes)
 Vue.use(Element)
 Vue.use(VueRouter)
 Vue.use(MageUI)
 Vue.component('demo-block', demoBlock)
-// Vue.component('main-header', MainHeader)
+Vue.component('main-header', MainHeader)
 Vue.component('side-nav', SideNav)
 const router = new VueRouter({
   mode: 'hash',
