@@ -9,6 +9,7 @@ import Card from '../packages/card/index.js'
 import Popover from '../packages/popover/index.js'
 import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
+import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
 
 const components = [
@@ -21,6 +22,7 @@ const components = [
   Popover,
   Tooltip,
   Popconfirm,
+  List,
   LazySelect,
 ]
 
@@ -46,5 +48,6 @@ export default {
   Popover,
   Tooltip,
   Popconfirm,
+  List,
   LazySelect
 }

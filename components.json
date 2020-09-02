@@ -8,5 +8,6 @@
 	"popover": "./packages/popover/index.js",
 	"tooltip": "./packages/tooltip/index.js",
 	"popconfirm": "./packages/popconfirm/index.js",
+	"list": "./packages/list/index.js",
 	"lazy-select": "./packages/lazy-select/index.js"
 }

@@ -20,6 +20,10 @@
           {
             "path": "/avatar",
             "title": "Avatar 头像"
+          },
+          {
+            "path": "/list",
+            "title": "List 列表"
           }
         ]
       },
