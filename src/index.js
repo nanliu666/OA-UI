@@ -12,6 +12,8 @@ import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import Pagination from '../packages/pagination/index.js'
+import Tabs from '../packages/tabs/index.js'
+import TabPane from '../packages/tab-pane/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 
@@ -26,6 +28,8 @@ const components = [
   Popconfirm,
   List,
   Pagination,
+  Tabs,
+  TabPane,
   LazySelect,
   TreeSelect,
 ]
@@ -53,6 +57,8 @@ export default {
   Popconfirm,
   List,
   Pagination,
+  Tabs,
+  TabPane,
   LazySelect,
   TreeSelect
 }

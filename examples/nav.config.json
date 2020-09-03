@@ -52,7 +52,11 @@
         "list": [
           {
             "path": "/pagination",
-            "title": "pagination 分页"
+            "title": "Pagination 分页"
+          },
+          {
+            "path": "/tabs",
+            "title": "Tabs 分页"
           }
         ]
       }
