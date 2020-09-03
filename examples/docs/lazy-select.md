@@ -11,7 +11,7 @@
 <template>
   <mg-lazy-select
     v-model="selected"
-    :load="load"
+    :load="load()"
     :option-props="{
       label: 'label',
       value: 'value',
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-let id = 0
 export default {
   data() {
     return {
@@ -30,7 +29,8 @@ export default {
   },
   methods: {
     load() {
-      return Promise.resolve({
+      let id = 0
+      return () => Promise.resolve({
         data: new Array(10).fill().map(() => ({ label: `label${id}`, value: `value${id++}` }))
       })
     }
