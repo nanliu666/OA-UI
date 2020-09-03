@@ -19,7 +19,7 @@
           },
           {
             "path": "/table",
-            "title": "表格"
+            "title": "Table 表格"
           },
           {
             "path": "/lazy-select",
@@ -38,16 +38,21 @@
             "title": "Popconfirm 气泡确认框"
           },
           {
-            "path": "/form",
-            "title": "表单"
-          },
-          {
             "path": "/tree-select",
             "title": "TreeSelect 树形选择器"
           },
           {
             "path": "/list",
             "title": "List 列表"
+          }
+        ]
+      },
+      {
+        "groupName": "导航",
+        "list": [
+          {
+            "path": "/pagination",
+            "title": "pagination 分页"
           }
         ]
       }

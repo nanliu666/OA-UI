@@ -166,7 +166,7 @@ export default {
 
 ### PageConfig Attributes
 
-除此之外支持所有 el-pagination attributes
+除此之外支持所有 mg-pagination attributes
 
 | 参数            | 说明                   |  类型  | 默认值 |
 | :-------------- | :--------------------- | :----: | :----: |

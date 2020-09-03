@@ -1,6 +1,6 @@
 <template>
   <div :class="['page-wrap', customClassName]">
-    <el-pagination
+    <mg-pagination
       :current-page="page.currentPage"
       :page-size="page.size"
       :total="page.total"
