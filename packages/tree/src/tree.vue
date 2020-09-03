@@ -33,7 +33,6 @@ export default {
     elTreeProps() {
       const props = Object.assign({}, EL_TREE_PROPS_DEFAULT)
       const { $attrs } = this
-      console.debug({ attrs: $attrs, props: this.$props })
       for (const key in $attrs) {
         if (EL_TREE_PROPS.includes(key)) {
           props[key] = $attrs[key]
