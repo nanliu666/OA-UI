@@ -60,3 +60,12 @@ export const EL_TREE_PROPS = [
 export const EL_TREE_PROPS_DEFAULT = {
   expandOnClickNode: false // 默认点击行的时候不展开
 }
+export function getElTreePropsDefault(vm) {
+  return Object.assign(
+    {
+      // 根据vm生成的属性
+      nodeKey: vm.$attrs.props.value
+    },
+    EL_TREE_PROPS_DEFAULT
+  )
+}
