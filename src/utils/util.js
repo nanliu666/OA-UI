@@ -99,3 +99,31 @@ export function omit(target, props) {
   }
   return result
 }
+
+/**
+ * 将驼峰字符串转换为kebab-case字符串
+ * @param {string} str 要转换的字符串
+ * @returns {string}
+ */
+export function toKebabCase(str) {
+  const REG_UPPER = /[A-Z]/
+  let result = ''
+  for (const c of str) {
+    REG_UPPER.test(c) ? (result += `-${c.toLowerCase()}`) : (result += c)
+  }
+  // ignore first "-"
+  return result.startsWith('-') ? result.slice(1) : result
+}
+
+/**
+ * 将驼峰字符串转换为kebab-case字符串
+ * @param {string} str 要转换的字符串
+ * @returns {string}
+ */
+export function toCamelCase(str) {
+  if (!str) return ''
+  while (str.indexOf('-') > -1) {
+    str = str.replace(/-\w/, /-\w/.exec(str)[0][1].toUpperCase())
+  }
+  return str[0].toLowerCase() + str.slice(1)
+}
