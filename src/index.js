@@ -2,7 +2,6 @@
 
 import './styles/common.scss'
 
-import Form from '../packages/form/index.js'
 import Table from '../packages/table/index.js'
 import Avatar from '../packages/avatar/index.js'
 import Timeline from '../packages/timeline/index.js'
@@ -13,9 +12,9 @@ import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
+import TreeSelect from '../packages/tree-select/index.js'
 
 const components = [
-  Form,
   Table,
   Avatar,
   Timeline,
@@ -26,6 +25,7 @@ const components = [
   Popconfirm,
   List,
   LazySelect,
+  TreeSelect,
 ]
 
 const install = function(Vue) {
@@ -41,7 +41,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Form,
   Table,
   Avatar,
   Timeline,
@@ -51,5 +50,6 @@ export default {
   Tooltip,
   Popconfirm,
   List,
-  LazySelect
+  LazySelect,
+  TreeSelect
 }
