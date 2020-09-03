@@ -272,7 +272,7 @@
           </div>
         )
       })
-      console.log('tabs==', panes)
+      
       return (
         <div class={['el-tabs__nav-wrap', scrollable ? 'is-scrollable' : '', `is-${ this.rootTabs.tabPosition }`]}>
           {scrollBtn}

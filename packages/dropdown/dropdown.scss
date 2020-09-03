@@ -1,0 +1,20 @@
+// 重写正常尺寸、中等尺寸，小尺寸，不动最小尺寸
+.el-dropdown-menu__item {
+    padding: 0 16px;
+}
+.el-dropdown-menu {
+    padding: 8px 0;
+}
+.el-dropdown-menu--medium {
+    padding: 6px 0;
+    .el-dropdown-menu__item {
+        padding: 0 14px;
+    }
+}
+.el-dropdown-menu--small {
+    padding: 4px 0;
+    .el-dropdown-menu__item {
+        padding: 0 12px;
+    }
+}
+
