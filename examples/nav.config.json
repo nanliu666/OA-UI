@@ -16,14 +16,14 @@
           {
             "path": "/card",
             "title": "Card 卡片"
-          },   
+          },
           {
             "path": "/table",
             "title": "表格"
           },
           {
             "path": "/lazy-select",
-            "title": "分页下拉选择器"
+            "title": "LazySelect 分页下拉选择器"
           },
           {
             "path": "/tooltip",
@@ -40,6 +40,10 @@
           {
             "path": "/form",
             "title": "表单"
+          },
+          {
+            "path": "/tree-select",
+            "title": "TreeSelect 树形选择器"
           },
           {
             "path": "/list",

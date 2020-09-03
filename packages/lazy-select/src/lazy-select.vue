@@ -12,11 +12,7 @@
     <el-option
       v-for="item in optionList"
       :key="optionProps.key ? item[optionProps.key] : item[optionProps.value]"
-      :label="
-        optionProps.formatter
-          ? optionProps.formatter(item)
-          : item[optionProps.label]
-      "
+      :label="optionProps.formatter ? optionProps.formatter(item) : item[optionProps.label]"
       :value="item[optionProps.value]"
     />
     <div
@@ -42,9 +38,23 @@
   </el-select>
 </template>
 <script>
-import Emitter from 'main/mixins/elFormEmitter'
+import Emitter from 'element-ui/src/mixins/emitter'
 export default {
   name: 'MgLazySelect',
+  directives: {
+    loadmore: {
+      bind(el, binding) {
+        // 获取element-ui定义好的scroll盒子
+        const SELECTWRAP_DOM = el.querySelector('.el-select-dropdown .el-select-dropdown__wrap')
+        SELECTWRAP_DOM.addEventListener('scroll', function() {
+          const CONDITION = this.scrollHeight - this.scrollTop <= this.clientHeight
+          if (CONDITION) {
+            binding.value()
+          }
+        })
+      }
+    }
+  },
   mixins: [Emitter],
   model: {
     prop: 'value',
@@ -127,14 +137,12 @@ export default {
         pageSize: this.pageSize,
         search: this.search
       })
-        .then(res => {
+        .then((res) => {
           this.pageNo += 1
           if (firstOption) {
             this.optionList.push(
               ...res.data.filter(
-                item =>
-                  item[this.optionProps.value] !==
-                  firstOption[this.optionProps.value]
+                (item) => item[this.optionProps.value] !== firstOption[this.optionProps.value]
               )
             )
           } else {

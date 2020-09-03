@@ -1,13 +1,13 @@
 {
-	"form": "./packages/form/index.js",
-	"table": "./packages/table/index.js",
-	"avatar": "./packages/avatar/index.js",
-	"timeline": "./packages/timeline/index.js",
-	"timeline-item": "./packages/timeline-item/index.js",
-	"card": "./packages/card/index.js",
-	"popover": "./packages/popover/index.js",
-	"tooltip": "./packages/tooltip/index.js",
-	"popconfirm": "./packages/popconfirm/index.js",
-	"list": "./packages/list/index.js",
-	"lazy-select": "./packages/lazy-select/index.js"
+  "table": "./packages/table/index.js",
+  "avatar": "./packages/avatar/index.js",
+  "timeline": "./packages/timeline/index.js",
+  "timeline-item": "./packages/timeline-item/index.js",
+  "card": "./packages/card/index.js",
+  "popover": "./packages/popover/index.js",
+  "tooltip": "./packages/tooltip/index.js",
+  "popconfirm": "./packages/popconfirm/index.js",
+  "list": "./packages/list/index.js",
+  "lazy-select": "./packages/lazy-select/index.js",
+  "tree-select": "./packages/tree-select/index.js"
 }
