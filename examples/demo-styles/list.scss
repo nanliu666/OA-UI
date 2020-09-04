@@ -24,3 +24,18 @@
     }
   }
 }
+.pagination-demo {
+  align-items: center;
+  justify-content: space-between;
+  .desc-box {
+    width: calc(100% - 40px - 282px);
+  }
+
+  .pagination-img {
+    width: 272px; 
+  }
+}
+.pagination-demo1 {
+  display: flex;
+  justify-content: flex-end;
+}

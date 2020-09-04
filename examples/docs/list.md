@@ -84,8 +84,118 @@
 :::
 
 
+#### 分页模式
+
+:::demo 
+```html
+<template>
+  <mg-list
+    :data-source="dataSource" 
+  >
+    <template slot-scope="{ item, index }"  slot="renderItem">
+        <div class="mg-li-style pagination-demo">
+           <mg-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>
+           <div class="desc-box">
+              <div class="title">{{item.title}}</div>
+              <div class="desc">{{item.desc}}</div>
+           </div>
+            <img
+              class="pagination-img"
+              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+            />
+        </div>
+    </template>
+    <div slot="footer">
+      <mg-pagination
+        class="pagination-demo1"
+        background
+        layout="prev, pager, next"
+        :total="100">
+      </mg-pagination>
+    </div>
+  </mg-list>
+</template>
+<script>
+  const dataSource = [
+    {
+      title: 'mage-ui-list-demo 1',
+      desc: '这是我们的mage的list展示的描述这是我们的mage的list展示的描述这是我们的mage的list展示的描述这是我们的mage的list展示的描述',
+    },
+    {
+      title: 'mage-ui-list-demo 2',
+      desc: '这是我们的mage的list展示的描述',
+    },
+    {
+      title: 'mage-ui-list-demo 3',
+      desc: '这是我们的mage的list展示的描述',
+    },
+    {
+      title: 'mage-ui-list-demo 4',
+      desc: '这是我们的mage的list展示的描述',
+    },
+  ];
+  export default {
+    data() {
+      return {
+        dataSource: dataSource
+      }
+    },
+    mounted() {
+
+    },
+    methods: {
+
+    },
+  }
+</script>
+<style lang="scss">
+  .mg-li-style {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    .desc-box {
+      width: calc(100% - 40px);
+      padding-left: 20px;
+      .title {
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        margin-bottom: 4px;
+        &:hover {
+          color: #409eff;
+        }
+      }
+      .desc {
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .pagination-demo {
+    align-items: center;
+    justify-content: space-between;
+    .desc-box {
+      width: calc(100% - 40px - 282px);
+    }
+
+    .pagination-img {
+      width: 272px; 
+    }
+  }
+  .pagination-demo1 {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>
+````
+:::
+
 #### 加载更多（无边框列表）
-需要使用者在
+
 :::demo 
 ```html
 <template>
