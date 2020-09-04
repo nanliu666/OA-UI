@@ -94,7 +94,7 @@ export default {
 
 ### 通用规则
 
-- 树形节点支持常见的鼠标效果，包括：、正常（normal）、悬停（hover）、选中（focus）、禁用（disabled）。
+- 树形节点支持常见的鼠标效果，包括：、正常（normal）、悬停（hover）、选中（focus）、禁用（disabled，注意：disabled属性只有在checkbox的状态下才生效）。
 - 树形控件支持手风琴单层模式，对于同一级的节点，每次只能展开一个；也支持全部层级互不影响的自由展开折叠样式。
 
 :::demo
@@ -114,6 +114,7 @@ export default {
     <mg-tree
       :data="data"
       :props="defaultProps"
+      show-checkbox
       @node-click="handleNodeClick">
     </mg-tree>
   </div>

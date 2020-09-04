@@ -3,7 +3,7 @@
     ref="tree"
     class="mg-tree"
     :class="[noRotate ? 'no-rotate' : '']"
-    v-bind="elTreeProps"
+    v-bind="$attrs"
     v-on="$listeners"
   >
     <template
