@@ -15,5 +15,9 @@
   "tabs": "./packages/tabs/index.js",
   "tab-pane": "./packages/tab-pane/index.js",
   "lazy-select": "./packages/lazy-select/index.js",
+  "menu": "./packages/menu/index.js",
+  "menu-item": "./packages/menu-item/index.js",
+  "menu-item-group": "./packages/menu-item-group/index.js",
+  "submenu": "./packages/submenu/index.js",
   "tree-select": "./packages/tree-select/index.js"
 }

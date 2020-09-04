@@ -19,6 +19,10 @@ import Pagination from '../packages/pagination/index.js'
 import Tabs from '../packages/tabs/index.js'
 import TabPane from '../packages/tab-pane/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
+import Menu from '../packages/menu/index.js'
+import MenuItem from '../packages/menu-item/index.js'
+import MenuItemGroup from '../packages/menu-item-group/index.js'
+import Submenu from '../packages/submenu/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 
 const components = [
@@ -38,6 +42,10 @@ const components = [
   Tabs,
   TabPane,
   LazySelect,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
   TreeSelect,
 ]
 
@@ -70,5 +78,9 @@ export default {
   Tabs,
   TabPane,
   LazySelect,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
   TreeSelect
 }
