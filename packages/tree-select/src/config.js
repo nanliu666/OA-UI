@@ -58,5 +58,15 @@ export const EL_TREE_PROPS = [
 ]
 
 export const EL_TREE_PROPS_DEFAULT = {
-  expandOnClickNode: false // 默认点击行的时候不展开
+  expandOnClickNode: false, // 默认点击行的时候不展开
+  highlightCurrent: true // 默认高亮当前选中的项
+}
+export function getElTreePropsDefault(vm) {
+  return Object.assign(
+    {
+      // 根据vm生成的属性
+      nodeKey: vm.$attrs.props.value
+    },
+    EL_TREE_PROPS_DEFAULT
+  )
 }

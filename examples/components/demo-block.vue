@@ -45,8 +45,7 @@
   transition: 0.2s;
 
   &.hover {
-    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
-      0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
   }
 
   code {
@@ -197,9 +196,7 @@ export default {
 
   computed: {
     blockClass() {
-      return `demo-${this.lang} demo-${this.$router.currentRoute.path
-        .split('/')
-        .pop()}`
+      return `demo-${this.lang} demo-${this.$router.currentRoute.path.split('/').pop()}`
     },
 
     iconClass() {
@@ -207,7 +204,7 @@ export default {
     },
 
     controlText() {
-      return this.isExpanded ? '显示代码' : '隐藏代码'
+      return this.isExpanded ? '隐藏代码' : '显示代码'
     },
 
     codeArea() {
@@ -236,11 +233,8 @@ export default {
         return
       }
       setTimeout(() => {
-        this.scrollParent = document.querySelector(
-          '.page-component__scroll > .el-scrollbar__wrap'
-        )
-        this.scrollParent &&
-          this.scrollParent.addEventListener('scroll', this.scrollHandler)
+        this.scrollParent = document.querySelector('.page-component__scroll > .el-scrollbar__wrap')
+        this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler)
         this.scrollHandler()
       }, 200)
     }
@@ -289,8 +283,7 @@ export default {
     },
 
     removeScrollHandler() {
-      this.scrollParent &&
-        this.scrollParent.removeEventListener('scroll', this.scrollHandler)
+      this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
     }
   }
 }

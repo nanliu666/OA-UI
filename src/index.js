@@ -12,6 +12,7 @@ import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
+import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 
 const components = [
@@ -25,6 +26,7 @@ const components = [
   Popconfirm,
   List,
   LazySelect,
+  Tree,
   TreeSelect,
 ]
 
@@ -51,5 +53,6 @@ export default {
   Popconfirm,
   List,
   LazySelect,
+  Tree,
   TreeSelect
 }
