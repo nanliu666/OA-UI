@@ -116,7 +116,7 @@ export function toKebabCase(str) {
 }
 
 /**
- * 将驼峰字符串转换为kebab-case字符串
+ * 将kebab-case字符串转换为驼峰字符串
  * @param {string} str 要转换的字符串
  * @returns {string}
  */
