@@ -171,7 +171,6 @@ export default {
   },
 
   created() {
-    console.log('this.$props==', this.$slots)
     this.throttledArrowClick = throttle(300, true, index => {
       this.setActiveItem(index)
     })
