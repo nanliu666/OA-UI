@@ -9,5 +9,7 @@
   "popconfirm": "./packages/popconfirm/index.js",
   "list": "./packages/list/index.js",
   "lazy-select": "./packages/lazy-select/index.js",
-  "tree-select": "./packages/tree-select/index.js"
+  "tree-select": "./packages/tree-select/index.js",
+  "date-picker": "./packages/date-picker/index.js",
+  "select": "./packages/select/index.js"
 }
