@@ -21,6 +21,7 @@
   "submenu": "./packages/submenu/index.js",
   "steps": "./packages/steps/index.js",
   "step": "./packages/step/index.js",
+  "tag": "./packages/tag/index.js",
   "tree": "./packages/tree/index.js",
   "tree-select": "./packages/tree-select/index.js"
 }

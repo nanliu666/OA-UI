@@ -18,10 +18,6 @@
             "title": "Card 卡片"
           },
           {
-            "path": "/table",
-            "title": "Table 表格"
-          },
-          {
             "path": "/lazy-select",
             "title": "LazySelect 分页下拉选择器"
           },
@@ -38,12 +34,20 @@
             "title": "Popconfirm 气泡确认框"
           },
           {
+            "path": "/table",
+            "title": "Table 表格"
+          },
+          {
             "path": "/tree-select",
             "title": "TreeSelect 树形选择器"
           },
           {
             "path": "/tree",
             "title": "Tree 树形控件"
+          },
+          {
+            "path": "/tag",
+            "title": "Tag 标签"
           },
           {
             "path": "/list",
