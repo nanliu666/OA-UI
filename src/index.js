@@ -30,6 +30,8 @@ import Carousel from '../packages/carousel/index.js'
 import CarouselItem from '../packages/carousel-item/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
+import DatePicker from '../packages/date-picker/index.js'
+import Select from '../packages/select/index.js'
 
 const components = [
   Table,
@@ -59,6 +61,8 @@ const components = [
   CarouselItem,
   Tree,
   TreeSelect,
+  DatePicker,
+  Select,
 ]
 
 const install = function(Vue) {
@@ -100,5 +104,7 @@ export default {
   Carousel,
   CarouselItem,
   Tree,
-  TreeSelect
+  TreeSelect,
+  DatePicker,
+  Select
 }

@@ -25,5 +25,7 @@
   "carousel": "./packages/carousel/index.js",
   "carousel-item": "./packages/carousel-item/index.js",
   "tree": "./packages/tree/index.js",
-  "tree-select": "./packages/tree-select/index.js"
+  "tree-select": "./packages/tree-select/index.js",
+  "date-picker": "./packages/date-picker/index.js",
+  "select": "./packages/select/index.js"
 }

@@ -83,6 +83,19 @@
             "title": "Steps 步骤条"
           }
         ]
+      },
+      {
+        "groupName": "数据录入",
+        "list": [
+          {
+            "path": "/date-picker",
+            "title": "日期选择器"
+          },
+          {
+            "path": "/select",
+            "title": "select表单下拉选择器"
+          }
+        ]
       }
     ]
   }
