@@ -22,6 +22,8 @@
   "steps": "./packages/steps/index.js",
   "step": "./packages/step/index.js",
   "tag": "./packages/tag/index.js",
+  "carousel": "./packages/carousel/index.js",
+  "carousel-item": "./packages/carousel-item/index.js",
   "tree": "./packages/tree/index.js",
   "tree-select": "./packages/tree-select/index.js"
 }

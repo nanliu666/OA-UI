@@ -48,6 +48,10 @@
           {
             "path": "/tag",
             "title": "Tag 标签"
+          },          
+          {
+            "path": "/carousel",
+            "title": "Carousel 走马灯"
           },
           {
             "path": "/list",

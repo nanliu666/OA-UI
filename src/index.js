@@ -26,6 +26,8 @@ import Submenu from '../packages/submenu/index.js'
 import Steps from '../packages/steps/index.js'
 import Step from '../packages/step/index.js'
 import Tag from '../packages/tag/index.js'
+import Carousel from '../packages/carousel/index.js'
+import CarouselItem from '../packages/carousel-item/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 
@@ -53,6 +55,8 @@ const components = [
   Steps,
   Step,
   Tag,
+  Carousel,
+  CarouselItem,
   Tree,
   TreeSelect,
 ]
@@ -93,6 +97,8 @@ export default {
   Steps,
   Step,
   Tag,
+  Carousel,
+  CarouselItem,
   Tree,
   TreeSelect
 }
