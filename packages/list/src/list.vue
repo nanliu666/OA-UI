@@ -10,20 +10,24 @@
     >
       <slot name="header" />
     </div>
-    <ul>
-      <li
+    <el-row :gutter="getGutter()">
+      <el-col
         v-for="(item, index) in dataSource"
         :key="index"
         class="mg-list-item"
-        :class="[`mg-list-item-${size}`, split ? 'mg-list-item-split' : '']"
+        :class="[
+          `mg-list-item-${size}`,
+          split && getGrid == '' ? 'mg-list-item-split' : '',
+        ]"
+        v-bind="getGrid"
       >
         <slot
           name="renderItem"
           :item="item"
           :index="index"
         />
-      </li>
-    </ul>
+      </el-col>
+    </el-row>
     <div
       v-if="$slots.footer"
       class="mg-list-footer"
@@ -51,6 +55,12 @@ export default {
       type: String,
       default: 'middle'
     },
+    grid: {
+      type: Object,
+      default: function() {
+        return {}
+      }
+    },
     dataSource: {
       type: Array,
       default: function() {
@@ -65,6 +75,29 @@ export default {
   data() {
     return {}
   },
+  computed: {
+    getGrid() {
+      return JSON.stringify(this.grid) == '{}'
+        ? ''
+        : this.handleGrid()
+    }
+  },
+  created() {
+  },
+  methods: {
+    handleGrid() {
+      let obj = {}
+      for(let i in this.grid) {
+        if(i === 'gutter') continue
+        obj[i] = this.grid[i]
+      }
+      console.log('obj==', obj)
+      return obj
+    },
+    getGutter() {
+      return JSON.stringify(this.grid) == '{}' ? 0 : this.grid.gutter
+    }
+  }
 }
 </script>
 

@@ -83,6 +83,48 @@
 ````
 :::
 
+#### 响应式的栅格列表
+:::demo 
+```html
+<template>
+  <mg-list  :data-source="dataSource" :grid="{ gutter: 16, xs: 24, sm: 24, md: 12, lg: 6, xl: 6}">
+    <template slot-scope="{ item, index }"  slot="renderItem">
+      <mg-card>
+        <div slot="header" class="clearfix">
+          <span>卡片名称</span>
+        </div>
+        {{item.title}}
+      </mg-card>
+    </template>
+  </mg-list>
+</template>
+<script>
+  const dataSource = [
+    {
+      title: 'list-demo 1',
+    },
+    {
+      title: 'list-demo 2',
+    },
+    {
+      title: 'list-demo 3',
+    },
+    {
+      title: 'list-demo 4',
+    },
+  ];
+  export default {
+    data() {
+      return {
+        dataSource
+      }
+    },
+  }
+</script>
+````
+:::
+
+
 
 #### 分页模式
 
@@ -179,7 +221,7 @@
     align-items: center;
     justify-content: space-between;
     .desc-box {
-      width: calc(100% - 40px - 282px);
+      width: calc(100% - 50px - 282px);
     }
 
     .pagination-img {
