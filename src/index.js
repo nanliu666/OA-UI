@@ -31,6 +31,7 @@ import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
 import Select from '../packages/select/index.js'
+import Button from '../packages/button/index.js'
 
 const components = [
   Table,
@@ -62,6 +63,7 @@ const components = [
   TreeSelect,
   DatePicker,
   Select,
+  Button,
 ]
 
 const install = function(Vue) {
@@ -105,5 +107,6 @@ export default {
   Tree,
   TreeSelect,
   DatePicker,
-  Select
+  Select,
+  Button
 }

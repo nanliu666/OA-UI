@@ -94,7 +94,11 @@
           {
             "path": "/select",
             "title": "select表单下拉选择器"
-          }
+          },
+          {
+	        "path": "/button",
+	        "title": "Button 按钮"
+	      }           
         ]
       }
     ]
