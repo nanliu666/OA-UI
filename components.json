@@ -10,5 +10,7 @@
   "popconfirm": "./packages/popconfirm/index.js",
   "list": "./packages/list/index.js",
   "lazy-select": "./packages/lazy-select/index.js",
-  "tree-select": "./packages/tree-select/index.js"
+  "tree-select": "./packages/tree-select/index.js",
+  "anchor": "./packages/anchor/index.js",
+  "anchor-link": "./packages/anchor-link/index.js"
 }

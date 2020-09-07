@@ -13,6 +13,9 @@ import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
+import TreeSelect from '../packages/tree-select/index.js'
+import Anchor from '../packages/anchor/index.js'
+import AnchorLink from '../packages/anchor-link/index.js'
 
 const components = [
   Form,
@@ -26,6 +29,9 @@ const components = [
   Popconfirm,
   List,
   LazySelect,
+  TreeSelect,
+  Anchor,
+  AnchorLink,
 ]
 
 const install = function(Vue) {
@@ -51,5 +57,8 @@ export default {
   Tooltip,
   Popconfirm,
   List,
-  LazySelect
+  LazySelect,
+  TreeSelect,
+  Anchor,
+  AnchorLink
 }
