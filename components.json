@@ -10,5 +10,6 @@
   "list": "./packages/list/index.js",
   "lazy-select": "./packages/lazy-select/index.js",
   "tree": "./packages/tree/index.js",
-  "tree-select": "./packages/tree-select/index.js"
+  "tree-select": "./packages/tree-select/index.js",
+  "button" : "./packages/button/index.js"
 }
