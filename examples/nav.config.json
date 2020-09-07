@@ -54,6 +54,14 @@
             "title": "List 列表"
           }
         ]
+      },{
+    	  "groupName": "数据录入",
+    	  "list":[
+	          {
+	          "path": "/button",
+	          "title": "Button 按钮"
+	      	  }      	
+          ]    	  
       }
     ]
   }
