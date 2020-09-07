@@ -25,6 +25,7 @@ import MenuItemGroup from '../packages/menu-item-group/index.js'
 import Submenu from '../packages/submenu/index.js'
 import Steps from '../packages/steps/index.js'
 import Step from '../packages/step/index.js'
+import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 
 const components = [
@@ -50,6 +51,7 @@ const components = [
   Submenu,
   Steps,
   Step,
+  Tree,
   TreeSelect,
 ]
 
@@ -88,5 +90,6 @@ export default {
   Submenu,
   Steps,
   Step,
+  Tree,
   TreeSelect
 }

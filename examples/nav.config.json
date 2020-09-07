@@ -42,6 +42,10 @@
             "title": "TreeSelect 树形选择器"
           },
           {
+            "path": "/tree",
+            "title": "Tree 树形控件"
+          },
+          {
             "path": "/list",
             "title": "List 列表"
           }
