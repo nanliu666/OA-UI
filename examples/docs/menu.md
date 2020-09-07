@@ -32,7 +32,7 @@
   class="mg-menu-demo"
   mode="horizontal"
   @select="handleSelect"
-  background-color="#545c64"
+  background-color="#115FD4"
   text-color="#fff"
   active-text-color="#ffd04b">
   <mg-menu-item index="1">处理中心</mg-menu-item>
@@ -123,9 +123,9 @@
       class="mg-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#545c64"
+      background-color="#115FD4"
       text-color="#fff"
-      active-text-color="#ffd04b">
+      active-text-color="#ffffff">
       <mg-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
