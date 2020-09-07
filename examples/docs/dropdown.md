@@ -233,7 +233,7 @@
 
 Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的尺寸。
 
-:::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
+:::demo 提供三种尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
 <mg-dropdown size="medium"  type="primary">
@@ -251,7 +251,7 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 
 <mg-dropdown size="small" type="primary">
   <span class="mg-dropdown-link">
-    中型尺寸（默认）<i class="el-icon-arrow-down el-icon--right"></i>
+    中型尺寸<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <mg-dropdown-menu slot="dropdown">
     <mg-dropdown-item>黄金糕</mg-dropdown-item>
