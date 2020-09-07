@@ -1,0 +1,9 @@
+//数据录入公共全局样式
+//时间选择器 mg-time-picker 的选择框的取消隐藏
+.el-time-panel .el-time-panel__footer button:nth-child(1){
+  display: none;
+}
+//输入框的鼠标hover效果
+.el-input__inner:hover{
+  border-color: #198cff;
+}

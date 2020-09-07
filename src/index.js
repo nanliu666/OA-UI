@@ -14,6 +14,9 @@ import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
+import TimeSelect from '../packages/time-select/index.js'
+import TimePicker from '../packages/time-picker/index.js'
+import Transfer from '../packages/transfer/index.js'
 
 const components = [
   Table,
@@ -28,6 +31,9 @@ const components = [
   LazySelect,
   Tree,
   TreeSelect,
+  TimeSelect,
+  TimePicker,
+  Transfer,
 ]
 
 const install = function(Vue) {
@@ -54,5 +60,8 @@ export default {
   List,
   LazySelect,
   Tree,
-  TreeSelect
+  TreeSelect,
+  TimeSelect,
+  TimePicker,
+  Transfer
 }

@@ -54,6 +54,19 @@
             "title": "List 列表"
           }
         ]
+      },
+      {
+        "groupName": "数据录入",
+        "list": [
+          {
+            "path": "/time-picker",
+            "title": "TimePicker 时间选择器"
+          },
+          {
+            "path": "/transfer",
+            "title": "Transfer 穿梭框"
+          }
+        ]
       }
     ]
   }
