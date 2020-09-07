@@ -65,6 +65,10 @@
           {
             "path": "/menu",
             "title": "NavMenu 导航菜单"
+          },
+          {
+            "path": "/stpes",
+            "title": "Steps 步骤条"
           }
         ]
       }
