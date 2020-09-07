@@ -9,11 +9,11 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
-// const isPlay = !!process.env.PLAY_ENV;
+const isPlay = !!process.env.PLAY_ENV
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
-  entry: './examples/entry.js',
+  entry: isPlay ? './examples/play.js' : './examples/entry.js',
   output: {
     path: path.resolve(process.cwd(), './examples/dist/'),
     publicPath: process.env.CI_ENV || '',
@@ -31,7 +31,7 @@ const webpackConfig = {
   },
   devServer: {
     host: '127.0.0.1',
-    port: 8085,
+    port: isPlay ? 8086 : 8085,
     publicPath: '/',
     hot: true,
     open: true

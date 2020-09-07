@@ -93,6 +93,8 @@
 
 * git commit消息格式按照 `.commitlintrc.js`文件中的关键词＋＇:＇＋提交信息，否则将无法提交代码，请仔细看一下`.commitlintrc.js`中的注释，使用正确的关键词
 
+* 执行`npm run serve:play`可打开playground页面，代码位置在`examples/play/index.vue`,此处可以写任何element-ui和项目内创建的组件，作为调试使用
+
 ### 组件设计要点
 
 * 尽量支持elementUI组件原本的全部属性和方法，参考我开发的table组件（除了多级表头还没支持，其他基本都支持了）
