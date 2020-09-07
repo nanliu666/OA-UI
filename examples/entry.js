@@ -10,8 +10,8 @@ import SideNav from './components/side-nav'
 import MageUI from 'main'
 import './assets/styles/common.scss'
 import './demo-styles/index.scss'
-
 Vue.use(Element)
+console.log('Element==', Element)
 Vue.use(VueRouter)
 Vue.use(MageUI)
 Vue.component('demo-block', demoBlock)

@@ -92,4 +92,7 @@ export default {
     white-space: nowrap;
   }
 }
+.el-avatar {
+  background: #d8dff4;
+}
 </style>
