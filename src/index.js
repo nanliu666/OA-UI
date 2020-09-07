@@ -13,6 +13,10 @@ import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
+import TreeSelect from '../packages/tree-select/index.js'
+import TimeSelect from '../packages/time-select/index.js'
+import TimePicker from '../packages/time-picker/index.js'
+import Transfer from '../packages/transfer/index.js'
 
 const components = [
   Form,
@@ -26,6 +30,10 @@ const components = [
   Popconfirm,
   List,
   LazySelect,
+  TreeSelect,
+  TimeSelect,
+  TimePicker,
+  Transfer,
 ]
 
 const install = function(Vue) {
@@ -51,5 +59,9 @@ export default {
   Tooltip,
   Popconfirm,
   List,
-  LazySelect
+  LazySelect,
+  TreeSelect,
+  TimeSelect,
+  TimePicker,
+  Transfer
 }

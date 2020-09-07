@@ -272,6 +272,7 @@ export default {
   computed: {
     options() {
       const { data, props } = this.$attrs
+      console.log(this.$attrs)
       return Array.from(flatten(data, props.children)).map((item) => ({
         currentLabel: item[props.label],
         value: item[props.value]
