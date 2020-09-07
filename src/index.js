@@ -13,6 +13,8 @@ import Popconfirm from '../packages/popconfirm/index.js'
 import List from '../packages/list/index.js'
 import LazySelect from '../packages/lazy-select/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
+import DatePicker from '../packages/date-picker/index.js'
+import Select from '../packages/select/index.js'
 
 const components = [
   Table,
@@ -26,6 +28,8 @@ const components = [
   List,
   LazySelect,
   TreeSelect,
+  DatePicker,
+  Select,
 ]
 
 const install = function(Vue) {
@@ -51,5 +55,7 @@ export default {
   Popconfirm,
   List,
   LazySelect,
-  TreeSelect
+  TreeSelect,
+  DatePicker,
+  Select
 }
