@@ -18,10 +18,6 @@
             "title": "Card 卡片"
           },
           {
-            "path": "/table",
-            "title": "表格"
-          },
-          {
             "path": "/lazy-select",
             "title": "LazySelect 分页下拉选择器"
           },
@@ -38,12 +34,24 @@
             "title": "Popconfirm 气泡确认框"
           },
           {
-            "path": "/form",
-            "title": "表单"
+            "path": "/table",
+            "title": "Table 表格"
           },
           {
             "path": "/tree-select",
             "title": "TreeSelect 树形选择器"
+          },
+          {
+            "path": "/tree",
+            "title": "Tree 树形控件"
+          },
+          {
+            "path": "/tag",
+            "title": "Tag 标签"
+          },          
+          {
+            "path": "/carousel",
+            "title": "Carousel 走马灯"
           },
           {
             "path": "/list",
@@ -52,6 +60,44 @@
           {
             "path": "/anchor",
             "title": "anchor 锚点"
+          }
+        ]
+      },
+      {
+        "groupName": "导航",
+        "list": [
+          {
+            "path": "/pagination",
+            "title": "Pagination 分页"
+          },          
+          {
+            "path": "/dropdown",
+            "title": "Dropdown 下拉菜单"
+          },
+          {
+            "path": "/tabs",
+            "title": "Tabs 分页"
+          },
+          {
+            "path": "/menu",
+            "title": "NavMenu 导航菜单"
+          },
+          {
+            "path": "/stpes",
+            "title": "Steps 步骤条"
+          }
+        ]
+      },
+      {
+        "groupName": "数据录入",
+        "list": [
+          {
+            "path": "/date-picker",
+            "title": "日期选择器"
+          },
+          {
+            "path": "/select",
+            "title": "select表单下拉选择器"
           }
         ]
       }

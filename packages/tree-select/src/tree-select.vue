@@ -139,15 +139,16 @@
           view-class="el-select-dropdown__list"
           wrap-class="el-select-dropdown__wrap"
         >
-          <el-tree
+          <mg-tree
             ref="tree"
             v-bind="elTreeProps"
+            :value="value"
             @node-click="handleNodeClick"
           >
             <template v-if="$slots.default">
               <slot />
             </template>
-          </el-tree>
+          </mg-tree>
         </el-scrollbar>
       </el-select-menu>
     </transition>
@@ -156,8 +157,8 @@
 
 <script>
 import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event'
-import { EL_TREE_PROPS, EL_TREE_PROPS_DEFAULT } from './config'
-import { flatten } from './util'
+import { EL_TREE_PROPS, getElTreePropsDefault } from './config'
+import { flattenBy } from 'main/utils/util'
 import { getValueByPath, valueEquals, isIE, isEdge } from 'element-ui/src/utils/util'
 import { isKorean } from 'element-ui/src/utils/shared'
 import Clickoutside from 'element-ui/src/utils/clickoutside'
@@ -165,13 +166,15 @@ import debounce from 'throttle-debounce/debounce'
 import ElSelectMenu from 'element-ui/packages/select/src/select-dropdown.vue'
 import Emitter from 'element-ui/src/mixins/emitter'
 import Focus from 'element-ui/src/mixins/focus'
+import MgTree from 'packages/tree/src/tree'
 import NavigationMixin from 'element-ui/packages/select/src/navigation-mixin'
 import scrollIntoView from 'element-ui/src/utils/scroll-into-view'
 
 export default {
   name: 'MgTreeSelect',
   components: {
-    ElSelectMenu
+    ElSelectMenu,
+    MgTree
   },
   directives: { Clickoutside },
   mixins: [Emitter, Focus('reference'), NavigationMixin],
@@ -272,13 +275,13 @@ export default {
   computed: {
     options() {
       const { data, props } = this.$attrs
-      return Array.from(flatten(data, props.children)).map((item) => ({
+      return flattenBy(data, props.children).map((item) => ({
         currentLabel: item[props.label],
         value: item[props.value]
       }))
     },
     elTreeProps() {
-      const props = Object.assign({}, EL_TREE_PROPS_DEFAULT)
+      const props = Object.assign({}, getElTreePropsDefault(this))
       const { $attrs } = this
       for (const key in $attrs) {
         if (EL_TREE_PROPS.includes(key)) {
@@ -515,10 +518,15 @@ export default {
 
   methods: {
     // tree 函数的方法
-    handleNodeClick(node) {
+    handleNodeClick(data, node, vm) {
       const { label, value } = this.$attrs.props
-      // const value = this.multiple ? [...this.value, node[props.value]] : node[props.value]
-      this.$emit('handleOptionClick', { label: node[label], value: node[value] }, true)
+      // const value = this.multiple ? [...this.value, data{,[props.value]] : data{,[props.value]
+      // 先清空
+      this.$refs.tree.setCheckedKeys([])
+      vm.handleCheckChange(null, {
+        target: { checked: true }
+      })
+      this.$emit('handleOptionClick', { label: data[label], value: data[value] }, true)
       this.$emit('node-click', ...arguments)
     },
 
