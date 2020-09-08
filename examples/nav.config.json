@@ -98,7 +98,12 @@
           {
             "path": "/time-picker",
             "title": "TimePicker 时间选择器"
+          },
+          {
+            "path": "/radio",
+            "title": "Radio 单选框"
           }
+         
         ]
       }
     ]

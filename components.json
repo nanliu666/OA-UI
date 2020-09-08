@@ -29,5 +29,9 @@
   "date-picker": "./packages/date-picker/index.js",
   "select": "./packages/select/index.js",
   "time-picker": "./packages/time-picker/index.js",
-  "time-select": "./packages/time-select/index.js"
+  "time-select": "./packages/time-select/index.js",
+  "radio": "./packages/radio/index.js",
+  "radio-button": "./packages/radio-button/index.js",
+  "radio-group": "./packages/radio-group/index.js"
+
 }
