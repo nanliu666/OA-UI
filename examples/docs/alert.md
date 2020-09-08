@@ -1,4 +1,4 @@
-## Alert 警告
+## Alert 信息提示
 
 用于页面中展示重要的提示信息。
 
@@ -18,7 +18,7 @@
     type="info">
   </el-alert>
   <el-alert
-    title="警告提示的文案"
+    title="信息提示的文案"
     type="warning">
   </el-alert>
   <el-alert
@@ -47,7 +47,7 @@ Alert 组件提供了两个不同的主题：`light`和`dark`。
     effect="dark">
   </el-alert>
   <el-alert
-    title="警告提示的文案"
+    title="信息提示的文案"
     type="warning"
     effect="dark">
   </el-alert>
@@ -116,7 +116,7 @@ Alert 组件提供了两个不同的主题：`light`和`dark`。
     show-icon>
   </el-alert>
   <el-alert
-    title="警告提示的文案"
+    title="信息提示的文案"
     type="warning"
     show-icon>
   </el-alert>
@@ -149,7 +149,7 @@ Alert 组件提供了两个不同的主题：`light`和`dark`。
     show-icon>
   </el-alert>
   <el-alert
-    title="警告提示的文案"
+    title="信息提示的文案"
     type="warning"
     center
     show-icon>
@@ -166,7 +166,7 @@ Alert 组件提供了两个不同的主题：`light`和`dark`。
 
 ### 带有辅助性文字介绍
 
-包含标题和内容，解释更详细的警告。
+包含标题和内容，解释更详细的信息。
 
 :::demo 除了必填的`title`属性外，你可以设置`description`属性来帮助你更好地介绍，我们称之为辅助性文字。辅助性文字只能存放单行文本，会自动换行显示。
 ```html
@@ -198,7 +198,7 @@ Alert 组件提供了两个不同的主题：`light`和`dark`。
     show-icon>
   </el-alert>
   <el-alert
-    title="警告提示的文案"
+    title="信息提示的文案"
     type="warning"
     description="文字说明文字说明文字说明文字说明文字说明文字说明"
     show-icon>
