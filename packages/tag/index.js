@@ -1,6 +1,6 @@
 import { Tag } from 'element-ui'
-Tag.name = 'MgTag'
+Tag.mgName = 'MgTag'
 Tag.install = function(Vue) {
-  Vue.component(Tag.name, Tag)
+  Vue.component(Tag.mgName, Tag)
 }
 export default Tag

@@ -90,12 +90,12 @@
 
 ```html
 <template>
-  <el-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
-    <el-radio-button label="top">top</el-radio-button>
-    <el-radio-button label="right">right</el-radio-button>
-    <el-radio-button label="bottom">bottom</el-radio-button>
-    <el-radio-button label="left">left</el-radio-button>
-  </el-radio-group>
+  <mg-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
+    <mg-radio-button label="top">top</mg-radio-button>
+    <mg-radio-button label="right">right</mg-radio-button>
+    <mg-radio-button label="bottom">bottom</mg-radio-button>
+    <mg-radio-button label="left">left</mg-radio-button>
+  </mg-radio-group>
 
   <mg-tabs :tab-position="tabPosition" style="height: 200px;">
     <mg-tab-pane label="用户管理">用户管理</mg-tab-pane>
@@ -207,12 +207,12 @@
 :::demo
 ```html
 <div style="margin-bottom: 20px;">
-  <el-button
+  <mg-button
     size="small"
     @click="addTab(editableTabsValue)"
   >
     add tab
-  </el-button>
+  </mg-button>
 </div>
 <mg-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
   <mg-tab-pane

@@ -60,6 +60,10 @@
           {
             "path": "/tag",
             "title": "Tag 标签"
+          },   
+          {
+            "path": "/statistic",
+            "title": "Statistic 数据展示"
           },          
           {
             "path": "/carousel",
@@ -68,6 +72,10 @@
           {
             "path": "/list",
             "title": "List 列表"
+          },
+          {
+            "path": "/anchor",
+            "title": "anchor 锚点"
           }
         ]
       },
@@ -77,7 +85,7 @@
           {
             "path": "/pagination",
             "title": "Pagination 分页"
-          },          
+          },
           {
             "path": "/dropdown",
             "title": "Dropdown 下拉菜单"
@@ -106,6 +114,22 @@
           {
             "path": "/select",
             "title": "select表单下拉选择器"
+          },
+          {
+            "path": "/time-picker",
+            "title": "TimePicker 时间选择器"
+          },
+          {
+            "path": "/button",
+            "title": "Button 按钮"
+          }
+          ,{
+            "path": "/radio",
+            "title": "Radio 单选框"
+          }
+          ,{
+            "path": "/checkbox",
+            "title": "Checkbox 复选框"
           }
         ]
       }
