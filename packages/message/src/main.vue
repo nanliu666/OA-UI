@@ -152,7 +152,11 @@ $types: (
 .el-message {
   @each $type, $color in $types {
     &--#{$type} {
-      border: 1px solid $color;
+      border: 1px solid currentColor;
+      color: $color;
+      .el-message__content {
+        color: inherit;
+      }
     }
   }
 }
