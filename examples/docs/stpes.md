@@ -13,7 +13,7 @@
   <mg-step title="步骤 3"></mg-step>
 </mg-steps>
 
-<el-button style="margin-top: 12px;" @click="next">下一步</el-button>
+<mg-button style="margin-top: 12px;" @click="next">下一步</mg-button>
 
 <script>
   export default {

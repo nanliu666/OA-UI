@@ -30,6 +30,7 @@ import CarouselItem from '../packages/carousel-item/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
+import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
@@ -41,6 +42,8 @@ import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
 import Switch from '../packages/switch/index.js'
+import Anchor from '../packages/anchor/index.js'
+import AnchorLink from '../packages/anchor-link/index.js'
 
 const components = [
   Table,
@@ -71,6 +74,7 @@ const components = [
   Tree,
   TreeSelect,
   DatePicker,
+  Statistic,
   Select,
   TimePicker,
   TimeSelect,
@@ -82,11 +86,13 @@ const components = [
   CheckboxGroup,
   CheckboxButton,
   Switch,
+  Anchor,
+  AnchorLink,
 ]
 
 const install = function(Vue) {
   components.forEach(component => {
-    Vue.component(component.name, component)
+    Vue.component(component.mgName, component)
   })
 }
 
@@ -125,6 +131,7 @@ export default {
   Tree,
   TreeSelect,
   DatePicker,
+  Statistic,
   Select,
   TimePicker,
   TimeSelect,
@@ -135,5 +142,7 @@ export default {
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Switch
+  Switch,
+  Anchor,
+  AnchorLink
 }
