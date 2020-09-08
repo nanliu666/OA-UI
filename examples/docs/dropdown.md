@@ -42,9 +42,9 @@
 
 ```html
 <mg-dropdown>
-  <el-button type="primary">
+  <mg-button type="primary">
     更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
-  </el-button>
+  </mg-button>
   <mg-dropdown-menu slot="dropdown">
     <mg-dropdown-item>黄金糕</mg-dropdown-item>
     <mg-dropdown-item>狮子头</mg-dropdown-item>

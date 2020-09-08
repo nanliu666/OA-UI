@@ -251,9 +251,9 @@
       :style="{ textAlign: 'center', marginTop: '12px', height: '32px', lineHeight: '32px' }"
     >
       <i v-if="loadingMore" class="el-icon-loading" />
-      <el-button v-else @click="onLoadMore">
+      <mg-button v-else @click="onLoadMore">
         loading more
-      </el-button>
+      </mg-button>
     </div>
     <template slot-scope="{ item, index }"  slot="renderItem">
         <div class="mg-li-style">

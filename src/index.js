@@ -129,6 +129,7 @@ export default {
   Tree,
   TreeSelect,
   DatePicker,
+  Statistic,
   Select,
   TimePicker,
   TimeSelect,

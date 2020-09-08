@@ -13,10 +13,10 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，�
 <div class="block">
   <div class="radio" style="margin-bottom: 20px">
     排序：
-    <el-radio-group v-model="reverse">
-      <el-radio :label="true">倒序</el-radio>
-      <el-radio :label="false">正序</el-radio>
-    </el-radio-group>
+    <mg-radio-group v-model="reverse">
+      <mg-radio :label="true">倒序</mg-radio>
+      <mg-radio :label="false">正序</mg-radio>
+    </mg-radio-group>
   </div>
 
   <mg-timeline :reverse="reverse">
