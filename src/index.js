@@ -41,6 +41,7 @@ import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
+import Switch from '../packages/switch/index.js'
 import Anchor from '../packages/anchor/index.js'
 import AnchorLink from '../packages/anchor-link/index.js'
 
@@ -84,6 +85,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Switch,
   Anchor,
   AnchorLink,
 ]
@@ -140,6 +142,7 @@ export default {
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Switch,
   Anchor,
   AnchorLink
 }
