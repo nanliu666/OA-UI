@@ -22,6 +22,16 @@ const install = function(Vue) {
   components.forEach(component => {
     Vue.component(component.mgName, component)
   })
+
+  Vue.use(Loading.directive)
+
+  Vue.prototype.$mgLoading = Loading.service
+  // Vue.prototype.$mgMsgbox = MessageBox
+  // Vue.prototype.$mgAlert = MessageBox.alert
+  // Vue.prototype.$mgConfirm = MessageBox.confirm
+  // Vue.prototype.$mgPrompt = MessageBox.prompt
+  // Vue.prototype.$mgNotify = Notification
+  Vue.prototype.$mgMessage = Message
 }
 
 /* istanbul ignore if */
@@ -41,7 +51,7 @@ var includeComponentTemplate = []
 var installTemplate = []
 var listTemplate = []
 
-ComponentNames.forEach(name => {
+ComponentNames.forEach((name) => {
   var componentName = uppercamelcase(name)
 
   includeComponentTemplate.push(
@@ -51,14 +61,20 @@ ComponentNames.forEach(name => {
     })
   )
 
-  installTemplate.push(
-    render(INSTALL_COMPONENT_TEMPLATE, {
-      name: componentName,
-      component: name
-    })
-  )
+  if (
+    ['Loading', 'MessageBox', 'Notification', 'Message', 'InfiniteScroll'].indexOf(
+      componentName
+    ) === -1
+  ) {
+    installTemplate.push(
+      render(INSTALL_COMPONENT_TEMPLATE, {
+        name: componentName,
+        component: name
+      })
+    )
+  }
 
-  listTemplate.push(`  ${componentName}`)
+  if (componentName !== 'Loading') listTemplate.push(`  ${componentName}`)
 })
 
 var template = render(MAIN_TEMPLATE, {
