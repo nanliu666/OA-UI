@@ -179,10 +179,10 @@
 
 :::demo
 ```html
-<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <el-radio-button :label="false">展开</el-radio-button>
-  <el-radio-button :label="true">收起</el-radio-button>
-</el-radio-group>
+<mg-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <mg-radio-button :label="false">展开</mg-radio-button>
+  <mg-radio-button :label="true">收起</mg-radio-button>
+</mg-radio-group>
 <mg-menu default-active="1-4-1" class="mg-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <mg-submenu index="1">
     <template slot="title">

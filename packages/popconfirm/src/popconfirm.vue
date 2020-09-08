@@ -22,20 +22,20 @@
         v-if="hideActionSlot"
         class="el-popconfirm__action"
       >
-        <el-button
+        <mg-button
           size="mini"
           :type="cancelButtonType"
           @click="cancel"
         >
           {{ cancelButtonText }}
-        </el-button>
-        <el-button
+        </mg-button>
+        <mg-button
           size="mini"
           :type="confirmButtonType"
           @click="confirm"
         >
           {{ confirmButtonText }}
-        </el-button>
+        </mg-button>
       </div>
     </div>
     <slot
@@ -47,13 +47,11 @@
 
 <script>
 import MgPopover from '../../popover'
-import ElButton from 'element-ui/packages/button'
 
 export default {
   name: 'MgPopconfirm',
   components: {
-    MgPopover,
-    ElButton
+    MgPopover
   },
   props: {
     hideActionSlot: {
