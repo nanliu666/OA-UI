@@ -32,6 +32,17 @@ import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
 import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
+import TimePicker from '../packages/time-picker/index.js'
+import TimeSelect from '../packages/time-select/index.js'
+import Button from '../packages/button/index.js'
+import Radio from '../packages/radio/index.js'
+import RadioButton from '../packages/radio-button/index.js'
+import RadioGroup from '../packages/radio-group/index.js'
+import Checkbox from '../packages/checkbox/index.js'
+import CheckboxGroup from '../packages/checkbox-group/index.js'
+import CheckboxButton from '../packages/checkbox-button/index.js'
+import Anchor from '../packages/anchor/index.js'
+import AnchorLink from '../packages/anchor-link/index.js'
 
 const components = [
   Table,
@@ -64,6 +75,17 @@ const components = [
   DatePicker,
   Statistic,
   Select,
+  TimePicker,
+  TimeSelect,
+  Button,
+  Radio,
+  RadioButton,
+  RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton,
+  Anchor,
+  AnchorLink,
 ]
 
 const install = function(Vue) {
@@ -107,6 +129,16 @@ export default {
   Tree,
   TreeSelect,
   DatePicker,
-  Statistic,
-  Select
+  Select,
+  TimePicker,
+  TimeSelect,
+  Button,
+  Radio,
+  RadioButton,
+  RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton,
+  Anchor,
+  AnchorLink
 }
