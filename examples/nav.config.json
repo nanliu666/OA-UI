@@ -10,6 +10,14 @@
             "title": "Avatar 头像"
           },
           {
+            "path": "/drawer",
+            "title": "Drawer 抽屉"
+          },
+          {
+            "path": "/message",
+            "title": "Message 消息"
+          },
+          {
             "path": "/timeline",
             "title": "Timeline 时间轴"
           },
@@ -20,6 +28,10 @@
           {
             "path": "/lazy-select",
             "title": "LazySelect 分页下拉选择器"
+          },
+          {
+            "path": "/loading",
+            "title": "Loading 加载中"
           },
           {
             "path": "/tooltip",
