@@ -9,7 +9,7 @@
   import { arrayFind } from 'element-ui/src/utils/util'
   export default {
     name: 'TabBar',
-
+    mgName: 'TabBar',
     props: {
       tabs: Array
     },

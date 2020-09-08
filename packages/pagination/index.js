@@ -1,7 +1,7 @@
 import { Pagination } from 'element-ui'
-Pagination.name = 'MgPagination'
+Pagination.mgName = 'MgPagination'
 Pagination.install = function(Vue) {
-    Vue.component(Pagination.name, Pagination)
+    Vue.component(Pagination.mgName, Pagination)
   }
 export default Pagination
 

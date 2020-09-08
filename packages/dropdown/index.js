@@ -1,7 +1,7 @@
 import { Dropdown } from 'element-ui'
 import './dropdown.scss'
-Dropdown.name = 'MgDropdown'
+Dropdown.mgName = 'MgDropdown'
 Dropdown.install = function(Vue) {
-    Vue.component(Dropdown.name, Dropdown)
+    Vue.component(Dropdown.mgName, Dropdown)
   }
 export default Dropdown

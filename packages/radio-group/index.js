@@ -1,7 +1,7 @@
 
 import { RadioGroup } from 'element-ui'
-RadioGroup.mgname = 'MgRadioGroup';
+RadioGroup.mgName = 'MgRadioGroup'
 RadioGroup.install = function(Vue) {
-  Vue.component(RadioGroup.mgname, RadioGroup)
-};
+  Vue.component(RadioGroup.mgName, RadioGroup)
+}
 export default RadioGroup

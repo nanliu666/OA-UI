@@ -1,6 +1,6 @@
 import { MenuItemGroup } from 'element-ui'
-MenuItemGroup.name = 'MgMenuItemGroup'
+MenuItemGroup.mgName = 'MgMenuItemGroup'
 MenuItemGroup.install = function(Vue) {
-    Vue.component(MenuItemGroup.name, MenuItemGroup)
+    Vue.component(MenuItemGroup.mgName, MenuItemGroup)
   }
 export default MenuItemGroup

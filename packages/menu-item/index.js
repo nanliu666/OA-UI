@@ -1,6 +1,6 @@
 import { MenuItem } from 'element-ui'
-MenuItem.name = 'MgMenuItem'
+MenuItem.mgName = 'MgMenuItem'
 MenuItem.install = function(Vue) {
-    Vue.component(MenuItem.name, MenuItem)
+    Vue.component(MenuItem.mgName, MenuItem)
   }
 export default MenuItem

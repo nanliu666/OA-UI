@@ -17,6 +17,7 @@
 <script>
 export default {
   name: 'MgAvatar',
+  mgName: 'MgAvatar',
   props: {
     icon: {
       type: String,

@@ -1,6 +1,6 @@
 import { DropdownItem } from 'element-ui'
-DropdownItem.name = 'MgDropdownItem'
+DropdownItem.mgName = 'MgDropdownItem'
 DropdownItem.install = function(Vue) {
-    Vue.component(DropdownItem.name, DropdownItem)
+    Vue.component(DropdownItem.mgName, DropdownItem)
   }
 export default DropdownItem

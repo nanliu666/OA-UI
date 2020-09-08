@@ -1,6 +1,6 @@
 import { Steps } from 'element-ui'
-Steps.name = 'MgSteps'
+Steps.mgName = 'MgSteps'
 Steps.install = function(Vue) {
-  Vue.component(Steps.name, Steps)
+  Vue.component(Steps.mgName, Steps)
 }
 export default Steps

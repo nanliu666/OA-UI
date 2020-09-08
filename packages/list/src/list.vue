@@ -15,10 +15,7 @@
         v-for="(item, index) in dataSource"
         :key="index"
         class="mg-list-item"
-        :class="[
-          `mg-list-item-${size}`,
-          split && getGrid == '' ? 'mg-list-item-split' : '',
-        ]"
+        :class="[`mg-list-item-${size}`, split && getGrid == '' ? 'mg-list-item-split' : '']"
         v-bind="getGrid"
       >
         <slot
@@ -41,6 +38,7 @@
 <script>
 export default {
   name: 'MgList',
+  mgName: 'MgList',
   provide() {
     return {
       list: this
@@ -77,18 +75,15 @@ export default {
   },
   computed: {
     getGrid() {
-      return JSON.stringify(this.grid) == '{}'
-        ? ''
-        : this.handleGrid()
+      return JSON.stringify(this.grid) == '{}' ? '' : this.handleGrid()
     }
   },
-  created() {
-  },
+  created() {},
   methods: {
     handleGrid() {
       let obj = {}
-      for(let i in this.grid) {
-        if(i === 'gutter') continue
+      for (let i in this.grid) {
+        if (i === 'gutter') continue
         obj[i] = this.grid[i]
       }
       return obj

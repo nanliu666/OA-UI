@@ -1,6 +1,6 @@
 import { TimeSelect } from 'element-ui'
-TimeSelect.mgname = 'MgTimeSelect'
+TimeSelect.mgName = 'MgTimeSelect'
 TimeSelect.install = function(Vue) {
-  Vue.component(TimeSelect.mgname, TimeSelect)
+  Vue.component(TimeSelect.mgName, TimeSelect)
 }
 export default TimeSelect
