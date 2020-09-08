@@ -33,13 +33,14 @@ import DatePicker from '../packages/date-picker/index.js'
 import Select from '../packages/select/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
+import Button from '../packages/button/index.js'
 import Radio from '../packages/radio/index.js'
 import RadioButton from '../packages/radio-button/index.js'
 import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
-import Button from '../packages/button/index.js'
+import Switch from '../packages/switch/index.js'
 
 const components = [
   Table,
@@ -73,13 +74,14 @@ const components = [
   Select,
   TimePicker,
   TimeSelect,
+  Button,
   Radio,
   RadioButton,
   RadioGroup,
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Button,
+  Switch,
 ]
 
 const install = function(Vue) {
@@ -126,11 +128,12 @@ export default {
   Select,
   TimePicker,
   TimeSelect,
+  Button,
   Radio,
   RadioButton,
   RadioGroup,
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Button
+  Switch
 }
