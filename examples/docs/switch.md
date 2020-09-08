@@ -10,7 +10,6 @@
 <mg-switch
   v-model="value"
   :size="size"
-  :width="width"
   active-text="开"
   active-color="#13ce66"
   inactive-color="#ff4949">
@@ -21,8 +20,8 @@
     data() {
       return {
         value: true,
-        size:'mini',
-        width:28
+        size:'mini'
+        
       }
     }
   };
@@ -124,7 +123,6 @@
 |---------- |-------- |---------- |-------------  |-------- |
 | value / v-model | 绑定值 | boolean / string / number | — | — |
 | disabled  | 是否禁用    | boolean   | — | false   |
-| width  | switch 的宽度（像素）    | number   | — | 40 |
 | size  | switch 的大小    | small / mini    | — | small |
 | active-icon-class  | switch 打开时所显示图标的类名，设置此项会忽略 `active-text`    | string   | — | — |
 | inactive-icon-class  | switch 关闭时所显示图标的类名，设置此项会忽略 `inactive-text`    | string   | — | — |

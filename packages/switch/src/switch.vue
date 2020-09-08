@@ -1,6 +1,6 @@
 <template>
   <span :class="[size=='mini'?'mg-switch-size':'']">
-    <el-switch v-bind="$attrs" v-on="$listeners"></el-switch>
+    <el-switch v-bind="$attrs" v-on="$listeners" :width="width"></el-switch>
   </span>
 </template>
 
@@ -8,6 +8,11 @@
 export default {
   name: 'MgSwitch',
   mgName: 'MgSwitch',
+  data(){
+    return {
+      width:this.size=='mini'?28:44
+    }
+  },
   props: {
     size: {
       type:String,
