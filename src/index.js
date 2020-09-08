@@ -90,7 +90,7 @@ const components = [
 
 const install = function(Vue) {
   components.forEach(component => {
-    Vue.component(component.name, component)
+    Vue.component(component.mgName, component)
   })
 }
 
