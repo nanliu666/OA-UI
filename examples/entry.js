@@ -31,4 +31,4 @@ router.afterEach(() => {
   })
 })
 // eslint-disable-next-line
-new Vue({ el: "#app", render: h => h(entry), router });
+new Vue({ el: '#app', render: (h) => h(entry), router })
