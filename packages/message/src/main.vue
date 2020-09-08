@@ -56,7 +56,8 @@ const typeMap = {
 }
 
 export default {
-  name: 'MgMessage',
+  name: 'ElMessage',
+  mgName: 'MgMessage',
   data() {
     return {
       visible: false,

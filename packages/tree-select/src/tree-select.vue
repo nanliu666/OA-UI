@@ -172,6 +172,7 @@ import scrollIntoView from 'element-ui/src/utils/scroll-into-view'
 
 export default {
   name: 'MgTreeSelect',
+  mgName: 'MgTreeSelect',
   components: {
     ElSelectMenu,
     MgTree
