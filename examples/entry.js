@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import entry from './app'
-import VueRouter from 'vue-router'
 import Element from 'element-ui'
 import hljs from 'highlight.js'
-import routes from './route.config'
+import MageUI from 'main'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import entry from './app'
+import './assets/styles/common.scss'
 import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
-import MageUI from 'main'
-import './assets/styles/common.scss'
 import './demo-styles/index.scss'
+import routes from './route.config'
 Vue.use(Element)
-console.log('Element==', Element)
+
 Vue.use(VueRouter)
 Vue.use(MageUI)
 Vue.component('demo-block', demoBlock)
