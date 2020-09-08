@@ -33,6 +33,7 @@ import DatePicker from '../packages/date-picker/index.js'
 import Select from '../packages/select/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
+import Button from '../packages/button/index.js'
 
 const components = [
   Table,
@@ -66,6 +67,7 @@ const components = [
   Select,
   TimePicker,
   TimeSelect,
+  Button,
 ]
 
 const install = function(Vue) {
@@ -111,5 +113,6 @@ export default {
   DatePicker,
   Select,
   TimePicker,
-  TimeSelect
+  TimeSelect,
+  Button
 }
