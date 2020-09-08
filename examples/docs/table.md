@@ -24,10 +24,10 @@
     展开行
   </template>
   <template slot="name" slot-scope="{ row }">
-    <el-tag>{{ row.name }}</el-tag>
+    <mg-tag>{{ row.name }}</mg-tag>
   </template>
   <template slot="name-header" slot-scope="{ column }">
-    <el-tag>{{ column.label }}</el-tag>
+    <mg-tag>{{ column.label }}</mg-tag>
   </template>
   <template slot="handler">
     <el-button type="text">
