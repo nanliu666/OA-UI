@@ -36,7 +36,9 @@ import TimeSelect from '../packages/time-select/index.js'
 import Radio from '../packages/radio/index.js'
 import RadioButton from '../packages/radio-button/index.js'
 import RadioGroup from '../packages/radio-group/index.js'
-import Transfer from '../packages/transfer/index.js'
+import Checkbox from '../packages/checkbox/index.js'
+import CheckboxGroup from '../packages/checkbox-group/index.js'
+import CheckboxButton from '../packages/checkbox-button/index.js'
 
 const components = [
   Table,
@@ -73,7 +75,9 @@ const components = [
   Radio,
   RadioButton,
   RadioGroup,
-  Transfer,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton,
 ]
 
 const install = function(Vue) {
@@ -123,5 +127,7 @@ export default {
   Radio,
   RadioButton,
   RadioGroup,
-  Transfer
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton
 }
