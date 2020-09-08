@@ -47,6 +47,7 @@ import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
 import Anchor from '../packages/anchor/index.js'
 import AnchorLink from '../packages/anchor-link/index.js'
+import Switch from '../packages/switch/index.js'
 
 const components = [
   Table,
@@ -92,6 +93,7 @@ const components = [
   CheckboxButton,
   Anchor,
   AnchorLink,
+  Switch,
 ]
 
 const install = function(Vue) {
@@ -160,5 +162,6 @@ export default {
   CheckboxGroup,
   CheckboxButton,
   Anchor,
-  AnchorLink
+  AnchorLink,
+  Switch
 }

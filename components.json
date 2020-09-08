@@ -44,4 +44,5 @@
   ,"checkbox-button": "./packages/checkbox-button/index.js",
   "anchor": "./packages/anchor/index.js",
   "anchor-link": "./packages/anchor-link/index.js"
+  ,"switch": "./packages/switch/index.js"
 }
