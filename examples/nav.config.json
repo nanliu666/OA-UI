@@ -48,7 +48,7 @@
           {
             "path": "/tag",
             "title": "Tag 标签"
-          },          
+          },
           {
             "path": "/carousel",
             "title": "Carousel 走马灯"
@@ -65,7 +65,7 @@
           {
             "path": "/pagination",
             "title": "Pagination 分页"
-          },          
+          },
           {
             "path": "/dropdown",
             "title": "Dropdown 下拉菜单"
@@ -101,7 +101,15 @@
           },
           {
             "path": "/button",
-            "title": "Button 按钮"        	  
+            "title": "Button 按钮"
+          }
+          ,{
+            "path": "/radio",
+            "title": "Radio 单选框"
+          }
+          ,{
+            "path": "/checkbox",
+            "title": "Checkbox 复选框"
           }
         ]
       }

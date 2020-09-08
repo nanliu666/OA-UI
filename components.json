@@ -30,5 +30,11 @@
   "select": "./packages/select/index.js",
   "time-picker": "./packages/time-picker/index.js",
   "time-select": "./packages/time-select/index.js",
-  "button": "./packages/button/index.js"
+  "button": "./packages/button/index.js",
+  "radio": "./packages/radio/index.js"
+  ,"radio-button": "./packages/radio-button/index.js"
+  ,"radio-group": "./packages/radio-group/index.js"
+  ,"checkbox": "./packages/checkbox/index.js"
+  ,"checkbox-group": "./packages/checkbox-group/index.js"
+  ,"checkbox-button": "./packages/checkbox-button/index.js"
 }
