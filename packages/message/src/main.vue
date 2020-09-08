@@ -154,6 +154,7 @@ $types: (
     &--#{$type} {
       border: 1px solid currentColor;
       color: $color;
+      background: white;
       .el-message__content {
         color: inherit;
       }
