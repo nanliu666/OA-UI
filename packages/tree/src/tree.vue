@@ -20,6 +20,7 @@ import { EL_TREE_PROPS, EL_TREE_PROPS_DEFAULT, EL_TREE_METHODS } from './config'
 
 export default {
   name: 'MgTree',
+  mgName: 'MgTree',
 
   props: {
     // 禁用图标的旋转

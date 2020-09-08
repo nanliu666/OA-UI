@@ -47,6 +47,7 @@
 import { formatMoney, formatDecimals } from '../../../src/utils/util'
 export default {
   name: 'MgStatistic',
+  mgName: 'MgStatistic',
   props: {
     label: {
       type: String,

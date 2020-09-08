@@ -3,7 +3,7 @@
 
   export default {
     name: 'MgTabs',
-
+    mgName: 'MgTabs',
     components: {
       TabNav
     },

@@ -1,7 +1,7 @@
 import { CheckboxGroup } from 'element-ui'
-CheckboxGroup.name = 'MgCheckboxGroup';
+CheckboxGroup.mgName = 'MgCheckboxGroup'
 CheckboxGroup.install = function(Vue) {
-  Vue.component(CheckboxGroup.name, CheckboxGroup)
-};
+  Vue.component(CheckboxGroup.mgName, CheckboxGroup)
+}
 export default CheckboxGroup
 

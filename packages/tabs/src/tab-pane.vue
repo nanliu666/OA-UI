@@ -14,7 +14,7 @@
 <script>
   export default {
     name: 'MgTabPane',
-
+    mgName: 'MgTabPane',
     componentName: 'MgTabPane',
 
     props: {

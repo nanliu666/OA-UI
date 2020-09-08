@@ -1,9 +1,9 @@
 
 
 import { Checkbox } from 'element-ui'
-Checkbox.name = 'MgCheckbox';
+Checkbox.mgName = 'MgCheckbox'
 Checkbox.install = function(Vue) {
-  Vue.component(Checkbox.name, Checkbox)
-};
+  Vue.component(Checkbox.mgName, Checkbox)
+}
 export default Checkbox
 

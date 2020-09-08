@@ -1,6 +1,6 @@
 import { Popover } from 'element-ui'
-Popover.name = 'MgPopover'
+Popover.mgName = 'MgPopover'
 Popover.install = function(Vue) {
-  Vue.component(Popover.name, Popover)
+  Vue.component(Popover.mgName, Popover)
 }
 export default Popover

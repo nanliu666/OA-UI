@@ -41,6 +41,7 @@
 import Emitter from 'element-ui/src/mixins/emitter'
 export default {
   name: 'MgLazySelect',
+  mgName: 'MgLazySelect',
   directives: {
     loadmore: {
       bind(el, binding) {

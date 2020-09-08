@@ -7,6 +7,8 @@ import Dropdown from '../packages/dropdown/index.js'
 import DropdownMenu from '../packages/dropdown-menu/index.js'
 import DropdownItem from '../packages/dropdown-item/index.js'
 import Avatar from '../packages/avatar/index.js'
+import Drawer from '../packages/drawer/index.js'
+import Message from '../packages/message/index.js'
 import Timeline from '../packages/timeline/index.js'
 import TimelineItem from '../packages/timeline-item/index.js'
 import Card from '../packages/card/index.js'
@@ -27,11 +29,13 @@ import Step from '../packages/step/index.js'
 import Tag from '../packages/tag/index.js'
 import Carousel from '../packages/carousel/index.js'
 import CarouselItem from '../packages/carousel-item/index.js'
+import Loading from '../packages/loading/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
 import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
+import Input from '../packages/input/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
 import Button from '../packages/button/index.js'
@@ -41,6 +45,7 @@ import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
+import Switch from '../packages/switch/index.js'
 import Anchor from '../packages/anchor/index.js'
 import AnchorLink from '../packages/anchor-link/index.js'
 
@@ -50,6 +55,7 @@ const components = [
   DropdownMenu,
   DropdownItem,
   Avatar,
+  Drawer,
   Timeline,
   TimelineItem,
   Card,
@@ -75,6 +81,7 @@ const components = [
   DatePicker,
   Statistic,
   Select,
+  Input,
   TimePicker,
   TimeSelect,
   Button,
@@ -84,6 +91,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Switch,
   Anchor,
   AnchorLink,
 ]
@@ -92,6 +100,16 @@ const install = function(Vue) {
   components.forEach(component => {
     Vue.component(component.mgName, component)
   })
+
+  Vue.use(Loading.directive)
+
+  Vue.prototype.$mgLoading = Loading.service
+  // Vue.prototype.$mgMsgbox = MessageBox
+  // Vue.prototype.$mgAlert = MessageBox.alert
+  // Vue.prototype.$mgConfirm = MessageBox.confirm
+  // Vue.prototype.$mgPrompt = MessageBox.prompt
+  // Vue.prototype.$mgNotify = Notification
+  Vue.prototype.$mgMessage = Message
 }
 
 /* istanbul ignore if */
@@ -106,6 +124,8 @@ export default {
   DropdownMenu,
   DropdownItem,
   Avatar,
+  Drawer,
+  Message,
   Timeline,
   TimelineItem,
   Card,
@@ -131,6 +151,7 @@ export default {
   DatePicker,
   Statistic,
   Select,
+  Input,
   TimePicker,
   TimeSelect,
   Button,
@@ -140,6 +161,7 @@ export default {
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Switch,
   Anchor,
   AnchorLink
 }

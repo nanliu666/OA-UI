@@ -68,6 +68,7 @@ import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/re
 
 export default {
   name: 'MgCarousel',
+  mgName: 'MgCarousel',
 
   props: {
     initialIndex: {

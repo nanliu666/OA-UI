@@ -1,7 +1,7 @@
 import List from './src/list'
 
 List.install = function(Vue) {
-  Vue.component(List.name, List)
+  Vue.component(List.mgName, List)
 }
 
 export default List

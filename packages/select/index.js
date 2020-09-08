@@ -1,6 +1,6 @@
 import { Select } from 'element-ui'
-Select.name = 'MgSelect';
+Select.mgName = 'MgSelect'
 Select.install = function(Vue) {
-  Vue.component(Select.name, Select)
-};
+  Vue.component(Select.mgName, Select)
+}
 export default Select
