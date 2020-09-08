@@ -1,7 +1,7 @@
 import { Drawer } from 'element-ui'
-Drawer.name = 'MgDrawer'
+Drawer.mgName = 'MgDrawer'
 Drawer.install = function(Vue) {
-  Vue.component(Drawer.name, Drawer)
+  Vue.component(Drawer.mgName, Drawer)
 }
 
 export default Drawer
