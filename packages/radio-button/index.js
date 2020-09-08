@@ -1,9 +1,9 @@
 
 
 import { RadioButton } from 'element-ui'
-RadioButton.name = 'MgRadioButton';
+RadioButton.mgname = 'MgRadioButton';
 RadioButton.install = function(Vue) {
-  Vue.component(RadioButton.name, RadioButton)
+  Vue.component(RadioButton.mgname, RadioButton)
 };
 export default RadioButton
 

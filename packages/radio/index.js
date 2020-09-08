@@ -1,6 +1,6 @@
 import { Radio } from 'element-ui'
-Radio.name = 'MgRadio';
+Radio.mgname = 'MgRadio';
 Radio.install = function(Vue) {
-  Vue.component(Radio.name, Radio)
+  Vue.component(Radio.mgname, Radio)
 };
 export default Radio
