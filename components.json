@@ -29,5 +29,6 @@
   "date-picker": "./packages/date-picker/index.js",
   "select": "./packages/select/index.js",
   "time-picker": "./packages/time-picker/index.js",
-  "time-select": "./packages/time-select/index.js"
+  "time-select": "./packages/time-select/index.js",
+  "button": "./packages/button/index.js"
 }

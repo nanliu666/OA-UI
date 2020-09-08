@@ -98,6 +98,10 @@
           {
             "path": "/time-picker",
             "title": "TimePicker 时间选择器"
+          },
+          {
+            "path": "/button",
+            "title": "Button 按钮"        	  
           }
         ]
       }
