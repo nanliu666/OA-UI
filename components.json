@@ -27,5 +27,6 @@
   "tree": "./packages/tree/index.js",
   "tree-select": "./packages/tree-select/index.js",
   "date-picker": "./packages/date-picker/index.js",
+  "statistic": "./packages/statistic/index.js",
   "select": "./packages/select/index.js"
 }

@@ -48,6 +48,10 @@
           {
             "path": "/tag",
             "title": "Tag 标签"
+          },   
+          {
+            "path": "/statistic",
+            "title": "Statistic 数据展示"
           },          
           {
             "path": "/carousel",

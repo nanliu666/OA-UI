@@ -30,6 +30,7 @@ import CarouselItem from '../packages/carousel-item/index.js'
 import Tree from '../packages/tree/index.js'
 import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
+import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
 
 const components = [
@@ -61,6 +62,7 @@ const components = [
   Tree,
   TreeSelect,
   DatePicker,
+  Statistic,
   Select,
 ]
 
@@ -105,5 +107,6 @@ export default {
   Tree,
   TreeSelect,
   DatePicker,
+  Statistic,
   Select
 }
