@@ -56,6 +56,10 @@
           {
             "path": "/list",
             "title": "List 列表"
+          },
+          {
+            "path": "/anchor",
+            "title": "anchor 锚点"
           }
         ]
       },
