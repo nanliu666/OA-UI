@@ -39,6 +39,7 @@ import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
+import Button from '../packages/button/index.js'
 
 const components = [
   Table,
@@ -78,6 +79,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Button,
 ]
 
 const install = function(Vue) {
@@ -129,5 +131,6 @@ export default {
   RadioGroup,
   Checkbox,
   CheckboxGroup,
-  CheckboxButton
+  CheckboxButton,
+  Button
 }
