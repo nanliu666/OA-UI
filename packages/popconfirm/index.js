@@ -1,7 +1,7 @@
 import Popconfirm from './src/popconfirm'
 
 Popconfirm.install = function(Vue) {
-  Vue.component(Popconfirm.name, Popconfirm)
+  Vue.component(Popconfirm.mgName, Popconfirm)
 }
 
 export default Popconfirm

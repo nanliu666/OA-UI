@@ -1,6 +1,6 @@
 import { Card } from 'element-ui'
-Card.name = 'MgCard'
+Card.mgName = 'MgCard'
 Card.install = function(Vue) {
-    Vue.component(Card.name, Card)
-  }
+  Vue.component(Card.mgName, Card)
+}
 export default Card

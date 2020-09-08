@@ -9,7 +9,7 @@
 
   export default {
     name: 'TabNav',
-
+    mgName: 'TabNav',
     components: {
       TabBar
     },

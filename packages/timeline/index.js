@@ -1,6 +1,6 @@
 import { Timeline } from 'element-ui'
-Timeline.name = 'MgTimeline'
+Timeline.mgName = 'MgTimeline'
 Timeline.install = function(Vue) {
-  Vue.component(Timeline.name, Timeline)
+  Vue.component(Timeline.mgName, Timeline)
 }
 export default Timeline

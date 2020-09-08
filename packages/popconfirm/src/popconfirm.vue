@@ -50,6 +50,7 @@ import MgPopover from '../../popover'
 
 export default {
   name: 'MgPopconfirm',
+  mgName: 'MgPopconfirm',
   components: {
     MgPopover
   },

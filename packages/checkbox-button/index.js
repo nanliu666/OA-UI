@@ -1,7 +1,7 @@
 import { CheckboxButton } from 'element-ui'
-CheckboxButton.name = 'MgCheckboxButton';
+CheckboxButton.mgName = 'MgCheckboxButton'
 CheckboxButton.install = function(Vue) {
-  Vue.component(CheckboxButton.name, CheckboxButton)
-};
+  Vue.component(CheckboxButton.mgName, CheckboxButton)
+}
 export default CheckboxButton
 

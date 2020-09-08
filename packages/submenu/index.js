@@ -1,8 +1,7 @@
 import { Submenu } from 'element-ui'
-Submenu.name = 'MgSubmenu'
-Submenu.componentName = 'MgSubmenu'
+Submenu.mgName = 'MgSubmenu'
 Submenu.install = function(Vue) {
-  Vue.component(Submenu.name, Submenu)
+  Vue.component(Submenu.mgName, Submenu)
 }
 
 export default Submenu

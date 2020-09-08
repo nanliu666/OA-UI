@@ -1,6 +1,6 @@
 import { DatePicker } from 'element-ui'
-DatePicker.name = 'MgDatePicker';
+DatePicker.mgName = 'MgDatePicker'
 DatePicker.install = function(Vue) {
-  Vue.component(DatePicker.name, DatePicker)
-};
+  Vue.component(DatePicker.mgName, DatePicker)
+}
 export default DatePicker

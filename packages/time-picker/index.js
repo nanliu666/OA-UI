@@ -1,6 +1,6 @@
 import {TimePicker} from 'element-ui'
-TimePicker.name='MgTimePicker'
+TimePicker.mgName='MgTimePicker'
 TimePicker.install = function(Vue) {
-  Vue.component(TimePicker.name, TimePicker)
+  Vue.component(TimePicker.mgName, TimePicker)
 }
 export default TimePicker

@@ -89,6 +89,7 @@ import tablePagination from './table-pagination'
 
 export default {
   name: 'MgTable',
+  mgName: 'MgTable',
   components: {
     tableColumn,
     tablePagination
