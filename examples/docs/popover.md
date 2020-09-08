@@ -13,7 +13,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     width="200"
     trigger="hover"
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-    <el-button slot="reference">hover 激活</el-button>
+    <mg-button slot="reference">hover 激活</mg-button>
   </mg-popover>
 
   <mg-popover
@@ -22,7 +22,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     width="200"
     trigger="click"
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-    <el-button slot="reference">click 激活</el-button>
+    <mg-button slot="reference">click 激活</mg-button>
   </mg-popover>
 
   <mg-popover
@@ -33,7 +33,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     trigger="focus"
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
   </mg-popover>
-  <el-button v-popover:popover>focus 激活</el-button>
+  <mg-button v-popover:popover>focus 激活</mg-button>
 
   <mg-popover
     placement="bottom"
@@ -42,7 +42,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     trigger="manual"
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
     v-model="visible">
-    <el-button slot="reference" @click="visible = !visible">手动激活</el-button>
+    <mg-button slot="reference" @click="visible = !visible">手动激活</mg-button>
   </mg-popover>
 </template>
 
@@ -73,7 +73,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
     <el-table-column width="100" property="name" label="姓名"></el-table-column>
     <el-table-column width="300" property="address" label="地址"></el-table-column>
   </el-table>
-  <el-button slot="reference">click 激活</el-button>
+  <mg-button slot="reference">click 激活</mg-button>
 </mg-popover>
 
 <script>
@@ -116,10 +116,10 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
   v-model="visible">
   <p>这是一段内容这是一段内容确定删除吗？</p>
   <div style="text-align: right; margin: 0">
-    <el-button size="mini" type="text" @click="visible = false">取消</el-button>
-    <el-button type="primary" size="mini" @click="visible = false">确定</el-button>
+    <mg-button size="mini" type="text" @click="visible = false">取消</mg-button>
+    <mg-button type="primary" size="mini" @click="visible = false">确定</mg-button>
   </div>
-  <el-button slot="reference">删除</el-button>
+  <mg-button slot="reference">删除</mg-button>
 </mg-popover>
 
 <script>

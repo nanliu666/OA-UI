@@ -91,7 +91,6 @@ export default {
         if(i === 'gutter') continue
         obj[i] = this.grid[i]
       }
-      console.log('obj==', obj)
       return obj
     },
     getGutter() {

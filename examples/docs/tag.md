@@ -70,7 +70,7 @@
   @blur="handleInputConfirm"
 >
 </el-input>
-<el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</el-button>
+<mg-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</mg-button>
 
 <style>
   .mg-tag + .mg-tag {

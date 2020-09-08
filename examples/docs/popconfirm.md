@@ -9,7 +9,7 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
 ```html
 <template>
   <mg-popconfirm title="这是一段内容确定删除吗？">
-    <el-button slot="reference">删除</el-button>
+    <mg-button slot="reference">删除</mg-button>
   </mg-popconfirm>
 </template>
 
@@ -29,7 +29,7 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
     iconColor="red"
     title="这是一段内容确定删除吗？"
   >
-    <el-button slot="reference">删除</el-button>
+    <mg-button slot="reference">删除</mg-button>
   </mg-popconfirm>
 </template>
 ```
@@ -50,30 +50,30 @@ Popconfirm 的属性与 Popover 很类似，因此对于重复属性，请参考
     title="这是一段内容确定删除吗？"
     :hideActionSlot="hideActionSlot"
   >
-    <el-button slot="reference">删除</el-button>
+    <mg-button slot="reference">删除</mg-button>
     <div class="action-box" slot="action">
-      <el-checkbox
+      <mg-checkbox
         v-model="tipsChecked"
         class="no-tips"
         @change="tipsChange"
       >
         不再提示
-      </el-checkbox>
+      </mg-checkbox>
       <div class="button-box">
-      <el-button
+      <mg-button
         size="mini"
         type="text"
         @click="cancel"
       >
         按钮一
-      </el-button>
-      <el-button
+      </mg-button>
+      <mg-button
         size="mini"
         type="primary"
         @click="confirm"
       >
         按钮二
-      </el-button>
+      </mg-button>
       </div>
     </div>
   </mg-popconfirm>

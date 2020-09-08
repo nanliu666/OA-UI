@@ -58,7 +58,7 @@ export default {
     avatarSrc() {
       // 图片和昵称都为空，显示一个默认的图片
       const condition = [this.src === '', this.nickName === '']
-      const defaultSrc = 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png' 
+      const defaultSrc = 'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png'
       return condition.every((item) => {return item}) ? defaultSrc : this.src
     },
     avatarSize() {

@@ -27,5 +27,17 @@
   "tree": "./packages/tree/index.js",
   "tree-select": "./packages/tree-select/index.js",
   "date-picker": "./packages/date-picker/index.js",
-  "select": "./packages/select/index.js"
+  "statistic": "./packages/statistic/index.js",
+  "select": "./packages/select/index.js",
+  "time-picker": "./packages/time-picker/index.js",
+  "time-select": "./packages/time-select/index.js",
+  "button": "./packages/button/index.js",
+  "radio": "./packages/radio/index.js"
+  ,"radio-button": "./packages/radio-button/index.js"
+  ,"radio-group": "./packages/radio-group/index.js"
+  ,"checkbox": "./packages/checkbox/index.js"
+  ,"checkbox-group": "./packages/checkbox-group/index.js"
+  ,"checkbox-button": "./packages/checkbox-button/index.js",
+  "anchor": "./packages/anchor/index.js",
+  "anchor-link": "./packages/anchor-link/index.js"
 }
