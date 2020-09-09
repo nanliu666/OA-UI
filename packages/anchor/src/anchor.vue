@@ -1,101 +1,229 @@
+<template>
+  <div class="mg-anchor">
+    <ul class="mg-anchor-ul">
+      <div class="mg-anchor-ink">
+        <span
+          class="mg-anchor-ink-ball"
+          :class="{ visibile: ballVisibile }"
+          :style="{ top: ballTop + 'px' }"
+        />
+      </div>
+      <a
+        v-for="(item, index) in anchorLinks"
+        :key="index"
+        class="mg-anchor-link"
+        :class="{'mg-anchor-link-active': currentLink === index && showActiveLink}"
+        :href="currentAnchor"
+        :title="item.title"
+        @click.prevent="goAnchor(item.href)"
+      >{{ item.label }}</a>
+    </ul>
+    <slot />
+  </div>
+</template>
 <script>
+import { throttle } from '../../../src/utils/util'
+const STATIS_BALL_HEIGHT = 9 //为什么是9？因为一个link高度为30px，12为ball的高度，所以值为15 - （12/2）= 9
+const STATIS_HEIGHT = 30 //因为一个link高度为30px
+const STATIS_TOP = 100 // 距离至目标位置100左右进行跳转
+const cubic = (value) => Math.pow(value, 3)
+const easeInOutCubic = (value) =>
+  value < 0.5 ? cubic(value * 2) / 2 : 1 - cubic((1 - value) * 2) / 2
 export default {
-  name: 'MgAnchor',
   mgName: 'MgAnchor',
+  name: 'MgAnchor',
   props: {
-    bounds: {
-      type: Number,
-      default: 10
+    anchorLinks: {
+      type: Array,
+      default: function() {
+        return []
+      }
     },
-    affix: {
-      type: Boolean,
-      default: true
+    target: {
+      type: [String],
+      default: ''
     }
   },
   data() {
     return {
-      t: 0,
-      l: 0,
-      anthorClass: 'anthor' + new Date().getTime()
-    }
-  },
-  watch: {
-    affix: {
-      handler(val) {
-        console.log(val)
-      },
-      deep: true,
-      immediate: true
+      showActiveLink: false,
+      currentLink: 0,
+      ballVisibile: false,
+      windowHref: window.location.href,
+      currentAnchor: '',
+      el: null,
+      container: null,
+      ballTop: STATIS_BALL_HEIGHT
     }
   },
   mounted() {
-    this.getPoint(document.getElementsByClassName(this.anthorClass)[0])
-    window.addEventListener('scroll', this.handleScroll, false)
+    this.init()
+    this.throttledScrollHandler = throttle(this.onScroll, 100)
+    this.container.addEventListener('scroll', this.throttledScrollHandler)
+  },
+  beforeDestroy() {
+    this.container.removeEventListener('scroll', this.throttledScrollHandler)
   },
   methods: {
-    getPoint(obj) {
-      //获取某元素以浏览器左上角为原点的坐标
-      let t = obj.offsetTop //获取该元素对应父容器的上边距
-      let l = obj.offsetLeft //对应父容器的上边距
-      //判断是否有父容器，如果存在则累加其边距
-      while (obj == obj.offsetParent) {
-        //等效 obj = obj.offsetParent;while (obj != undefined)
-        t += obj.offsetTop //叠加父容器的上边距
-        l += obj.offsetLeft //叠加父容器的左边距
+    onScroll() {
+      this.isVisibile()
+      this.handleBallMove()
+    },
+    handleBallMove() {
+      if(this.anchorLinks.length === 0) return
+      this.anchorLinks.map((item, index) => {
+        if (this.el.scrollTop + STATIS_TOP > item.offsetTop ) {
+          if (this.currentLink !== index) {
+            this.currentLink = index
+            this.ballTop = index * STATIS_HEIGHT + STATIS_BALL_HEIGHT
+          }
+        }
+      })
+      // 上移到第一个位置的时候，设置到第一个节点
+      if(this.el.scrollTop <= this.anchorLinks[0].offsetTop ) {
+        this.ballTop = STATIS_BALL_HEIGHT
       }
-      this.t = t
-      this.l = l
+    },
+    isVisibile() {
+      this.ballVisibile = this.el.scrollTop > 0 ? true : false
+      this.showActiveLink = this.el.scrollTop > 0 ? true : false
+    },
+    setHash(data) {
+      let hashArray = this.windowHref.split('#')
+      if (this.getCharCount(this.windowHref, '#') >= 2) {
+        hashArray.splice(2)
+        this.currentAnchor = `${hashArray.join('#')}#${data}`
+      } else {
+        this.currentAnchor = `${this.windowHref}#${data}`
+      }
+      window.location.href = this.currentAnchor
+    },
+    getCharCount(str, char) {
+      var regex = new RegExp(char, 'g') // 使用g表示整个字符串都要匹配
+      var result = str.match(regex) //match方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+      var count = !result ? 0 : result.length
+      return count
+    },
+    goAnchor(data) {
+      this.setHash(data)
+      const el = this.el
+      const beginTime = Date.now()
+      const beginValue = this.el.scrollTop
+      const targetValue = document.querySelector(`#${data}`).offsetTop
+      const rAF = window.requestAnimationFrame || ((func) => setTimeout(func, 16))
+      const frameFunc = () => {
+        const progress = (Date.now() - beginTime) / 500
+        if (progress < 1) {
+          let cubicMath = easeInOutCubic(progress)
+          if (targetValue > beginValue) {
+            el.scrollTop = beginValue + Math.abs(targetValue - beginValue) * cubicMath
+          } else {
+            el.scrollTop = beginValue - Math.abs(targetValue - beginValue) * cubicMath
+          }
+          rAF(frameFunc)
+        } else {
+          el.scrollTop = targetValue
+        }
+      }
+      rAF(frameFunc)
+    },
+    init() {
+      this.container = document
+      this.el = document.documentElement
+      if (this.target) {
+        this.el = document.querySelector(this.target)
+        if (!this.el) {
+          throw new Error(`target is not existed: ${this.target}`)
+        }
+        this.container = this.el
+      }
+      this.anchorLinks.map((item) => {
+        item.offsetTop = document.querySelector(`#${item.href}`).offsetTop
+      })
+      this.isVisibile()
     }
-  },
-  render() {
-    const slotName = 'default' || 'default'
-    const scopeSlotChild = this.$slots[slotName]
-    let { affix, t, l, anthorClass, bounds } = this
-    console.log(affix, t, l, anthorClass)
-    console.log(new Date().getTime())
-
-    const calssx = anthorClass + '  anthor'
-    return (
-      <div class={calssx} style={{ paddingLeft: bounds + 'px' }}>
-        {scopeSlotChild}
-      </div>
-    )
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.anthor {
-  padding: 5px;
-  z-index: 9999;
-  background: #fff;
-  border-left: 1px solid #e3e7e9;
-  min-width: 200px;
-  .anthorLi {
-    height: 22px;
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #202940;
-    line-height: 22px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    a {
-      color: #202940;
+.mg-anchor {
+  .mg-anchor-ul {
+    padding: 0px 5px 0px 15px;
+    z-index: 9999;
+    position: fixed;
+    right: 40px;
+    top: 120px;
+    .mg-anchor-ink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      &::before {
+        position: relative;
+        display: block;
+        width: 2px;
+        height: 100%;
+        margin: 0 auto;
+        background-color: #E3E7E9;
+        content: ' ';
+      }
+      .mg-anchor-ink-ball {
+        position: absolute;
+        left: 50%;
+        display: none;
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        border: 2px solid #1890ff;
+        border-radius: 8px;
+        transform: translateX(-50%);
+        transition: top 0.3s ease-in-out;
+      }
+      .visibile {
+        display: inline-block;
+      }
     }
-    a:hover {
-      color: #207efa;
+    .mg-anchor-link {
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      display: block;
     }
-  }
-  .actives {
-    color: #207efa;
-  }
-  .anthorLi:last-child {
-    margin-bottom: 0px;
+    .mg-anchor-link-active {
+      color: #1890ff;
+    }
+    .mg-anchor-link-title {
+      position: relative;
+      display: block;
+      margin-bottom: 6px;
+      overflow: hidden;
+      color: rgba(0, 0, 0, 0.65);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: all 0.3s;
+    }
   }
 }
-body,
-html {
-  transition: opacity 10s ease-in-out;
+/*包含以下四种的链接*/
+a {
+  color: #202940;
+  text-decoration: none;
+}
+/*正常的未被访问过的链接*/
+a:link {
+  text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+  text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+  text-decoration: none;
+}
+/* 正在点击的链接*/
+a:active {
+  text-decoration: none;
 }
 </style>

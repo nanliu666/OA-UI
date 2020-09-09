@@ -5,113 +5,51 @@
 :::demo
 ```html
 <template>
-    <div style="height: 150px;position: relative">
-     <div id="top1">
-       top1
-     </div>
-      <mg-anchor >
-          <mg-anchor-link href="#top1" title="标签1"></mg-anchor-link>
-          <mg-anchor-link href="#top2" title="标签2"></mg-anchor-link>
-          <mg-anchor-link href="#top3" title="标签3"></mg-anchor-link>
-          <mg-anchor-link href="#top4" title="标签4"></mg-anchor-link>
-      </mg-anchor>
-    </div>
-
+  <div>
+    <mg-anchor :anchorLinks="anchorLinks" target=".page-component__scroll .el-scrollbar__wrap">
+      <ul class="anchor-demo-ul">
+        <li v-for="(item, index) in anchorLinks" :key="index">
+          <div :id="item.href">{{item.label}}</div>
+          <div class="anchor-demo-box" :class="'demo-' + index"></div>
+        </li>
+      </ul>
+    </mg-anchor>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      anchorLinks: [
+        {
+          href: 'href1',
+          label: '标签1'
+        },
+        {
+          href: 'href2',
+          label: '标签2'
+        },
+        {
+          href: 'href3',
+          label: '标签3'
+        },
+        {
+          href: 'href4',
+          label: '标签4'
+        },
+      ]
     }
   },
- mounted(){
-        window.addEventListener('scroll',this.handleScroll)
-},
-methods:{
-handleScroll(){
-}
-}
 }
 </script>
 ```
 :::
-### affix
-静态位置 affix
-:::demo
-```html
-<template>
-<div id="top2">
-   top2
- </div>
-  <mg-anchor :affix='false'>
-       <mg-anchor-link href="#top1" title="标签1"></mg-anchor-link>
-        <mg-anchor-link href="#top2" title="标签2"></mg-anchor-link>
-        <mg-anchor-link href="#top3" title="标签3"></mg-anchor-link>
-        <mg-anchor-link href="#top4" title="标签4"></mg-anchor-link>
-</mg-anchor>
-</template>
-<script>
-export default {
-  data() {
-    return {
-    }
-  }
-}
-</script>
-```
-:::
-:::demo
-```html
-<template>
-<div id="top3">
-   top3
- </div>
-    <mg-anchor >
-            <mg-anchor-link href="#top1" title="标签1"></mg-anchor-link>
-            <mg-anchor-link href="#top2" title="标签2"></mg-anchor-link>
-            <mg-anchor-link href="#top3" title="标签3"></mg-anchor-link>
-            <mg-anchor-link href="#top4" title="标签4"></mg-anchor-link>
-        </mg-anchor>
-</template>
-<script>
-export default {
-  data() {
-    return {
-    }
-  }
-}
-</script>
-```
-:::
-:::demo
-```html
-<template>
- <div id="top4">
-   top4
- </div>
-  <mg-anchor >
-          <mg-anchor-link href="#top1" title="标签1"></mg-anchor-link>
-          <mg-anchor-link href="#top2" title="标签2"></mg-anchor-link>
-          <mg-anchor-link href="#top3" title="标签3"></mg-anchor-link>
-          <mg-anchor-link href="#top4" title="标签4"></mg-anchor-link>
-      </mg-anchor>
-</template>
-<script>
-export default {
-  data() {
-    return {
-    }
-  }
-}
-</script>
-```
-:::
-
-
-
 ### Attributes
 
-| 参数     | 说明                                                               | 类型          | 可选值                                     | 默认值 |
-| -------- | ------------------------------------------------------------------ | ------------- | ------------------------------------------ | ------ |
-| href      | 锚点链接                                                 | string        |                                            |        |
-| title     | 文字内容                                         |        string        |                                            |        |
+| 参数        | 说明                           | 类型   | 可选值 | 默认值 |
+| ----------- | ------------------------------ | ------ | ------ | ------ |
+| anchorLinks | 锚点数组                       | array  |        |        |
+| title       | 文字内容                       | string |        |        |
+| target   | 包裹容器，注意使用时的滚动容器 | string |        |        |
++ **<font color='red'>1. 如果锚点不能跳转，请检查你的包裹容器 </font>**
++ **<font color='red'>2. 注意使用时需要在相关地方绑定id（demo内有示例） </font>**

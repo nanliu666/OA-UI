@@ -138,8 +138,8 @@ export function formatMoney(number, decimals = 0, decPoint = '.', thousandsSep =
   number = (number + '').replace(/[^0-9+-Ee.]/g, '')
   const n = !isFinite(+number) ? 0 : +number
   const prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)
-  const sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep
-  const dec = (typeof decPoint === 'undefined') ? '.' : decPoint
+  const sep = typeof thousandsSep === 'undefined' ? ',' : thousandsSep
+  const dec = typeof decPoint === 'undefined' ? '.' : decPoint
   let s = ''
   const toFixedFix = function(n, prec) {
     const k = Math.pow(10, prec)
@@ -164,4 +164,29 @@ export function formatMoney(number, decimals = 0, decPoint = '.', thousandsSep =
  */
 export function formatDecimals(number, decimals = 2) {
   return formatMoney(number, decimals, '.', '')
+}
+export function throttle(fn, wait, options = {}) {
+  let timer
+  let previous = 0
+  let throttled = function() {
+    let now = +new Date()
+    // remaining 不触发下一次函数的剩余时间
+    if (!previous && options.leading === false) previous = now
+    let remaining = wait - (now - previous)
+    if (remaining < 0) {
+      if (timer) {
+        clearTimeout(timer)
+        timer = null
+      }
+      previous = now
+      fn.apply(this, arguments)
+    } else if (!timer && options.trailing !== false) {
+      timer = setTimeout(() => {
+        previous = options.leading === false ? 0 : new Date().getTime()
+        timer = null
+        fn.apply(this, arguments)
+      }, remaining)
+    }
+  }
+  return throttled
 }
