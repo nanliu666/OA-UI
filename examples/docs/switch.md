@@ -4,13 +4,14 @@
 
 ### 基本用法
 
-:::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
+:::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色,可以配置`size`来定义switch的大小。
 
 ```html
 <mg-switch
   v-model="value"
   :size="size"
   active-text="开"
+  inactive-text="关"
   active-color="#13ce66"
   inactive-color="#ff4949">
 </mg-switch>
@@ -20,8 +21,7 @@
     data() {
       return {
         value: true,
-        size:'mini'
-        
+        size:'mini',
       }
     }
   };
@@ -61,7 +61,7 @@
 ```
 :::
 
-### 扩展的 value 类型
+### 扩展的 value 类型(可配置tooltip的开关)
 
 :::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
 
