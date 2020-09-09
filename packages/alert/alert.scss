@@ -1,0 +1,20 @@
+@import '~main/styles/var';
+$types: (
+  error: $--color-error,
+  info: $--color-info,
+  success: $--color-success,
+  warning: $--color-warning
+);
+
+.is-light.el-alert {
+  @each $type, $color in $types {
+    &--#{$type} {
+      border: 1px solid currentColor;
+      color: $color;
+      background-color: rgba($color, 0.1);
+      .el-alert__content {
+        color: inherit;
+      }
+    }
+  }
+}
