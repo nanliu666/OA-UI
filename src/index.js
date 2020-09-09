@@ -45,8 +45,8 @@ import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
+import Backtop from '../packages/backtop/index.js'
 import Anchor from '../packages/anchor/index.js'
-import AnchorLink from '../packages/anchor-link/index.js'
 
 const components = [
   Table,
@@ -90,8 +90,8 @@ const components = [
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
+  Backtop,
   Anchor,
-  AnchorLink,
 ]
 
 const install = function(Vue) {
@@ -159,6 +159,6 @@ export default {
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Anchor,
-  AnchorLink
+  Backtop,
+  Anchor
 }
