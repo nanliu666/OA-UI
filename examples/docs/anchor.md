@@ -102,6 +102,6 @@ li {
 | ----------- | ------------------------------ | ------ | ------ | ------ |
 | anchorLinks | 锚点数组                       | array  |        |        |
 | title       | 文字内容                       | string |        |        |
-| target   | 包裹容器，注意使用时的滚动容器 | string |        |        |
-+ **<font color='red'>1. 如果锚点不能跳转，请检查你的包裹容器 </font>**
-+ **<font color='red'>2. 注意使用时需要在相关地方绑定id（demo内有示例） </font>**
+| target      | 包裹容器，注意使用时的滚动容器 | string |        |        |
++ **<font color='black'>1. 如果锚点不能跳转，请检查你的包裹容器 </font>**
++ **<font color='black'>2. 注意使用时需要在相关地方绑定id（demo内有示例） </font>**
