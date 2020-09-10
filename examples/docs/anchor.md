@@ -15,7 +15,6 @@
             </a>
             {{item.label}}
           </h2>
-          <!-- <div :id="item.href" style="scroll-margin-top: 150px">{{item.label}}</div> -->
           <div class="anchor-demo-box" :class="'demo-' + index"></div>
         </li>
       </ul>

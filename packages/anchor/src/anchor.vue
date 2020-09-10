@@ -58,7 +58,7 @@ export default {
   },
   mounted() {
     this.init()
-    this.throttledScrollHandler = throttle(this.onScroll, 150)
+    this.throttledScrollHandler = throttle(this.onScroll, 100)
     this.container.addEventListener('scroll', this.throttledScrollHandler)
   },
   beforeDestroy() {
@@ -74,29 +74,45 @@ export default {
       this.anchorLinks.map((item, index) => {
         if (this.el.scrollTop + STATIS_TOP >= item.offsetTop) {
           if (this.currentLink !== index) {
-            this.currentLink = index
-            this.ballTop = index * STATIS_HEIGHT + STATIS_BALL_HEIGHT
+            this.setBallIndex(index)
           }
         }
       })
       // 上移到第一个位置的时候，设置到第一个节点
       if (this.el.scrollTop <= this.anchorLinks[0].offsetTop) {
-        this.ballTop = STATIS_BALL_HEIGHT
+        this.setBallIndex(0)
       }
+      // 最底
+      if (this.el.scrollTop + this.el.clientHeight >= this.el.scrollHeight) {
+        this.setBallIndex(this.anchorLinks.length - 1)
+      }
+    },
+    setBallIndex(index) {
+      this.ballTop = index * STATIS_HEIGHT + STATIS_BALL_HEIGHT
+      this.currentLink = index
     },
     isVisibile() {
       this.ballVisibile = this.el.scrollTop > 0 ? true : false
       this.showActiveLink = this.el.scrollTop > 0 ? true : false
     },
     setHash(data) {
+      // 兼容hash模式
       let hashArray = this.windowHref.split('#')
       if (this.getCharCount(this.windowHref, '#') >= 2) {
-        hashArray.splice(2)
-        this.currentAnchor = `${hashArray.join('#')}#${data}`
+        this.spliceArray(hashArray, data, 2)
       } else {
-        this.currentAnchor = `${this.windowHref}#${data}`
+        // 只有一个#号的时候
+        if (hashArray.length === 1) {
+          this.currentAnchor = `${this.windowHref}#${data}`
+        } else {
+          this.spliceArray(hashArray, data, 1)
+        }
       }
       window.location.href = this.currentAnchor
+    },
+    spliceArray(hashArray, data, spliceIndex) {
+      hashArray.splice(spliceIndex)
+      this.currentAnchor = `${hashArray.join('#')}#${data}`
     },
     getCharCount(str, char) {
       var regex = new RegExp(char, 'g') // 使用g表示整个字符串都要匹配
@@ -105,27 +121,35 @@ export default {
       return count
     },
     goAnchor(data) {
-      this.setHash(data)
       const el = this.el
-      const beginTime = Date.now()
-      const beginValue = this.el.scrollTop
       const targetValue = document.querySelector(`#${data}`).offsetTop
-      const rAF = window.requestAnimationFrame || ((func) => setTimeout(func, 16))
-      const frameFunc = () => {
-        const progress = (Date.now() - beginTime) / 500
-        if (progress < 1) {
-          let cubicMath = easeInOutCubic(progress)
-          if (targetValue > beginValue) {
-            el.scrollTop = beginValue + Math.abs(targetValue - beginValue) * cubicMath
-          } else {
-            el.scrollTop = beginValue - Math.abs(targetValue - beginValue) * cubicMath
-          }
-          rAF(frameFunc)
-        } else {
-          el.scrollTop = targetValue
-        }
+      let scrollOptions = {
+        top: targetValue,
+        behavior: 'smooth'
       }
-      rAF(frameFunc)
+      el.scrollTo(scrollOptions)
+      setTimeout(() => {
+        this.setHash(data)
+      }, 300)
+      // this.setHash(data)
+      // const beginTime = Date.now()
+      // const beginValue = this.el.scrollTop
+      // const rAF = window.requestAnimationFrame || ((func) => setTimeout(func, 16))
+      // const frameFunc = () => {
+      //   const progress = (Date.now() - beginTime) / 500
+      //   if (progress < 1) {
+      //     let cubicMath = easeInOutCubic(progress)
+      //     if (targetValue > beginValue) {
+      //       el.scrollTop = beginValue + Math.abs(targetValue - beginValue) * cubicMath
+      //     } else {
+      //       el.scrollTop = beginValue - Math.abs(targetValue - beginValue) * cubicMath
+      //     }
+      //     rAF(frameFunc)
+      //   } else {
+      //     el.scrollTop = targetValue
+      //   }
+      // }
+      // rAF(frameFunc)
     },
     init() {
       this.container = document
