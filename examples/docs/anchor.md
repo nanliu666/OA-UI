@@ -9,7 +9,13 @@
     <mg-anchor :anchorLinks="anchorLinks" target=".page-component__scroll .el-scrollbar__wrap">
       <ul class="anchor-demo-ul">
         <li v-for="(item, index) in anchorLinks" :key="index">
-          <div :id="item.href">{{item.label}}</div>
+          <h2 :id="item.href">
+            <a class="anchor" :href="`#${item.href}`">
+              <i class="el-icon-link" />
+            </a>
+            {{item.label}}
+          </h2>
+          <!-- <div :id="item.href" style="scroll-margin-top: 150px">{{item.label}}</div> -->
           <div class="anchor-demo-box" :class="'demo-' + index"></div>
         </li>
       </ul>
@@ -42,6 +48,53 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+.anchor-demo-ul {
+  h2 {
+    scroll-margin-top: 120px;
+    font-size: 35px;
+    line-height: 1.2;
+    &::before {
+      content: ' ';
+      display: block;
+      border-bottom: 1px solid #ececec;
+      padding-top: 44px;
+      margin-bottom: 40px;
+    }
+    .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+  }
+  .anchor-demo-box {
+    width: 100%;
+    height: 500px;
+    margin: 10px 0;
+    color: #fff;
+  }
+
+  .demo-0 {
+    background-color: #207efa;
+  }
+  .demo-1 {
+    background-color: #d56779;
+  }
+  .demo-2 {
+    background-color: #5bc077;
+  }
+  .demo-3 {
+    background-color: #dbc226;
+  }
+}
+</style>
 ```
 :::
 ### Attributes

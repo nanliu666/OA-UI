@@ -12,7 +12,7 @@
         v-for="(item, index) in anchorLinks"
         :key="index"
         class="mg-anchor-link"
-        :class="{'mg-anchor-link-active': currentLink === index && showActiveLink}"
+        :class="{ 'mg-anchor-link-active': currentLink === index && showActiveLink }"
         :href="currentAnchor"
         :title="item.title"
         @click.prevent="goAnchor(item.href)"
@@ -58,7 +58,7 @@ export default {
   },
   mounted() {
     this.init()
-    this.throttledScrollHandler = throttle(this.onScroll, 100)
+    this.throttledScrollHandler = throttle(this.onScroll, 150)
     this.container.addEventListener('scroll', this.throttledScrollHandler)
   },
   beforeDestroy() {
@@ -70,9 +70,9 @@ export default {
       this.handleBallMove()
     },
     handleBallMove() {
-      if(this.anchorLinks.length === 0) return
+      if (this.anchorLinks.length === 0) return
       this.anchorLinks.map((item, index) => {
-        if (this.el.scrollTop + STATIS_TOP > item.offsetTop ) {
+        if (this.el.scrollTop + STATIS_TOP >= item.offsetTop) {
           if (this.currentLink !== index) {
             this.currentLink = index
             this.ballTop = index * STATIS_HEIGHT + STATIS_BALL_HEIGHT
@@ -80,7 +80,7 @@ export default {
         }
       })
       // 上移到第一个位置的时候，设置到第一个节点
-      if(this.el.scrollTop <= this.anchorLinks[0].offsetTop ) {
+      if (this.el.scrollTop <= this.anchorLinks[0].offsetTop) {
         this.ballTop = STATIS_BALL_HEIGHT
       }
     },
@@ -165,7 +165,7 @@ export default {
         width: 2px;
         height: 100%;
         margin: 0 auto;
-        background-color: #E3E7E9;
+        background-color: #e3e7e9;
         content: ' ';
       }
       .mg-anchor-ink-ball {
@@ -192,6 +192,7 @@ export default {
     }
     .mg-anchor-link-active {
       color: #1890ff;
+      font-weight: 700;
     }
     .mg-anchor-link-title {
       position: relative;
