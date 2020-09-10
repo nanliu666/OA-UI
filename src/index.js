@@ -2,6 +2,7 @@
 
 import './styles/common.scss'
 
+import Alert from '../packages/alert/index.js'
 import Table from '../packages/table/index.js'
 import Dropdown from '../packages/dropdown/index.js'
 import DropdownMenu from '../packages/dropdown-menu/index.js'
@@ -47,8 +48,10 @@ import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
 import Backtop from '../packages/backtop/index.js'
 import Anchor from '../packages/anchor/index.js'
+import Switch from '../packages/switch/index.js'
 
 const components = [
+  Alert,
   Table,
   Dropdown,
   DropdownMenu,
@@ -92,6 +95,7 @@ const components = [
   CheckboxButton,
   Backtop,
   Anchor,
+  Switch,
 ]
 
 const install = function(Vue) {
@@ -117,6 +121,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  Alert,
   Table,
   Dropdown,
   DropdownMenu,
@@ -160,5 +165,6 @@ export default {
   CheckboxGroup,
   CheckboxButton,
   Backtop,
-  Anchor
+  Anchor,
+  Switch
 }

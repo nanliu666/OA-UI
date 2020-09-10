@@ -6,6 +6,10 @@
         "groupName": "数据展示",
         "list": [
           {
+            "path": "/alert",
+            "title": "Alert 信息提示"
+          },
+          {
             "path": "/avatar",
             "title": "Avatar 头像"
           },
@@ -60,11 +64,11 @@
           {
             "path": "/tag",
             "title": "Tag 标签"
-          },   
+          },
           {
             "path": "/statistic",
             "title": "Statistic 数据展示"
-          },          
+          },
           {
             "path": "/carousel",
             "title": "Carousel 走马灯"
@@ -126,14 +130,18 @@
           {
             "path": "/button",
             "title": "Button 按钮"
-          }
-          ,{
+          },
+          {
             "path": "/radio",
             "title": "Radio 单选框"
-          }
-          ,{
+          },
+          {
             "path": "/checkbox",
             "title": "Checkbox 复选框"
+          }
+          ,{
+            "path": "/switch",
+            "title": "Switch 开关"
           }
         ]
       }
