@@ -87,17 +87,21 @@ export default {
         this.setBallIndex(this.anchorLinks.length - 1)
       }
     },
+    // 设置小球位置以及活动的link
     setBallIndex(index) {
       this.ballTop = index * STATIS_HEIGHT + STATIS_BALL_HEIGHT
       this.currentLink = index
     },
+    // 小球以及激活的link的显示与隐藏
     isVisibile() {
       this.ballVisibile = this.el.scrollTop > 0 ? true : false
       this.showActiveLink = this.el.scrollTop > 0 ? true : false
     },
+    // 设置location的hash值，方便刷新的时候重定位，不存在也是可以滚动的
     setHash(data) {
-      // 兼容hash模式
+      // 兼容浏览器页面hash模式（非history模式）
       let hashArray = this.windowHref.split('#')
+      // 以下处理皆为使location.hash只存在一个，如http://localhost:8085/#/component/anchor#href4
       if (this.getCharCount(this.windowHref, '#') >= 2) {
         this.spliceArray(hashArray, data, 2)
       } else {
@@ -110,16 +114,19 @@ export default {
       }
       window.location.href = this.currentAnchor
     },
+    // 切分hash字符串，并设置当前锚点
     spliceArray(hashArray, data, spliceIndex) {
       hashArray.splice(spliceIndex)
       this.currentAnchor = `${hashArray.join('#')}#${data}`
     },
+    // 获取某个字符出现的次数
     getCharCount(str, char) {
       var regex = new RegExp(char, 'g') // 使用g表示整个字符串都要匹配
       var result = str.match(regex) //match方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
       var count = !result ? 0 : result.length
       return count
     },
+    // 点击跳转函数，scrollTo原理：https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTo
     goAnchor(data) {
       const el = this.el
       const targetValue = document.querySelector(`#${data}`).offsetTop
@@ -131,6 +138,7 @@ export default {
       setTimeout(() => {
         this.setHash(data)
       }, 300)
+      // 以下为使用Cubic动画函数设置scrollTop的高度
       // this.setHash(data)
       // const beginTime = Date.now()
       // const beginValue = this.el.scrollTop
@@ -151,6 +159,7 @@ export default {
       // }
       // rAF(frameFunc)
     },
+    // 初始化设置包裹容器、ball以及激活link的显示
     init() {
       this.container = document
       this.el = document.documentElement
