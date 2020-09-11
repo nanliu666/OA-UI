@@ -2,6 +2,7 @@
 
 import './styles/common.scss'
 
+import Alert from '../packages/alert/index.js'
 import Table from '../packages/table/index.js'
 import Dropdown from '../packages/dropdown/index.js'
 import DropdownMenu from '../packages/dropdown-menu/index.js'
@@ -50,6 +51,7 @@ import AnchorLink from '../packages/anchor-link/index.js'
 import Switch from '../packages/switch/index.js'
 
 const components = [
+  Alert,
   Table,
   Dropdown,
   DropdownMenu,
@@ -119,6 +121,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  Alert,
   Table,
   Dropdown,
   DropdownMenu,

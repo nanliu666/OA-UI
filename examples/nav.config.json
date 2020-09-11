@@ -120,6 +120,10 @@
             "title": "select表单下拉选择器"
           },
           {
+            "path": "/input",
+            "title": "Input 输入框"
+          },
+          {
             "path": "/time-picker",
             "title": "TimePicker 时间选择器"
           },
