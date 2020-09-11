@@ -43,9 +43,10 @@ export default {
 ```html
 <mg-search
   ref="search"
-  v-model="value"
-  searchBtn
   :options="options"
+  searchBtn
+  v-model="value"
+  @search="handleSearch"
 />
 
 <script>
@@ -66,6 +67,11 @@ export default {
           ]
         }
       ]
+    }
+  },
+  methods: {
+    handleSearch(search) {
+      console.log(search)
     }
   }
 }
