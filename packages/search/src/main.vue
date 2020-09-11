@@ -134,6 +134,11 @@ export default {
     }
   },
 
+  mounted() {
+    // 防止blur时候失去输入的内容
+    this.$refs.select.$refs.reference.$watch('value', this.setValue)
+  },
+
   methods: {
     ...EL_SELECT_METHODS.reduce((acc, method) => {
       acc[method] = function() {
@@ -142,18 +147,15 @@ export default {
       return acc
     }, {}),
 
-    clear() {
-      this.setValue(null)
-    },
-
     handleBtnClick() {
       this.confirm()
     },
     // 处理btn事件
     confirm(value) {
-      if (value || this.value) {
-        value && (this.value = value)
-        this.submit()
+      value = value ? value : this.value
+      if (value) {
+        value && this.setValue(value)
+        this.submit(value)
       }
     },
 
@@ -164,7 +166,6 @@ export default {
           this.confirm()
           break
         default:
-          this.setValue(event.target.value)
       }
     },
 
@@ -185,15 +186,16 @@ export default {
       this.$emit(this.$options.model.event, value)
     },
 
-    submit() {
-      this.$emit(SUBMIT_EVENT_NAME, this.value)
+    submit(value) {
+      value = value ? value : this.value
+      this.$emit(SUBMIT_EVENT_NAME, value)
       // 记录历史记录
       if (this.history) {
         const historyGroup = this.historyGroup
         historyGroup.options = Array.from(
           new Set( // 使用Set去重
             historyGroup.options
-              .concat([this.value])
+              .concat([value])
               .filter((i) => !!i)
               .map((h) => String.prototype.trim.call(h))
               .sort()
