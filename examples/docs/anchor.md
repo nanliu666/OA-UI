@@ -57,7 +57,6 @@ li {
 }
 .anchor-demo-ul {
   h2 {
-    scroll-margin-top: 120px;
     font-size: 35px;
     line-height: 1.2;
     &::before {
@@ -105,3 +104,4 @@ li {
 | target      | 包裹容器，注意使用时的滚动容器 | string |        |        |
 + **<font color='black'>1. 如果锚点不能跳转，请检查你的包裹容器 </font>**
 + **<font color='black'>2. 注意使用时需要在相关地方绑定id（demo内有示例） </font>**
++ **<font color='black'>3. 不支持所有IE版本 </font>**

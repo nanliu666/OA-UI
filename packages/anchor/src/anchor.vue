@@ -8,13 +8,14 @@
           :style="{ top: ballTop + 'px' }"
         />
       </div>
+      <!-- :href="`#${item.href}`" -->
       <a
         v-for="(item, index) in anchorLinks"
         :key="index"
         class="mg-anchor-link"
         :class="{ 'mg-anchor-link-active': currentLink === index && showActiveLink }"
-        :href="currentAnchor"
         :title="item.title"
+        :href="`#${item.href}`"
         @click.prevent="goAnchor(item.href)"
       >{{ item.label }}</a>
     </ul>
@@ -22,6 +23,9 @@
   </div>
 </template>
 <script>
+/**
+ * 锚点定位以及滚动兼容Chrome、Firefox、Edge，不兼容所有IE版本
+ */
 import { throttle } from '../../../src/utils/util'
 const STATIS_BALL_HEIGHT = 9 //为什么是9？因为一个link高度为30px，12为ball的高度，所以值为15 - （12/2）= 9
 const STATIS_HEIGHT = 30 //因为一个link高度为30px
@@ -83,7 +87,8 @@ export default {
         this.setBallIndex(0)
       }
       // 最底
-      if (this.el.scrollTop + this.el.clientHeight >= this.el.scrollHeight) {
+      let pageHeight = this.isEdge() ? document.documentElement.clientHeight : this.el.clientHeight
+      if (this.el.scrollTop + pageHeight >= this.el.scrollHeight) {
         this.setBallIndex(this.anchorLinks.length - 1)
       }
     },
@@ -97,72 +102,76 @@ export default {
       this.ballVisibile = this.el.scrollTop > 0 ? true : false
       this.showActiveLink = this.el.scrollTop > 0 ? true : false
     },
-    // 设置location的hash值，方便刷新的时候重定位，不存在也是可以滚动的
+    // 设置location的hash值，方便刷新的时候重定位
     setHash(data) {
-      // 兼容浏览器页面hash模式（非history模式）
       let hashArray = this.windowHref.split('#')
-      // 以下处理皆为使location.hash只存在一个，如http://localhost:8085/#/component/anchor#href4
-      if (this.getCharCount(this.windowHref, '#') >= 2) {
-        this.spliceArray(hashArray, data, 2)
-      } else {
-        // 只有一个#号的时候
-        if (hashArray.length === 1) {
-          this.currentAnchor = `${this.windowHref}#${data}`
+      if (hashArray.length === 1) {
+        this.currentAnchor = `#${data}`
+      } else if (hashArray.length === 2) {
+        if (hashArray[1].indexOf('/') === 0) {
+          this.spliceArray(hashArray, data, 2)
         } else {
-          this.spliceArray(hashArray, data, 1)
+          this.currentAnchor = `#${data}`
         }
+      } else {
+        this.spliceArray(hashArray, data, 2)
       }
-      window.location.href = this.currentAnchor
+      setTimeout(() => {
+        window.location.href = this.currentAnchor
+      }, 300)
     },
     // 切分hash字符串，并设置当前锚点
     spliceArray(hashArray, data, spliceIndex) {
       hashArray.splice(spliceIndex)
       this.currentAnchor = `${hashArray.join('#')}#${data}`
     },
-    // 获取某个字符出现的次数
-    getCharCount(str, char) {
-      var regex = new RegExp(char, 'g') // 使用g表示整个字符串都要匹配
-      var result = str.match(regex) //match方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
-      var count = !result ? 0 : result.length
-      return count
-    },
-    // 点击跳转函数，scrollTo原理：https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTo
+    // 平滑滚动实现函数，https://juejin.im/post/6844903925473083405
     goAnchor(data) {
-      const el = this.el
       const targetValue = document.querySelector(`#${data}`).offsetTop
+      if (!this.isEdge()) {
+        this.handleScollInChrome(targetValue, data)
+      } else {
+        this.handleScollInEdge(targetValue, data)
+      }
+    },
+    // scrollTo原理：https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTo
+    handleScollInChrome(targetValue, data) {
       let scrollOptions = {
         top: targetValue,
         behavior: 'smooth'
       }
-      el.scrollTo(scrollOptions)
-      setTimeout(() => {
-        this.setHash(data)
-      }, 300)
-      // 以下为使用Cubic动画函数设置scrollTop的高度
-      // this.setHash(data)
-      // const beginTime = Date.now()
-      // const beginValue = this.el.scrollTop
-      // const rAF = window.requestAnimationFrame || ((func) => setTimeout(func, 16))
-      // const frameFunc = () => {
-      //   const progress = (Date.now() - beginTime) / 500
-      //   if (progress < 1) {
-      //     let cubicMath = easeInOutCubic(progress)
-      //     if (targetValue > beginValue) {
-      //       el.scrollTop = beginValue + Math.abs(targetValue - beginValue) * cubicMath
-      //     } else {
-      //       el.scrollTop = beginValue - Math.abs(targetValue - beginValue) * cubicMath
-      //     }
-      //     rAF(frameFunc)
-      //   } else {
-      //     el.scrollTop = targetValue
-      //   }
-      // }
-      // rAF(frameFunc)
+      this.el.scrollTo(scrollOptions)
+      this.setHash(data)
+    },
+    // 以下为使用Cubic动画函数设置scrollTop的高度 https://developer.mozilla.org/zh-CN/docs/Web/CSS/easing-function
+    handleScollInEdge(targetValue, data) {
+      const beginTime = Date.now()
+      const beginValue = this.el.scrollTop
+      const rAF = window.requestAnimationFrame || ((func) => setTimeout(func, 16))
+      const frameFunc = () => {
+        const progress = (Date.now() - beginTime) / 500
+        if (progress < 1) {
+          let cubicMath = easeInOutCubic(progress)
+          if (targetValue > beginValue) {
+            this.el.scrollTop = beginValue + Math.abs(targetValue - beginValue) * cubicMath
+          } else {
+            this.el.scrollTop = beginValue - Math.abs(targetValue - beginValue) * cubicMath
+          }
+          rAF(frameFunc)
+        } else {
+          this.el.scrollTop = targetValue
+        }
+      }
+      rAF(frameFunc)
+      this.setHash(data)
+    },
+    isEdge() {
+      return navigator.userAgent.indexOf('Edge') > -1 ? true : false
     },
     // 初始化设置包裹容器、ball以及激活link的显示
     init() {
       this.container = document
-      this.el = document.documentElement
+      this.el = this.isEdge() ?  document.body : document.documentElement
       if (this.target) {
         this.el = document.querySelector(this.target)
         if (!this.el) {

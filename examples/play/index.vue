@@ -75,7 +75,6 @@ li {
 }
 .anchor-demo-ul {
   h2 {
-    scroll-margin-top: 120px;
     font-size: 35px;
     line-height: 1.2;
     &::before {
