@@ -13,7 +13,6 @@ import Message from '../packages/message/index.js'
 import Timeline from '../packages/timeline/index.js'
 import TimelineItem from '../packages/timeline-item/index.js'
 import Card from '../packages/card/index.js'
-import Comment from '../packages/comment/index.js'
 import Popover from '../packages/popover/index.js'
 import Tooltip from '../packages/tooltip/index.js'
 import Popconfirm from '../packages/popconfirm/index.js'
@@ -63,7 +62,6 @@ const components = [
   Timeline,
   TimelineItem,
   Card,
-  Comment,
   Popover,
   Tooltip,
   Popconfirm,
@@ -136,7 +134,6 @@ export default {
   Timeline,
   TimelineItem,
   Card,
-  Comment,
   Popover,
   Tooltip,
   Popconfirm,

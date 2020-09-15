@@ -10,7 +10,6 @@
   "timeline": "./packages/timeline/index.js",
   "timeline-item": "./packages/timeline-item/index.js",
   "card": "./packages/card/index.js",
-  // "comment": "./packages/comment/index.js",
   "popover": "./packages/popover/index.js",
   "tooltip": "./packages/tooltip/index.js",
   "popconfirm": "./packages/popconfirm/index.js",
@@ -47,6 +46,5 @@
   "checkbox-button": "./packages/checkbox-button/index.js",
   "backtop": "./packages/backtop/index.js",
   "anchor": "./packages/anchor/index.js",
-  "anchor-link": "./packages/anchor-link/index.js",
   "switch": "./packages/switch/index.js"
 }
