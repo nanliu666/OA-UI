@@ -1,25 +1,41 @@
 <template>
-  <div style="margin: 20px;">
-    <mg-input
-      v-model="input1"
-      placeholder="请输入内容"
-      :statusType = 'inputStatusType'
-      :disabled="true"
-    />
+  <div>
+    <mg-comment v-model="input" />
   </div>
 </template>
 
 <script>
-  // import mgInput from '../'
-  // import child from '../components/child.vue';
+// import mgInput from '../'
+// import child from '../components/child.vue';
 export default {
   data() {
     return {
       input: 'Hello Word!',
       input1: 'Hello',
-      value: 'Hello',
-      inputStatusType: 'error'
+      value: null,
+      inputStatusType: 'error',
+      options: [
+        {
+          label: '搜索建议',
+          options: [
+            {
+              label: 'foo',
+              value: 'foo',
+              disabled: true
+            },
+            'bar' // 简短形式
+          ]
+        }
+      ]
     }
   },
+
+  mounted() {},
+
+  methods: {
+    test() {
+      console.debug({ arguments })
+    }
+  }
 }
 </script>

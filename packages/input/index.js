@@ -4,3 +4,4 @@ Input.install = function(Vue) {
   Vue.component(Input.mgName, Input)
 }
 export default Input
+

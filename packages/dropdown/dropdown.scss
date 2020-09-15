@@ -12,9 +12,16 @@
     }
 }
 .el-dropdown-menu--small {
+    padding: 6px 0;
+    .el-dropdown-menu__item {
+        padding: 0 14px;
+    }
+}
+.el-dropdown-menu--mini {
     padding: 4px 0;
     .el-dropdown-menu__item {
         padding: 0 12px;
     }
 }
+
 

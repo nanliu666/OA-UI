@@ -91,6 +91,10 @@
             "title": "Pagination 分页"
           },
           {
+            "path": "/backtop",
+            "title": "Backtop 回到顶部"
+          },
+          {
             "path": "/dropdown",
             "title": "Dropdown 下拉菜单"
           },
@@ -122,6 +126,10 @@
           {
             "path": "/select",
             "title": "select表单下拉选择器"
+          },
+          {
+            "path": "/input",
+            "title": "Input 输入框"
           },
           {
             "path": "/time-picker",
