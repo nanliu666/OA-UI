@@ -120,6 +120,10 @@
             "title": "日期选择器"
           },
           {
+            "path": "/search",
+            "title": "Search 搜索"
+          },
+          {
             "path": "/select",
             "title": "select表单下拉选择器"
           },
@@ -142,8 +146,8 @@
           {
             "path": "/checkbox",
             "title": "Checkbox 复选框"
-          }
-          ,{
+          },
+          {
             "path": "/switch",
             "title": "Switch 开关"
           }

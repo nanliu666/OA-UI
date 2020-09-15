@@ -36,6 +36,7 @@ import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
 import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
+import Search from '../packages/search/index.js'
 import Input from '../packages/input/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
@@ -83,6 +84,7 @@ const components = [
   DatePicker,
   Statistic,
   Select,
+  Search,
   Input,
   TimePicker,
   TimeSelect,
@@ -154,6 +156,7 @@ export default {
   DatePicker,
   Statistic,
   Select,
+  Search,
   Input,
   TimePicker,
   TimeSelect,
