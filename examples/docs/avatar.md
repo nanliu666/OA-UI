@@ -1,8 +1,6 @@
 # Avatar 头像
 
 基于 elementUI Avatar组件 封装的 Avatar组件（[element 示例](https://element.eleme.cn/#/zh-CN/component/avatar)）
-- 此组件默认支持所有avatar的所有Attributes，新增一个nickname属性，头像尺寸新增huge（64px）。
-- 不支持插槽，不支持回调事件
 ### 基础用法
 最基础用法，只传入通过 `nickName` 显示用户名称
 <br/>

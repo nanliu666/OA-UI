@@ -1,7 +1,6 @@
 ## Pagination 分页
 
 当数据量过多时，使用分页分解数据。[element 示例](https://element.eleme.cn/#/zh-CN/component/pagination)
-+ 注释：完全支持element的Pagination组件（实现原理：直接修改组件的name)
 ### 基础用法
 
 :::demo 设置`layout`，表示需要显示的内容，用逗号分隔，布局元素会依次显示。`prev`表示上一页，`next`为下一页，`pager`表示页码列表，除此以外还提供了`jumper`和`total`，`size`和特殊的布局符号`->`，`->`后的元素会靠右显示，`jumper`表示跳页元素，`total`表示总条目数，`size`用于设置每页显示的页码数量。
