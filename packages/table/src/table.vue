@@ -2,7 +2,7 @@
   <div>
     <!--批量操作栏，勾选行时显示-->
     <div
-      v-if="_config.enableMultiSelect && selection.length > 0"
+      v-show="_config.enableMultiSelect && selection.length > 0"
       class="multi-menu"
     >
       <span style="margin-left:12px;">已选中{{ selection.length }}项</span>
@@ -18,7 +18,7 @@
     </div>
     <!--顶部操作栏占位，勾选行时不显示-->
     <div
-      v-else-if="_config.enableMultiSelect || $slots.topMenu"
+      v-show="_config.enableMultiSelect && selection.length === 0"
       class="top-menu"
     >
       <slot name="topMenu" />
@@ -172,11 +172,10 @@ export default {
     data: function(val) {
       this.$nextTick(() => {
         if (val.length > 0 && this.selection.length > 0) {
-          val.forEach(row => {
+          val.forEach((row) => {
             if (
-              this.selection.findIndex(
-                item => this._getRowKey(item) === this._getRowKey(row)
-              ) >= 0
+              this.selection.findIndex((item) => this._getRowKey(item) === this._getRowKey(row)) >=
+              0
             ) {
               this.$refs['table'].toggleRowSelection(row, true)
             }
@@ -212,10 +211,8 @@ export default {
     },
     handleSelectAll(selection) {
       let index
-      this.data.forEach(row => {
-        index = this.selection.findIndex(
-          item => this._getRowKey(item) === this._getRowKey(row)
-        )
+      this.data.forEach((row) => {
+        index = this.selection.findIndex((item) => this._getRowKey(item) === this._getRowKey(row))
         // 全选时
         if (selection.length > 0 && index < 0) {
           this.selection.push(row)
