@@ -117,7 +117,7 @@
         "list": [
           {
             "path": "/date-picker",
-            "title": "日期选择器"
+            "title": "DatePicker 日期选择器"
           },
           {
             "path": "/search",
@@ -125,11 +125,15 @@
           },
           {
             "path": "/select",
-            "title": "select表单下拉选择器"
+            "title": "Select 下拉选择器"
           },
           {
             "path": "/input",
             "title": "Input 输入框"
+          },
+          {
+            "path": "/bread-crumb",
+            "title": "BreadCrumb 面包屑"
           },
           {
             "path": "/time-picker",
