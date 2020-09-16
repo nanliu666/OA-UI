@@ -150,6 +150,10 @@
           {
             "path": "/switch",
             "title": "Switch 开关"
+          },
+          {
+            "path": "/transfer",
+            "title": "Transfer 穿梭框"
           }
         ]
       }

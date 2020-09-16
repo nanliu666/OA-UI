@@ -50,6 +50,7 @@ import CheckboxButton from '../packages/checkbox-button/index.js'
 import Backtop from '../packages/backtop/index.js'
 import Anchor from '../packages/anchor/index.js'
 import Switch from '../packages/switch/index.js'
+import Transfer from '../packages/transfer/index.js'
 
 const components = [
   Alert,
@@ -98,6 +99,7 @@ const components = [
   Backtop,
   Anchor,
   Switch,
+  Transfer,
 ]
 
 const install = function(Vue) {
@@ -169,5 +171,6 @@ export default {
   CheckboxButton,
   Backtop,
   Anchor,
-  Switch
+  Switch,
+  Transfer
 }
