@@ -2,7 +2,6 @@
 
 import './styles/common.scss'
 
-import Alert from '../packages/alert/index.js'
 import Table from '../packages/table/index.js'
 import Dropdown from '../packages/dropdown/index.js'
 import DropdownMenu from '../packages/dropdown-menu/index.js'
@@ -36,7 +35,6 @@ import TreeSelect from '../packages/tree-select/index.js'
 import DatePicker from '../packages/date-picker/index.js'
 import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
-import Search from '../packages/search/index.js'
 import Input from '../packages/input/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
@@ -47,12 +45,11 @@ import RadioGroup from '../packages/radio-group/index.js'
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
-import Backtop from '../packages/backtop/index.js'
 import Anchor from '../packages/anchor/index.js'
+import AnchorLink from '../packages/anchor-link/index.js'
 import Switch from '../packages/switch/index.js'
 
 const components = [
-  Alert,
   Table,
   Dropdown,
   DropdownMenu,
@@ -84,7 +81,6 @@ const components = [
   DatePicker,
   Statistic,
   Select,
-  Search,
   Input,
   TimePicker,
   TimeSelect,
@@ -95,8 +91,8 @@ const components = [
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Backtop,
   Anchor,
+  AnchorLink,
   Switch,
 ]
 
@@ -123,7 +119,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Alert,
   Table,
   Dropdown,
   DropdownMenu,
@@ -156,7 +151,6 @@ export default {
   DatePicker,
   Statistic,
   Select,
-  Search,
   Input,
   TimePicker,
   TimeSelect,
@@ -167,7 +161,7 @@ export default {
   Checkbox,
   CheckboxGroup,
   CheckboxButton,
-  Backtop,
   Anchor,
+  AnchorLink,
   Switch
 }

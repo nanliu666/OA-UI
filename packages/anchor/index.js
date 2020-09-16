@@ -1,4 +1,5 @@
-import Anchor from './src/anchor.vue'
+import Anchor from './src/anchor'
+
 Anchor.install = function(Vue) {
   Vue.component(Anchor.mgName, Anchor)
 }

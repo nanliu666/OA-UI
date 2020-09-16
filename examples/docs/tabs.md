@@ -1,6 +1,7 @@
 ## Tabs 标签页
 
 分隔内容上有关联但属于不同类别的数据集合。（[element 示例](https://element.eleme.cn/#/zh-CN/component/tabs)）
++ 注释：完全支持element的tabs组件（实现原理：copy element-ui的tabs组件，修改源代码相关属性，显示为mage工程的tabs）
 
 ### 基础用法
 
@@ -26,6 +27,7 @@
     },
     methods: {
       handleClick(tab, event) {
+        console.log(tab, event);
       }
     }
   };
@@ -57,7 +59,7 @@
     },
     methods: {
       handleClick(tab, event) {
-        
+        console.log(tab, event);
       }
     }
   };

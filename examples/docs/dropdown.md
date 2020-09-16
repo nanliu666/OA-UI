@@ -231,54 +231,49 @@
 
 ### 不同尺寸
 
-Dropdown 默认为small
+Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的尺寸。
 
 :::demo 提供三种尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
+<mg-dropdown size="medium"  type="primary">
+  <span class="mg-dropdown-link">
+    大型尺寸<i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+  <mg-dropdown-menu slot="dropdown">
+    <mg-dropdown-item>黄金糕</mg-dropdown-item>
+    <mg-dropdown-item>狮子头</mg-dropdown-item>
+    <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
+    <mg-dropdown-item>双皮奶</mg-dropdown-item>
+    <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
+  </mg-dropdown-menu>
+</mg-dropdown>
 
- 
- <mg-dropdown size="medium" split-button type="primary">
-   中等尺寸
-   <mg-dropdown-menu slot="dropdown">
-     <mg-dropdown-item>黄金糕</mg-dropdown-item>
-     <mg-dropdown-item>狮子头</mg-dropdown-item>
-     <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
-     <mg-dropdown-item>双皮奶</mg-dropdown-item>
-     <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
-   </mg-dropdown-menu>
- </mg-dropdown>
-<mg-dropdown split-button type="primary">
-   默认尺寸
-   <mg-dropdown-menu slot="dropdown">
-     <mg-dropdown-item>黄金糕</mg-dropdown-item>
-     <mg-dropdown-item>狮子头</mg-dropdown-item>
-     <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
-     <mg-dropdown-item>双皮奶</mg-dropdown-item>
-     <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
-   </mg-dropdown-menu>
- </mg-dropdown>
- <mg-dropdown size="small" split-button type="primary">
-   小型尺寸
-   <mg-dropdown-menu slot="dropdown">
-     <mg-dropdown-item>黄金糕</mg-dropdown-item>
-     <mg-dropdown-item>狮子头</mg-dropdown-item>
-     <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
-     <mg-dropdown-item>双皮奶</mg-dropdown-item>
-     <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
-   </mg-dropdown-menu>
- </mg-dropdown>
- 
- <mg-dropdown size="mini" split-button type="primary">
-   超小尺寸
-   <mg-dropdown-menu slot="dropdown">
-     <mg-dropdown-item>黄金糕</mg-dropdown-item>
-     <mg-dropdown-item>狮子头</mg-dropdown-item>
-     <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
-     <mg-dropdown-item>双皮奶</mg-dropdown-item>
-     <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
-   </mg-dropdown-menu>
- </mg-dropdown>
+<mg-dropdown size="small" type="primary">
+  <span class="mg-dropdown-link">
+    中型尺寸<i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+  <mg-dropdown-menu slot="dropdown">
+    <mg-dropdown-item>黄金糕</mg-dropdown-item>
+    <mg-dropdown-item>狮子头</mg-dropdown-item>
+    <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
+    <mg-dropdown-item>双皮奶</mg-dropdown-item>
+    <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
+  </mg-dropdown-menu>
+</mg-dropdown>
+
+<mg-dropdown size="mini" type="primary">
+  <span class="mg-dropdown-link">
+    小型尺寸<i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+  <mg-dropdown-menu slot="dropdown">
+    <mg-dropdown-item>黄金糕</mg-dropdown-item>
+    <mg-dropdown-item>狮子头</mg-dropdown-item>
+    <mg-dropdown-item>螺蛳粉</mg-dropdown-item>
+    <mg-dropdown-item>双皮奶</mg-dropdown-item>
+    <mg-dropdown-item>蚵仔煎</mg-dropdown-item>
+  </mg-dropdown-menu>
+</mg-dropdown>
 ```
 :::
 

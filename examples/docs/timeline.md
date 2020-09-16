@@ -1,6 +1,8 @@
 ## Timeline 时间线
 
 可视化地呈现时间流信息。[element 示例](https://element.eleme.cn/#/zh-CN/component/timeline)
++ 注释：完全支持element的timeline组件（实现原理：直接修改timeline组件的name）
++ todo: demo内部存在多个未更新的组件名称，等后续组件名称更新后，再修改demo
 ### 基础用法
 
 Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，时间戳是其区分于其他控件的重要特征，使⽤时注意与 Steps 步骤条等区分。

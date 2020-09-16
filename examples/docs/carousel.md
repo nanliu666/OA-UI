@@ -1,6 +1,7 @@
 ## Carousel 走马灯
 
 在有限空间内，循环播放同一类型的图片、文字等内容。[element 示例](https://element.eleme.cn/#/zh-CN/component/carousel)
++ 注释：完全支持element的carousel组件（实现原理：直接修改组件的name）
 
 ### 基础用法
 

@@ -2,6 +2,7 @@
 ## DatePicker 日期选择器
 
 用于选择或输入日期 [element 示例](https://element.eleme.cn/#/zh-CN/component/date-picker)
++ 注释：完全支持element的date-picker组件（实现原理：直接修改组件的name）
 
 ###  选择日
 

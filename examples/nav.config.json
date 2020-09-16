@@ -79,7 +79,7 @@
           },
           {
             "path": "/anchor",
-            "title": "Anchor 锚点"
+            "title": "anchor 锚点"
           }
         ]
       },
@@ -89,10 +89,6 @@
           {
             "path": "/pagination",
             "title": "Pagination 分页"
-          },
-          {
-            "path": "/backtop",
-            "title": "Backtop 回到顶部"
           },
           {
             "path": "/dropdown",
@@ -120,16 +116,8 @@
             "title": "日期选择器"
           },
           {
-            "path": "/search",
-            "title": "Search 搜索"
-          },
-          {
             "path": "/select",
             "title": "select表单下拉选择器"
-          },
-          {
-            "path": "/input",
-            "title": "Input 输入框"
           },
           {
             "path": "/time-picker",
@@ -146,8 +134,8 @@
           {
             "path": "/checkbox",
             "title": "Checkbox 复选框"
-          },
-          {
+          }
+          ,{
             "path": "/switch",
             "title": "Switch 开关"
           }
