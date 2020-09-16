@@ -7,6 +7,7 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:vue/recommended'],
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-unused-vars': 'off',
     'no-prototype-builtins': 'off',
     semi: [1, 'never'],
     quotes: [1, 'single'],
