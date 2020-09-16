@@ -1,7 +1,6 @@
 ## Tag 标签
 
 用于标记和选择。[element 示例](https://element.eleme.cn/#/zh-CN/component/tag)
-+ 注释：完全支持element的Tag组件（实现原理：直接修改组件的name)
 ### 基础用法
 
 :::demo 由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。

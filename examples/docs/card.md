@@ -1,6 +1,5 @@
 ## Card 卡片
 将信息聚合在卡片容器中展示。[element 示例](https://element.eleme.cn/#/zh-CN/component/card)
-+ 注释：完全支持element的card组件（实现原理：直接修改组件的name）
 ### 基础用法
 
 

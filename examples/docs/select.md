@@ -1,7 +1,6 @@
 ## Select 选择器
 
 当选项过多时，使用下拉菜单展示并选择内容。[element 示例](https://element.eleme.cn/2.0/#/zh-CN/component/select)
-+ 注释：完全支持element的select组件（实现原理：直接修改组件的name）
 
 ### 基础用法
 
