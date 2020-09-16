@@ -6,21 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isPlay = !!process.env.PLAY_ENV
 
 const webpackConfig = {
   mode: process.env.NODE_ENV,
-  entry: isProd
-    ? {
-        docs: './examples/entry.js'
-      }
-    : isPlay
-    ? './examples/play.js'
-    : './examples/entry.js',
+  entry: isPlay ? './examples/play.js' : './examples/entry.js',
   output: {
     path: path.resolve(process.cwd(), './examples/dist/'),
     publicPath: process.env.CI_ENV || '',
@@ -139,12 +132,11 @@ if (isProd) {
     })
   )
   webpackConfig.optimization.minimizer.push(
-    new TerserPlugin(),
-    // new UglifyJsPlugin({
-    //   cache: true,
-    //   parallel: true,
-    //   sourceMap: false
-    // }),
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: false
+    }),
     new OptimizeCSSAssetsPlugin({})
   )
   // https://webpack.js.org/configuration/optimization/#optimizationsplitchunks
