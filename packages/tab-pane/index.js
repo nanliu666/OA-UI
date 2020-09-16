@@ -1,8 +1,8 @@
-import TabPane from '../tabs/src/tab-pane.vue'
-
-/* istanbul ignore next */
+import { TabPane } from 'element-ui'
+TabPane.mgName = 'MgTabPane'
 TabPane.install = function(Vue) {
   Vue.component(TabPane.mgName, TabPane)
 }
 
 export default TabPane
+
