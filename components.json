@@ -47,6 +47,7 @@
   "backtop": "./packages/backtop/index.js",
   "anchor": "./packages/anchor/index.js",
   "switch": "./packages/switch/index.js",
-  "transfer": "./packages/transfer/index.js"
+  "transfer": "./packages/transfer/index.js",
+  "progress": "./packages/progress/index.js"
 
 }

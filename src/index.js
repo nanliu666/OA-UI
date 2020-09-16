@@ -51,6 +51,7 @@ import Backtop from '../packages/backtop/index.js'
 import Anchor from '../packages/anchor/index.js'
 import Switch from '../packages/switch/index.js'
 import Transfer from '../packages/transfer/index.js'
+import Progress from '../packages/progress/index.js'
 
 const components = [
   Alert,
@@ -100,6 +101,7 @@ const components = [
   Anchor,
   Switch,
   Transfer,
+  Progress,
 ]
 
 const install = function(Vue) {
@@ -172,5 +174,6 @@ export default {
   Backtop,
   Anchor,
   Switch,
-  Transfer
+  Transfer,
+  Progress
 }
