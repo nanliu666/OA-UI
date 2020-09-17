@@ -158,6 +158,18 @@
           {
             "path": "/switch",
             "title": "Switch 开关"
+          },
+          {
+            "path": "/transfer",
+            "title": "Transfer 穿梭框"
+          },
+          {
+            "path": "/progress",
+            "title": "Progress 进度条"
+          },
+          {
+            "path": "/badge",
+            "title": "Badge 徽标签"
           }
         ]
       }

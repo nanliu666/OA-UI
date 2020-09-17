@@ -48,5 +48,9 @@
   "checkbox-button": "./packages/checkbox-button/index.js",
   "backtop": "./packages/backtop/index.js",
   "anchor": "./packages/anchor/index.js",
-  "switch": "./packages/switch/index.js"
+  "switch": "./packages/switch/index.js",
+  "transfer": "./packages/transfer/index.js",
+  "progress": "./packages/progress/index.js",
+  "badge": "./packages/badge/index.js"
+
 }
