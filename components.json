@@ -36,6 +36,7 @@
   "search": "./packages/search/index.js",
   "input": "./packages/input/input.js",
   "bread-crumb": "./packages/bread-crumb/index.js",
+  "cascader": "./packages/cascader/index.js",
   "time-picker": "./packages/time-picker/index.js",
   "time-select": "./packages/time-select/index.js",
   "button": "./packages/button/index.js",

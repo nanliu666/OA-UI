@@ -26,7 +26,6 @@
     },
     methods: {
       handleClick(tab, event) {
-        console.log(tab, event);
       }
     }
   };
@@ -58,7 +57,7 @@
     },
     methods: {
       handleClick(tab, event) {
-        console.log(tab, event);
+        
       }
     }
   };

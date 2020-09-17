@@ -79,7 +79,7 @@
           },
           {
             "path": "/anchor",
-            "title": "anchor 锚点"
+            "title": "Anchor 锚点"
           }
         ]
       },
@@ -134,6 +134,10 @@
           {
             "path": "/bread-crumb",
             "title": "BreadCrumb 面包屑"
+          },
+          {
+            "path": "/cascader",
+            "title": "Cascader 级联选择器"
           },
           {
             "path": "/time-picker",
