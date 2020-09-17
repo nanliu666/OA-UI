@@ -13,7 +13,7 @@
         <rect :width="strokeWidth" :height="strokeHeight" :style="trailPathStyle[index]" />
       </svg>
       <span class="mg-progress-span" v-if="showText" :style="'right:-'+textRight+'px'">
-        {{percentages*10}}%
+        {{percentages*20}}%
       </span>
     </div>
     <el-progress v-else v-bind="{...$props,...$attrs}"></el-progress>

@@ -170,20 +170,25 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 ```html
 
 <mg-progress type="procedure" status="exception" :strokeWidth="15" :text-right="30" :showText="true" :margin-right="10" :percentage="percentage" :color="colors"></mg-progress>
-
+<div>
+  <el-button-group>
+    <el-button icon="el-icon-minus" @click="decrease"></el-button>
+    <el-button icon="el-icon-plus" @click="increase"></el-button>
+  </el-button-group>
+</div>
 <script>
   export default {
     data() {
       return {
-        percentage: 15,
+        percentage: 21,
         colors: '#20a0ff' 
       };
     },
     methods: {
       increase() {
         this.percentage += 10;
-        if (this.percentage > 100) {
-          this.percentage = 100;
+        if (this.percentage > 50) {
+          this.percentage = 50;
         }
       },
       decrease() {

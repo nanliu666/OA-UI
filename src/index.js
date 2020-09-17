@@ -52,6 +52,7 @@ import Anchor from '../packages/anchor/index.js'
 import Switch from '../packages/switch/index.js'
 import Transfer from '../packages/transfer/index.js'
 import Progress from '../packages/progress/index.js'
+import Badge from '../packages/badge/index.js'
 
 const components = [
   Alert,
@@ -102,6 +103,7 @@ const components = [
   Switch,
   Transfer,
   Progress,
+  Badge,
 ]
 
 const install = function(Vue) {
@@ -175,5 +177,6 @@ export default {
   Anchor,
   Switch,
   Transfer,
-  Progress
+  Progress,
+  Badge
 }

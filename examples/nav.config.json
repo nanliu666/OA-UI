@@ -158,6 +158,10 @@
           {
             "path": "/progress",
             "title": "Progress 进度条"
+          },
+          {
+            "path": "/badge",
+            "title": "Badge 徽标签"
           }
         ]
       }
