@@ -38,6 +38,7 @@ import Statistic from '../packages/statistic/index.js'
 import Select from '../packages/select/index.js'
 import Search from '../packages/search/index.js'
 import Input from '../packages/input/index.js'
+import BreadCrumb from '../packages/bread-crumb/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import TimeSelect from '../packages/time-select/index.js'
 import Button from '../packages/button/index.js'
@@ -86,6 +87,7 @@ const components = [
   Select,
   Search,
   Input,
+  BreadCrumb,
   TimePicker,
   TimeSelect,
   Button,
@@ -158,6 +160,7 @@ export default {
   Select,
   Search,
   Input,
+  BreadCrumb,
   TimePicker,
   TimeSelect,
   Button,
