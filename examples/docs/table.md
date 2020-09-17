@@ -4,37 +4,16 @@
 
 :::demo 
 ```html
-<mg-table
+<a-table
   :columns="columns"
-  :data="tableData"
+  :data-source="tableData"
   :config="tableConfig"
   :page="page"
   :page-config="pageConfig"
   @current-page-change="handleCurrentPageChange"
 >
-  <template slot="multiSelectMenu" slot-scope="{ selection }">
-    <mg-button type="text" @click="handleSelectionClick(selection)">
-      删除
-    </mg-button>
-  </template>
-  <template slot="topMenu">
-    <el-input placeholder="请输入名称" style="width:200px; " />
-  </template>
-  <template slot="expand">
-    展开行
-  </template>
-  <template slot="name" slot-scope="{ row }">
-    <mg-tag>{{ row.name }}</mg-tag>
-  </template>
-  <template slot="name-header" slot-scope="{ column }">
-    <mg-tag>{{ column.label }}</mg-tag>
-  </template>
-  <template slot="handler">
-    <mg-button type="text">
-      编辑
-    </mg-button>
-  </template>
-</mg-table>
+ 
+</a-table>
 
 <script>
 const list = [
@@ -84,22 +63,22 @@ export default {
     return {
       columns: [
         // {
-        //   prop: 'expand',
+        //   dataIndex: 'expand',
         //   type: 'expand',
         //   slot: true
         // },
         {
-          label: '日期',
-          prop: 'date'
+          title: '日期',
+          dataIndex: 'date'
         },
         {
-          label: '姓名',
-          prop: 'name',
+          title: '姓名',
+          dataIndex: 'name',
           slot: true
         },
         {
-          label: '地址',
-          prop: 'address'
+          title: '地址',
+          dataIndex: 'address'
         }
       ],
       tableData: list[0],
@@ -158,7 +137,7 @@ export default {
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------: | :------------------------------------------: |
 | enableMultiSelect | 是否支持多选                                                                                                                                                                             |       Boolean        |                    false                     |
 | showHandler       | 是否显示操作列                                                                                                                                                                           |       Boolean        |                    false                     |
-| handlerColumn     | 操作列配置，showHandler 为 true 时有效                                                                                                                                                   |        Objext        | {label: '操作',minWidth: 100,fixed: 'right'} |
+| handlerColumn     | 操作列配置，showHandler 为 true 时有效                                                                                                                                                   |        Objext        | {title: '操作',minWidth: 100,fixed: 'right'} |
 | highlightSelect   | 是否高亮选中行，仅多选时有效                                                                                                                                                             |       Boolean        |                     true                     |
 | showIndexColumn   | 是否显示序号列                                                                                                                                                                           |       Boolean        |                    false                     |
 | rowKey            | 行数据的 Key，用来优化 Table 的渲染；在使用 多选 功能与显示树形数据时，该属性是必填的。类型为 String 时，支持多层访问：user.info.id，但不支持 user.info[0].id，此种情况请使用 Function。 | Function(row)/String |                      --                      |
@@ -174,13 +153,13 @@ export default {
 
 ### Slot
 
-| name                     | 说明                                                                 |           参数           |
-| :----------------------- | :------------------------------------------------------------------- | :----------------------: |
-| 列的 prop 值             | 自定义列的内容,当列的 slot 属性设置为 true 时有效                    | { row, column, \$index } |
-| 列的 prop 值 + '-header' | 自定义表头的内容,当列的 slot 属性设置为 true 时有效                  |   { column, \$index }    |
-| handler                  | 自定义操作栏的内容                                                   | { row, column, \$index } |
-| multiSelectMenu          | 自定义多选操作列内容，enableMultiSelect 为 true 时有效，勾选行时显示 |      { selection }       |
-| topMenu                  | 自定义顶部操作，勾选行时不显示                                       |            -             |
+| name                          | 说明                                                                 |           参数           |
+| :---------------------------- | :------------------------------------------------------------------- | :----------------------: |
+| 列的 dataIndex 值             | 自定义列的内容,当列的 slot 属性设置为 true 时有效                    | { row, column, \$index } |
+| 列的 dataIndex 值 + '-header' | 自定义表头的内容,当列的 slot 属性设置为 true 时有效                  |   { column, \$index }    |
+| handler                       | 自定义操作栏的内容                                                   | { row, column, \$index } |
+| multiSelectMenu               | 自定义多选操作列内容，enableMultiSelect 为 true 时有效，勾选行时显示 |      { selection }       |
+| topMenu                       | 自定义顶部操作，勾选行时不显示                                       |            -             |
 
 ### Events
 

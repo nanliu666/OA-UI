@@ -1,175 +1,26 @@
 [
   {
+    "name": "开发指南",
+    "children": [
+      {
+        "path": "/installation",
+        "title": "安装"
+      }
+    ]
+  },
+  {
     "name": "组件",
     "groups": [
       {
         "groupName": "数据展示",
         "list": [
           {
-            "path": "/alert",
-            "title": "Alert 信息提示"
-          },
-          {
-            "path": "/avatar",
-            "title": "Avatar 头像"
-          },
-          {
-            "path": "/drawer",
-            "title": "Drawer 抽屉"
-          },
-          {
-            "path": "/message",
-            "title": "Message 消息"
-          },
-          {
-            "path": "/timeline",
-            "title": "Timeline 时间轴"
-          },
-          {
-            "path": "/card",
-            "title": "Card 卡片"
-          },
-          {
-            "path": "/lazy-select",
-            "title": "LazySelect 分页下拉选择器"
-          },
-          {
-            "path": "/loading",
-            "title": "Loading 加载中"
-          },
-          {
-            "path": "/tooltip",
-            "title": "Tooltip 文字提示"
-          },
-          {
-            "path": "/popover",
-            "title": "Popover 弹出框"
-          },
-          {
-            "path": "/popconfirm",
-            "title": "Popconfirm 气泡确认框"
-          },
-          {
-            "path": "/table",
-            "title": "Table 表格"
-          },
-          {
-            "path": "/tree-select",
-            "title": "TreeSelect 树形选择器"
-          },
-          {
-            "path": "/tree",
-            "title": "Tree 树形控件"
-          },
-          {
-            "path": "/tag",
-            "title": "Tag 标签"
-          },
-          {
-            "path": "/statistic",
-            "title": "Statistic 数据展示"
-          },
-          {
-            "path": "/carousel",
-            "title": "Carousel 走马灯"
-          },
-          {
-            "path": "/list",
-            "title": "List 列表"
-          },
-          {
-            "path": "/anchor",
-            "title": "Anchor 锚点"
-          }
-        ]
-      },
-      {
-        "groupName": "导航",
-        "list": [
-          {
-            "path": "/pagination",
-            "title": "Pagination 分页"
-          },
-          {
-            "path": "/backtop",
-            "title": "Backtop 回到顶部"
-          },
-          {
-            "path": "/dropdown",
-            "title": "Dropdown 下拉菜单"
-          },
-          {
-            "path": "/tabs",
-            "title": "Tabs 分页"
-          },
-          {
-            "path": "/menu",
-            "title": "NavMenu 导航菜单"
-          },
-          {
-            "path": "/stpes",
-            "title": "Steps 步骤条"
-          }
-        ]
-      },
-      {
-        "groupName": "数据录入",
-        "list": [
-          {
-            "path": "/date-picker",
-            "title": "DatePicker 日期选择器"
-          },
-          {
-            "path": "/search",
-            "title": "Search 搜索"
-          },
-          {
-            "path": "/select",
-            "title": "Select 下拉选择器"
-          },
-          {
             "path": "/input",
             "title": "Input 输入框"
           },
           {
-            "path": "/bread-crumb",
-            "title": "BreadCrumb 面包屑"
-          },
-          {
-            "path": "/cascader",
-            "title": "Cascader 级联选择器"
-          },
-          {
-            "path": "/time-picker",
-            "title": "TimePicker 时间选择器"
-          },
-          {
-            "path": "/button",
-            "title": "Button 按钮"
-          },
-          {
-            "path": "/radio",
-            "title": "Radio 单选框"
-          },
-          {
-            "path": "/checkbox",
-            "title": "Checkbox 复选框"
-          },
-          {
-            "path": "/switch",
-            "title": "Switch 开关"
-          },
-          {
-            "path": "/transfer",
-            "title": "Transfer 穿梭框"
-          },
-          {
-            "path": "/progress",
-            "title": "Progress 进度条"
-          },
-          {
-            "path": "/badge",
-            "title": "Badge 徽标签"
+            "path": "/table",
+            "title": "Table 表格"
           }
         ]
       }

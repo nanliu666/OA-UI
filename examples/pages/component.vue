@@ -1,11 +1,8 @@
-<style lang="scss">
+<style lang="less">
 .page-component__scroll {
   height: calc(100% - 80px);
   margin-top: 80px;
-
-  > .el-scrollbar__wrap {
-    overflow-x: auto;
-  }
+  overflow: auto;
 }
 
 .page-component {
@@ -51,57 +48,53 @@
     box-sizing: border-box;
   }
 
+  .content > h3 {
+    margin: 55px 0 20px;
+  }
+  .content > table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 45px;
+    line-height: 1.5em;
+
+    strong {
+      font-weight: normal;
+    }
+
+    td,
+    th {
+      border-bottom: 1px solid #dcdfe6;
+      padding: 15px;
+      max-width: 250px;
+    }
+
+    th {
+      text-align: left;
+      white-space: nowrap;
+      color: #909399;
+      font-weight: normal;
+    }
+
+    td {
+      color: #606266;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 10px;
+    }
+  }
+
   .content {
     padding-top: 50px;
-
-    > {
-      h3 {
-        margin: 55px 0 20px;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        background-color: #fff;
-        font-size: 14px;
-        margin-bottom: 45px;
-        line-height: 1.5em;
-
-        strong {
-          font-weight: normal;
-        }
-
-        td,
-        th {
-          border-bottom: 1px solid #dcdfe6;
-          padding: 15px;
-          max-width: 250px;
-        }
-
-        th {
-          text-align: left;
-          white-space: nowrap;
-          color: #909399;
-          font-weight: normal;
-        }
-
-        td {
-          color: #606266;
-        }
-
-        th:first-child,
-        td:first-child {
-          padding-left: 10px;
-        }
-      }
-
-      ul:not(.timeline) {
-        margin: 10px 0;
-        padding: 0 0 0 20px;
-        font-size: 14px;
-        color: #5e6d82;
-        line-height: 2em;
-      }
+    > ul:not(.timeline) {
+      margin: 10px 0;
+      padding: 0 0 0 20px;
+      font-size: 14px;
+      color: #5e6d82;
+      line-height: 2em;
     }
   }
 }
@@ -132,29 +125,29 @@
 }
 </style>
 <template>
-  <el-scrollbar
+  <div
     ref="componentScrollBar"
     class="page-component__scroll"
   >
     <div class="page-container page-component">
-      <el-scrollbar class="page-component__nav">
+      <div class="page-component__nav">
         <side-nav
           :data="navsData"
           :base="`/component`"
         />
-      </el-scrollbar>
+      </div>
       <div class="page-component__content">
         <router-view class="content" />
         <!-- <footer-nav /> -->
       </div>
-      <el-backtop
+      <a-back-top
         v-if="showBackToTop"
-        target=".page-component__scroll .el-scrollbar__wrap"
+        :target="backTopTarget"
         :right="100"
         :bottom="150"
       />
     </div>
-  </el-scrollbar>
+  </div>
 </template>
 <script>
 import bus from '../bus'
@@ -181,26 +174,21 @@ export default {
     '$route.path'() {
       // 触发伪滚动条更新
       this.componentScrollBox.scrollTop = 0
-      this.$nextTick(() => {
-        this.componentScrollBar.update()
-      })
+      // this.$nextTick(() => {
+      //   this.componentScrollBar.update()
+      // })
     }
   },
   created() {
-    bus.$on('navFade', val => {
+    bus.$on('navFade', (val) => {
       this.navFaded = val
     })
   },
   mounted() {
     this.componentScrollBar = this.$refs.componentScrollBar
-    this.componentScrollBox = this.componentScrollBar.$el.querySelector(
-      '.el-scrollbar__wrap'
-    )
+    this.componentScrollBox = this.componentScrollBar
     this.throttledScrollHandler = throttle(300, this.handleScroll)
-    this.componentScrollBox.addEventListener(
-      'scroll',
-      this.throttledScrollHandler
-    )
+    this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler)
     this.renderAnchorHref()
     this.goAnchor()
     document.body.classList.add('is-component')
@@ -209,21 +197,21 @@ export default {
     document.body.classList.remove('is-component')
   },
   beforeDestroy() {
-    this.componentScrollBox.removeEventListener(
-      'scroll',
-      this.throttledScrollHandler
-    )
+    this.componentScrollBox.removeEventListener('scroll', this.throttledScrollHandler)
   },
   methods: {
+    backTopTarget() {
+      return document.querySelector('.page-component__scroll')
+    },
     renderAnchorHref() {
       if (/changelog/g.test(location.href)) return
       const anchors = document.querySelectorAll('h2 a,h3 a,h4 a,h5 a')
       const basePath = location.href
         .split('#')
         .splice(0, 2)
-        .join('#');
+        .join('#')
 
-      [].slice.call(anchors).forEach(a => {
+      ;[].slice.call(anchors).forEach((a) => {
         const href = a.getAttribute('href')
         a.href = basePath + href
       })
