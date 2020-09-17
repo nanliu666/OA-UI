@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import App from './play/index.vue'
-import MageUI from 'main'
-import Element from 'element-ui'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/lib/style'
 
-Vue.use(Element)
-Vue.use(MageUI)
+Vue.use(Antd)
 new Vue({
   // eslint-disable-line
   render: (h) => h(App)

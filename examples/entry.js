@@ -1,19 +1,17 @@
-import Element from 'element-ui'
-import hljs from 'highlight.js'
-import MageUI from 'main'
 import Vue from 'vue'
+import Antd from 'ant-design-vue'
+import hljs from 'highlight.js'
 import VueRouter from 'vue-router'
 import entry from './app'
-import './assets/styles/common.scss'
+import './assets/styles/common.less'
 import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
-import './demo-styles/index.scss'
 import routes from './route.config'
-Vue.use(Element)
+import 'ant-design-vue/lib/style'
 
+Vue.use(Antd)
 Vue.use(VueRouter)
-Vue.use(MageUI)
 Vue.component('demo-block', demoBlock)
 Vue.component('main-header', MainHeader)
 Vue.component('side-nav', SideNav)

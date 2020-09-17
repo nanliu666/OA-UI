@@ -1,9 +1,18 @@
-const path = require("path")
+const path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
-  chainWebpack: config => {
-    config.resolve.alias.set("main", resolve("src"))
+  chainWebpack: (config) => {
+    config.resolve.alias.set('@', resolve('src'))
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true // 加载LESS 需要把JS设置一下
+        }
+      }
+    }
   }
 }

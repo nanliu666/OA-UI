@@ -1,32 +1,32 @@
 import navConfig from './nav.config'
 
-const load = name => {
-  return r => require.ensure([], () => r(require(`./pages/${name}.vue`)))
+const load = (name) => {
+  return (r) => require.ensure([], () => r(require(`./pages/${name}.vue`)))
 }
 
-const loadDocs = name => {
-  return r => require.ensure([], () => r(require(`./docs${name}.md`)))
+const loadDocs = (name) => {
+  return (r) => require.ensure([], () => r(require(`./docs${name}.md`)))
 }
 
-const registerRoute = navConfig => {
+const registerRoute = (navConfig) => {
   let route = []
   route.push({
     path: '/component',
-    redirect: '/component/table',
+    redirect: '/component/installation',
     component: load('component'),
     children: []
   })
 
-  navConfig.forEach(nav => {
+  navConfig.forEach((nav) => {
     if (nav.href) return
     if (nav.groups) {
-      nav.groups.forEach(group => {
-        group.list.forEach(nav => {
+      nav.groups.forEach((group) => {
+        group.list.forEach((nav) => {
           addRoute(nav)
         })
       })
     } else if (nav.children) {
-      nav.children.forEach(nav => {
+      nav.children.forEach((nav) => {
         addRoute(nav)
       })
     } else {

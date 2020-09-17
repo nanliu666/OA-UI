@@ -70,8 +70,19 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.(scss|css)$/,
-        use: [isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'sass-loader']
+        test: /\.(less)/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.md$/,

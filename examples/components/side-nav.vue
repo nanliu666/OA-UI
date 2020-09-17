@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="less">
 .side-nav {
   width: 100%;
   box-sizing: border-box;
@@ -131,16 +131,12 @@
         <a
           v-if="!item.path && !item.href"
           @click="expandMenu"
-        >{{
-          item.name
-        }}</a>
+        >{{ item.name }}</a>
         <a
           v-if="item.href"
           :href="item.href"
           target="_blank"
-        >{{
-          item.name
-        }}</a>
+        >{{ item.name }}</a>
         <router-link
           v-if="item.path"
           active-class="active"
@@ -270,23 +266,19 @@ export default {
       })
     },
     hideAllMenu() {
-      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), ul => {
+      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), (ul) => {
         ul.style.height = '0'
       })
     },
     expandAllMenu() {
-      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), ul => {
+      [].forEach.call(this.$el.querySelectorAll('.pure-menu-list'), (ul) => {
         ul.style.height = 'auto'
       })
     },
     expandMenu(event) {
       if (!this.isSmallScreen) return
       let target = event.currentTarget
-      if (
-        !target.nextElementSibling ||
-        target.nextElementSibling.tagName !== 'UL'
-      )
-        return
+      if (!target.nextElementSibling || target.nextElementSibling.tagName !== 'UL') return
       this.hideAllMenu()
       event.currentTarget.nextElementSibling.style.height = 'auto'
     }
