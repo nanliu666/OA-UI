@@ -2,10 +2,10 @@
 
 import './styles/common.less'
 
-
+import Table from '../packages/table/index.js'
 
 const components = [
-  
+    Table
 ]
 const install = function(Vue) {
   components.forEach(component => {

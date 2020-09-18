@@ -61,6 +61,10 @@
         "groupName": "DataDisplay-数据展示",
         "list": [
           {
+            "path": "/table",
+            "title": "Table 表格"
+          },
+          {
             "path": "/badge",
             "title": "Badge 徽标数"
           }
