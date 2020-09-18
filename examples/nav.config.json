@@ -12,15 +12,57 @@
     "name": "组件",
     "groups": [
       {
-        "groupName": "数据展示",
+        "groupName": "Navigation-导航",
         "list": [
           {
-            "path": "/input",
-            "title": "Input 输入框"
+            "path": "/menu",
+            "title": "Menu 导航菜单"
           },
           {
-            "path": "/table",
-            "title": "Table 表格"
+            "path": "/breadcrumb",
+            "title": "Breadcrumb 面包屑"
+          },
+          {
+            "path": "/dropdown",
+            "title": "Dropdown 下拉菜单"
+          },
+          {
+            "path": "/pagination",
+            "title": "Pagination 分页"
+          },
+          {
+            "path": "/steps",
+            "title": "Steps 步骤条"
+          }
+        ]
+      },
+      {
+        "groupName": "DataEntry-数据录入",
+        "list": [
+          {
+            "path": "/cascader",
+            "title": "Cascader 级联选择框"
+          },
+          {
+            "path": "/checkbox",
+            "title": "Checkbox 多选框"
+          },
+          {
+            "path": "/datePicker",
+            "title": "DatePicker 日期选择框"
+          },
+          {
+            "path": "/inputNumber",
+            "title": "InputNumber 数字输入框"
+          }
+        ]
+      },
+      {
+        "groupName": "DataDisplay-数据展示",
+        "list": [
+          {
+            "path": "/badge",
+            "title": "Badge 徽标数"
           }
         ]
       }

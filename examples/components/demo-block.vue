@@ -174,6 +174,9 @@
     }
   }
 }
+.demo-block + .demo-block {
+  margin-top: 20px;
+}
 </style>
 
 <script type="text/babel">

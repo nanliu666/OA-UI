@@ -8,10 +8,14 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-
+const lessToJS = require('less-vars-to-js')
+const fs = require('fs')
 const isProd = process.env.NODE_ENV === 'production'
 const isPlay = !!process.env.PLAY_ENV
 
+const themeVariables = lessToJS(
+  fs.readFileSync(path.resolve(__dirname, '../src/styles/antd-vars.less'), 'utf8')
+)
 const webpackConfig = {
   mode: process.env.NODE_ENV,
   entry: isProd
@@ -31,7 +35,7 @@ const webpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     modules: ['node_modules'],
     alias: {
-      main: path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, '../src'),
       packages: path.resolve(__dirname, '../packages'),
       examples: path.resolve(__dirname, '../examples')
     }
@@ -78,7 +82,8 @@ const webpackConfig = {
             loader: 'less-loader',
             options: {
               lessOptions: {
-                javascriptEnabled: true
+                javascriptEnabled: true,
+                modifyVars: themeVariables
               }
             }
           }
