@@ -1,6 +1,6 @@
 ## Menu 导航菜单
 
-为页面和功能提供导航的菜单列表。详细文档见[Ant-Design-Vue Menu](https://antdv.com/components/menu-cn/)
+为页面和功能提供导航的菜单列表。
 
 ### 何时使用
 

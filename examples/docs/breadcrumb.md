@@ -1,6 +1,6 @@
 ## Breadcrumb面包屑 
 
-显示当前页面在系统层级结构中的位置，并能向上返回。详细文档见[Ant-Design-Vue Breadcrumb](https://antdv.com/components/breadcrumb-cn/)
+显示当前页面在系统层级结构中的位置，并能向上返回。
 
 ### 何时使用
 
