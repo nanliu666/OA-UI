@@ -100,6 +100,70 @@
           {
             "path": "/badge",
             "title": "Badge 徽标数"
+          },
+          {
+            "path": "/avatar",
+            "title": "Avatar 头像"
+          },
+          {
+            "path": "/calendar",
+            "title": "Calendar 日历"
+          },
+          {
+            "path": "/carousel",
+            "title": "Carousel 走马灯"
+          },
+          {
+            "path": "/card",
+            "title": "Card 卡片"
+          },
+          {
+            "path": "/collapse",
+            "title": "Collapse 折叠面板"
+          },
+          {
+            "path": "/comment",
+            "title": "Comment 评论"
+          },
+          {
+            "path": "/descriptions",
+            "title": "Descriptions 描述列表"
+          },
+          {
+            "path": "/empty",
+            "title": "Empty 空状态"
+          },
+          {
+            "path": "/list",
+            "title": "List 列表"
+          },
+          {
+            "path": "/popover",
+            "title": "Popover 气泡卡片"
+          },
+          {
+            "path": "/statistic",
+            "title": "Statistic 统计数值"
+          },
+          {
+            "path": "/tabs",
+            "title": "Tabs 标签页"
+          },
+          {
+            "path": "/tag",
+            "title": "Tag 标签"
+          },
+          {
+            "path": "/timeline",
+            "title": "Timeline 时间轴"
+          },
+          {
+            "path": "/tooltip",
+            "title": "Tooltip 文字提示"
+          },
+          {
+            "path": "/tree",
+            "title": "Tree 树形控件"
           }
         ]
       }
