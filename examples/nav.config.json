@@ -166,6 +166,51 @@
             "title": "Tree 树形控件"
           }
         ]
+      },
+      {
+        "groupName": "Feedback-反馈",
+        "list": [
+          {
+            "path": "/alert",
+            "title": "Alert 警告提示"
+          },
+          {
+            "path": "/drawer",
+            "title": "Drawer 抽屉"
+          },
+          {
+            "path": "/message",
+            "title": "Message 全局提示"
+          },
+          {
+            "path": "/modal",
+            "title": "Modal 对话框"
+          },
+          {
+            "path": "/notification",
+            "title": "Notification 通知提醒框"
+          },
+          {
+            "path": "/popconfirm",
+            "title": "Popconfirm 气泡确认框"
+          },
+          {
+            "path": "/progress",
+            "title": "Progress 进度条"
+          },
+          {
+            "path": "/result",
+            "title": "Result 结果"
+          },
+          {
+            "path": "/skeleton",
+            "title": "Skeleton 骨架屏"
+          },
+          {
+            "path": "/spin",
+            "title": "Spin 加载中"
+          }
+        ]
       }
     ]
   }
