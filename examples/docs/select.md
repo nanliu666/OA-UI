@@ -50,7 +50,7 @@ export default {
 ```
 :::
 
-# 三种尺寸
+### 三种尺寸
 :::demo
 ```html
 <template>

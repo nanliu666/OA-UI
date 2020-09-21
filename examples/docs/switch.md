@@ -30,7 +30,7 @@ export default {
 ```
 :::
 
-# 带图标
+### 带图标
 :::demo
 ```html
 <template>
