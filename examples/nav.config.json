@@ -12,6 +12,15 @@
     "name": "组件",
     "groups": [
       {
+        "groupName": "General",
+        "list": [
+          {
+            "path": "/button",
+            "title": "button 按钮"
+          }
+        ]
+      },
+      {
         "groupName": "Navigation-导航",
         "list": [
           {

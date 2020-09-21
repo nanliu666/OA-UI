@@ -10,8 +10,8 @@ import demoBlock from './components/demo-block'
 import MainHeader from './components/header'
 import SideNav from './components/side-nav'
 import routes from './route.config'
-import 'ant-design-vue/lib/style'
 
+import '../src/styles/common.less'
 Vue.use(Antd)
 Vue.use(VueRouter)
 Vue.use(MageUI)

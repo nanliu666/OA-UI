@@ -1,5 +1,5 @@
 ## Cascader级联选择
-级联选择框。详细文档见[Ant-Design-Vue Cascader](https://antdv.com/components/cascader-cn/)
+级联选择框。
   
 ### 何时使用
 * 需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。

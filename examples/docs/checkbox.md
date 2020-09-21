@@ -1,5 +1,5 @@
 ## Checkbox多选框
-多选框。详细文档见[Ant-Design-Vue Checkbox](https://antdv.com/components/checkbox-cn/)
+多选框。
   
 ### 何时使用
 * 在一组可选项中进行多项选择时；

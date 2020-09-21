@@ -1,6 +1,6 @@
 ## 下拉菜单
 
-向下弹出的列表。详细文档见[Ant-Design-Vue Dropdown](https://antdv.com/components/dropdown-cn/)
+向下弹出的列表。
 
 
 ### 何时使用

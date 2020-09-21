@@ -1,5 +1,5 @@
 ## Pagination 分页
-采用分页的形式分隔长列表，每次只加载一个页面。详细文档见[Ant-Design-Vue Pagination](https://antdv.com/components/pagination-cn/)
+采用分页的形式分隔长列表，每次只加载一个页面。
 
 ### 何时使用
 * 当加载/渲染所有数据将花费很多时间时；
