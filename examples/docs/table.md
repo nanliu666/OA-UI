@@ -1,5 +1,6 @@
 ## Table表格
-展示行列数据。详细文档见[Ant-Design-Vue Table](https://antdv.com/components/table-cn/)
+展示行列数据。
+<!-- 详细文档见[Ant-Design-Vue Table](https://antdv.com/components/table-cn/) -->
   
 ### 何时使用
 * 当有大量结构化的数据需要展现时；

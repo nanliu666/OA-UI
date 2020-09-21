@@ -69,6 +69,10 @@
             "title": "Radio 单选框"
           },
           {
+            "path": "/search",
+            "title": "Search 搜索"
+          },
+          {
             "path": "/select",
             "title": "Select 选择器"
           },
