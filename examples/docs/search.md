@@ -51,14 +51,21 @@ export default {
 ```
 :::
 
+:::demo 消除历史记录
+```html
+<mg-search history-clearable/>
+```
+:::
+
 ### 属性
-| 参数         | 说明                                                        | 类型            | 可选值 | 默认值   |
-| ------------ | ----------------------------------------------------------- | --------------- | ------ | -------- |
-| allowClear   | 是否可以清除(设置宽度,否则出现清除按钮的时候宽度会发生改变) | boolean         | —      | `false`  |
-| dataSource   | 数据源列表                                                  | Array\|object   | —      | `[]`     |
-| defaultValue | 初始值                                                      | string          | —      | `""`     |
-| history      | 是否记录历史记录                                            | boolean\|object | —      | `true`   |
-| width        | 输入框的宽度                                                | string          | —      | `"auto"` |
+| 参数             | 说明                                                        | 类型            | 可选值 | 默认值   |
+| ---------------- | ----------------------------------------------------------- | --------------- | ------ | -------- |
+| allowClear       | 是否可以清除(设置宽度,否则出现清除按钮的时候宽度会发生改变) | boolean         | —      | `false`  |
+| dataSource       | 数据源列表                                                  | Array\|object   | —      | `[]`     |
+| defaultValue     | 初始值                                                      | string          | —      | `""`     |
+| history          | 是否记录历史记录                                            | boolean\|object | —      | `true`   |
+| historyClearable | 是否可以消除历史记录                                        | boolean         | —      | `false`  |
+| width            | 输入框的宽度                                                | string          | —      | `"auto"` |
 
 ### 事件 
 | name   | 说明                    | 参数              |

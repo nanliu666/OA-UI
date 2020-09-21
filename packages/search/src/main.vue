@@ -9,7 +9,7 @@
   >
     <template slot="dataSource">
       <a-select-opt-group
-        v-for="(group, index) of _dataSource"
+        v-for="(group, index) of dataSource"
         :key="index"
       >
         <span
@@ -25,6 +25,33 @@
             class="option__label"
             v-html="labelFormatter(opt)"
           />
+        </a-select-option>
+      </a-select-opt-group>
+      <a-select-opt-group>
+        <span
+          slot="label"
+        >历史记录
+          <span
+            v-if="historyClearable"
+            style="float: right; cursor: pointer"
+            @click.stop="() => (historys = [])"
+          >清空</span></span>
+        <a-select-option
+          v-for="opt of historys"
+          :key="opt"
+          :value="opt"
+        >
+          <span
+            class="option__label"
+            v-html="labelFormatter(opt)"
+          />
+          <span
+            v-if="historyClearable"
+            class="option__history--remove"
+          ><a-icon
+            type="close"
+            @click.stop="() => removeHistory(opt)"
+          /></span>
         </a-select-option>
       </a-select-opt-group>
     </template>
@@ -58,6 +85,9 @@ export default {
       type: [Boolean, Object],
       default: true
     },
+
+    // 是否可以清除历史记录
+    historyClearable: Boolean,
 
     dataSource: {
       type: [Array, Object],
@@ -152,6 +182,10 @@ export default {
       if (!historys.includes(input)) {
         this.historys.push(input)
       }
+    },
+
+    removeHistory(history) {
+      this.historys = this.historys.filter((item) => item !== history)
     }
   }
 }
@@ -180,5 +214,9 @@ export default {
     color: @primary-color;
     font-weight: bold;
   }
+}
+.option__history--remove {
+  float: right;
+  color: @disabled-color;
 }
 </style>
