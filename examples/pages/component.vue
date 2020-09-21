@@ -36,7 +36,10 @@
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 0;
-    overflow: auto;
+    overflow-y: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
     & > ul {
       padding-bottom: 50px;
     }
