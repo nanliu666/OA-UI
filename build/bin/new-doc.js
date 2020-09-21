@@ -17,11 +17,11 @@ const componentname = process.argv[2]
 const chineseName = process.argv[3] || componentname
 const ComponentName = uppercamelcase(componentname)
 
-// 详细文档见[Ant-Design-Vue ${ComponentName}](https://antdv.com/components/${kebabCase(
-//   componentname
-// )}-cn/)
 const mdContent = `## ${ComponentName}${chineseName}
   
+<!-- 详细文档见[Ant-Design-Vue ${ComponentName}](https://antdv.com/components/${kebabCase(
+  componentname
+)}-cn/) -->
 ### 何时使用
 
 

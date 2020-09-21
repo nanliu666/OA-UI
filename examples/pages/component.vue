@@ -36,7 +36,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 0;
-
+    overflow: auto;
     & > ul {
       padding-bottom: 50px;
     }

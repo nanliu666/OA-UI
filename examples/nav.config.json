@@ -16,7 +16,7 @@
         "list": [
           {
             "path": "/button",
-            "title": "button 按钮"
+            "title": "Button 按钮"
           }
         ]
       },
@@ -63,6 +63,34 @@
           {
             "path": "/inputNumber",
             "title": "InputNumber 数字输入框"
+          },
+          {
+            "path": "/radio",
+            "title": "Radio 单选框"
+          },
+          {
+            "path": "/select",
+            "title": "Select 选择器"
+          },
+          {
+            "path": "/switch",
+            "title": "switch 开关"
+          },
+          {
+            "path": "/timePicker",
+            "title": "TimePicker 时间选择框"
+          },
+          {
+            "path": "/transfer",
+            "title": "Transfer 穿梭框"
+          },
+          {
+            "path": "/treeSelect",
+            "title": "TreeSelect  树型选择控件"
+          },
+          {
+            "path": "/upload",
+            "title": "Upload 上传"
           }
         ]
       },
