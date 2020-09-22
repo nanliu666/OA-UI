@@ -100,6 +100,115 @@
           {
             "path": "/badge",
             "title": "Badge 徽标数"
+          },
+          {
+            "path": "/avatar",
+            "title": "Avatar 头像"
+          },
+          {
+            "path": "/calendar",
+            "title": "Calendar 日历"
+          },
+          {
+            "path": "/carousel",
+            "title": "Carousel 走马灯"
+          },
+          {
+            "path": "/card",
+            "title": "Card 卡片"
+          },
+          {
+            "path": "/collapse",
+            "title": "Collapse 折叠面板"
+          },
+          {
+            "path": "/comment",
+            "title": "Comment 评论"
+          },
+          {
+            "path": "/descriptions",
+            "title": "Descriptions 描述列表"
+          },
+          {
+            "path": "/empty",
+            "title": "Empty 空状态"
+          },
+          {
+            "path": "/list",
+            "title": "List 列表"
+          },
+          {
+            "path": "/popover",
+            "title": "Popover 气泡卡片"
+          },
+          {
+            "path": "/statistic",
+            "title": "Statistic 统计数值"
+          },
+          {
+            "path": "/tabs",
+            "title": "Tabs 标签页"
+          },
+          {
+            "path": "/tag",
+            "title": "Tag 标签"
+          },
+          {
+            "path": "/timeline",
+            "title": "Timeline 时间轴"
+          },
+          {
+            "path": "/tooltip",
+            "title": "Tooltip 文字提示"
+          },
+          {
+            "path": "/tree",
+            "title": "Tree 树形控件"
+          }
+        ]
+      },
+      {
+        "groupName": "Feedback-反馈",
+        "list": [
+          {
+            "path": "/alert",
+            "title": "Alert 警告提示"
+          },
+          {
+            "path": "/drawer",
+            "title": "Drawer 抽屉"
+          },
+          {
+            "path": "/message",
+            "title": "Message 全局提示"
+          },
+          {
+            "path": "/modal",
+            "title": "Modal 对话框"
+          },
+          {
+            "path": "/notification",
+            "title": "Notification 通知提醒框"
+          },
+          {
+            "path": "/popconfirm",
+            "title": "Popconfirm 气泡确认框"
+          },
+          {
+            "path": "/progress",
+            "title": "Progress 进度条"
+          },
+          {
+            "path": "/result",
+            "title": "Result 结果"
+          },
+          {
+            "path": "/skeleton",
+            "title": "Skeleton 骨架屏"
+          },
+          {
+            "path": "/spin",
+            "title": "Spin 加载中"
           }
         ]
       }
