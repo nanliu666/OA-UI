@@ -1,1 +1,4 @@
-{}
+{
+  "search": "./packages/search/index.js",
+  "table": "./packages/table/index.js"
+}

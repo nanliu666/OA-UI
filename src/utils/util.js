@@ -190,3 +190,43 @@ export function throttle(fn, wait, options = {}) {
   }
   return throttled
 }
+
+/**
+ * 对字符串进行转义
+ * @param {string} string 原字符串
+ * @returns {string} 转义后的字符串
+ */
+export function escape(string) {
+  const htmlEscapes = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    '\'': '&#39;'
+  }
+  const reUnescapedHtml = /[&<>"']/g
+  const reHasUnescapedHtml = new RegExp(reUnescapedHtml.source)
+  return string && reHasUnescapedHtml.test(string)
+    ? string.replace(reUnescapedHtml, (chr) => htmlEscapes[chr])
+    : string || ''
+}
+
+/**
+ * 对字符串进行反转义
+ * @param {string} string 要反转义的字符串
+ * @returns {string} 返回反转义的字符串
+ */
+export function unescape(string) {
+  const htmlUnescapes = {
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': '\''
+  }
+  const reEscapedHtml = /&(?:amp|lt|gt|quot|#(0+)?39);/g
+  const reHasEscapedHtml = RegExp(reEscapedHtml.source)
+  return string && reHasEscapedHtml.test(string)
+    ? string.replace(reEscapedHtml, (entity) => htmlUnescapes[entity] || '\'')
+    : string || ''
+}

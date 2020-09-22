@@ -4,10 +4,12 @@
 import Antd from 'ant-design-vue'
 import './styles/common.less'
 
-
+import Search from '../packages/search/index.js'
+import Table from '../packages/table/index.js'
 
 const components = [
-  
+    Search,
+  Table
 ]
 const install = function(Vue) {
   Vue.use(Antd)

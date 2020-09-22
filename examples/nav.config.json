@@ -69,6 +69,10 @@
             "title": "Radio 单选框"
           },
           {
+            "path": "/search",
+            "title": "Search 搜索"
+          },
+          {
             "path": "/select",
             "title": "Select 选择器"
           },
@@ -97,6 +101,10 @@
       {
         "groupName": "DataDisplay-数据展示",
         "list": [
+          {
+            "path": "/table",
+            "title": "Table 表格"
+          },
           {
             "path": "/badge",
             "title": "Badge 徽标数"
