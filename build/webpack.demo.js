@@ -23,7 +23,7 @@ const webpackConfig = {
     : './examples/entry.js',
   output: {
     path: path.resolve(process.cwd(), './examples/dist/'),
-    publicPath: process.env.CI_ENV || '',
+    publicPath: process.env.CI_ENV || '/',
     filename: '[name].[hash:7].js',
     chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
   },
@@ -41,7 +41,8 @@ const webpackConfig = {
     port: isPlay ? 8086 : 8085,
     publicPath: '/',
     hot: true,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
 
   module: {

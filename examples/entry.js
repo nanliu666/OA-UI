@@ -17,7 +17,7 @@ Vue.component('demo-block', demoBlock)
 Vue.component('main-header', MainHeader)
 Vue.component('side-nav', SideNav)
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: __dirname,
   routes
 })
