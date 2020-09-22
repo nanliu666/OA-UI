@@ -211,6 +211,15 @@
             "title": "Spin 加载中"
           }
         ]
+      },
+      {
+        "groupName": "Others-其他",
+        "list": [
+          {
+            "path": "/anchor",
+            "title": "Anchor 锚点"
+          }
+        ]
       }
     ]
   }

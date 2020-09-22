@@ -1,8 +1,7 @@
 <style lang="less">
 .page-component__scroll {
-  height: calc(100% - 80px);
-  margin-top: 80px;
   overflow: auto;
+  height: 100%;
 }
 
 .page-component {
@@ -193,7 +192,7 @@ export default {
     this.throttledScrollHandler = throttle(300, this.handleScroll)
     this.componentScrollBox.addEventListener('scroll', this.throttledScrollHandler)
     this.renderAnchorHref()
-    this.goAnchor()
+    // this.goAnchor()
     document.body.classList.add('is-component')
   },
   destroyed() {
