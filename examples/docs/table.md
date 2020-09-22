@@ -275,6 +275,63 @@ export default {
 ```
 :::
 
+###  插槽
+
+:::demo
+```html
+<mg-table
+  ref="table"
+  :columns="columns"
+  :data-source="dataSource"
+  row-key="id"
+>
+  <template #topMenu>
+    <!-- 插入自定义组件 -->
+    <mg-search />
+    <a-button type="primary">操作</a-button>
+  </template>
+  <template #handler="{row}">
+    <a-button @click="()=> handleBuy(row)">
+      购买
+    </a-button>
+  </template>
+</mg-table>
+
+<script>
+export default {
+  data() {
+    return {
+      columns: [
+        {
+          title: 'col1',
+          dataIndex: 'prop1'
+        },
+        {
+          title: 'col2',
+          dataIndex: 'prop2'
+        },
+        {
+          title: 'col3',
+          dataIndex: 'prop3'
+        }
+      ],
+      dataSource: [
+        { prop1: 'Apple', prop2: 'Banana', prop3: 'pineapple',id: 1 },
+        { prop1: 'foo', prop2: 'bar', prop3: 'foo-bar',id: 2 },
+        { prop1: 'col1', prop2: 'col2', prop3: 'col3',id: 3 },
+      ]
+    }
+  },
+  methods: {
+    handleBuy(row){
+      console.log(row)
+    }
+  }
+}
+</script>
+```
+:::
+
 
 ### 属性
 | 参数          | 说明                                                            | 类型            | 可选值 | 默认值                                                                                               |
