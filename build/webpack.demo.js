@@ -23,7 +23,7 @@ const webpackConfig = {
     : './examples/entry.js',
   output: {
     path: path.resolve(process.cwd(), './examples/dist/'),
-    publicPath: process.env.CI_ENV || '/',
+    publicPath: isProd ? '/ui/' : '/',
     filename: '[name].[hash:7].js',
     chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
   },

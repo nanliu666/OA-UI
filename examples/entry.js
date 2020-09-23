@@ -20,7 +20,7 @@ Vue.component('main-header', MainHeader)
 Vue.component('side-nav', SideNav)
 const router = new VueRouter({
   mode: 'history',
-  base: __dirname,
+  base: '/ui/',
   routes
 })
 

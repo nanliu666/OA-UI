@@ -38,7 +38,7 @@ export const A_TABLE_PROPS = [
 export const A_TABLE_PROP_DEFAULT = {
   //  TODO: 在这里写下默认属性
 }
-export const getATablePropDefault = ({ $attrs }) => Object.assign({}, A_TABLE_PROP_DEFAULT)
+export const getATablePropDefault = () => Object.assign({}, A_TABLE_PROP_DEFAULT)
 
 // a-table组件事件
 export const aTableEvents = ['change', 'expand', 'expandedRowsChange']
