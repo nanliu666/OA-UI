@@ -1,5 +1,5 @@
 ## Search搜索
-详细文档见[Ant-Design-Vue Search](https://antdv.com/components/autocomplete-cn/)
+<!-- 详细文档见[Ant-Design-Vue Search](https://antdv.com/components/autocomplete-cn/) -->
   
 ### 何时使用
 页面、表单搜索数据时使用。
