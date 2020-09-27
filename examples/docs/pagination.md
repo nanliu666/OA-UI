@@ -29,7 +29,7 @@ export default {
 ```html
 <template>
   <div>
-    <a-pagination show-quick-jumper :default-current="2" :total="500" @change="onChange" />
+    <a-pagination :total="50" show-size-changer show-quick-jumper />
     <br />
     <a-pagination
       show-quick-jumper
