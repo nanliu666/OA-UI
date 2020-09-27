@@ -61,6 +61,10 @@
             "title": "DatePicker 日期选择框"
           },
           {
+            "path": "/input",
+            "title": "Input 输入框"
+          },
+          {
             "path": "/inputNumber",
             "title": "InputNumber 数字输入框"
           },
@@ -78,7 +82,7 @@
           },
           {
             "path": "/switch",
-            "title": "switch 开关"
+            "title": "Switch 开关"
           },
           {
             "path": "/timePicker",
