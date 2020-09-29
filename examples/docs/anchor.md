@@ -17,7 +17,11 @@
       title="Basic demo with Target"
       target="_blank"
     />
-    <a-anchor-link href="#she-zhi-pian-yi-liang" title="Set offset"/>
+    <a-anchor-link href="#she-zhi-pian-yi-liang" title="Set offset">
+      <a-anchor-link href="#anchor-props" title="Anchor Props" />
+      <a-anchor-link href="#link-props" title="Link Props" />
+    </a-anchor-link>
+  </a-anchor>
   </a-anchor>
 </template>
 <script>
@@ -54,6 +58,8 @@ export default {
 :::
 
 ### 设置偏移量
+#### Anchor-Props
+#### Link-Props
 :::demo 设置锚点滚动偏移量,使锚点目标滚动到屏幕正中间。
 ```html
 <template>

@@ -12,7 +12,6 @@
   <a-time-picker  @change="onChange" />
 </template>
 <script>
-// import moment from 'moment';
 export default {
   methods: {
     onChange(time, timeString) {
@@ -22,6 +21,52 @@ export default {
 };
 </script>
 
+```
+:::
+
+### 底栏操作区
+:::demo
+```html
+<template>
+  <div>
+    <a-time-picker :open.sync="open2">
+      <div slot="addon" style="display: flex;justify-content: flex-end;">
+        <a-button size="small" type="primary" @click="handleClose">
+          确定
+        </a-button>
+      </div>
+    </a-time-picker>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      open: false,
+      open2: false,
+    };
+  },
+  methods: {
+    handleOpenChange(open) {
+      console.log('open', open);
+      this.open = open;
+    },
+    handleClose() {
+      this.open = false;
+      this.open2 = false;
+    },
+  },
+};
+</script>
+```
+:::
+
+### 禁用
+:::demo
+```html
+<template>
+  <a-time-picker  disabled />
+</template>
 ```
 :::
 

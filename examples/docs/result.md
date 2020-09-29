@@ -15,6 +15,7 @@
     sub-title="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
   >
     <template #extra>
+      <div style="color: #757C85; padding-bottom: 10px" v-if="show">{{times}}秒后自动返回</div>
       <a-button key="console" type="primary">
         Go Console
       </a-button>
@@ -27,7 +28,20 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      times: 5,
+      show: true,
+    };
+  },
+  created() {
+   this.timer = setInterval(()=>{
+        this.times--
+        if(this.times===0){
+          this.show = false
+          this.$message.success('示例以提示表示成功返回，不实际返回！');
+          clearInterval(this.timer)
+        }
+      },1000)
   },
 };
 </script>

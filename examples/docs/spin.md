@@ -1,4 +1,4 @@
-## Spin加载中
+## Loading 加载中
   
 <!-- 详细文档见[Ant-Design-Vue Spin](https://antdv.com/components/spin-cn/) -->
 ### 何时使用

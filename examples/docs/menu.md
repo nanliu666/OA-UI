@@ -57,19 +57,18 @@ export default {
 :::
 
 ### 收起
-
+收起后最底下部分有手风琴效果
 :::demo 内嵌菜单可以被缩起/展开。
 ```html
 <template>
-  <div style="width: 256px">
-    <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
-      <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
-    </a-button>
+  <div  class="antd-menu-demo1">
+    <div class="collapsed-img-box" @click="goHome" :style="{width: `${collapsed ? '80px' : '100%'}` }"> 
+      <img v-if="collapsed" src="https://oa-file-dev.bestgrand.com.cn/de0654def8414587835533583e60959c.png" />
+      <img v-if='!collapsed' src="https://oa-file-dev.bestgrand.com.cn/c0c6321897074df089d737af1c5eabe4.png">
+    </div>
     <a-menu
       :default-selected-keys="['1']"
-      :default-open-keys="['sub1']"
       mode="inline"
-      theme="dark"
       :inline-collapsed="collapsed"
     >
       <a-menu-item key="1">
@@ -117,6 +116,11 @@ export default {
         </a-sub-menu>
       </a-sub-menu>
     </a-menu>
+    <div class="button-box"  :style="{width: `${collapsed ? '80px' : '100%'}` }">
+      <a-button class="antd-button" type="primary"  @click="toggleCollapsed">
+        <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
+      </a-button>
+    </div>
   </div>
 </template>
 
@@ -124,16 +128,85 @@ export default {
 export default {
   data() {
     return {
-      collapsed: false,
+      collapsed: true,
     };
   },
   methods: {
     toggleCollapsed() {
       this.collapsed = !this.collapsed;
     },
+    goHome() {
+      this.$message.success('成功跳转首页')
+    }
   },
 };
 </script>
 ```
 :::
 
+### 完整示例
+
+:::demo
+```html
+<template>
+  <div class="antd-menu-demo">
+    <img class="logo" @click="goHome" src="https://oa-file-dev.bestgrand.com.cn/c0c6321897074df089d737af1c5eabe4.png">
+    <a-dropdown>
+      <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+        {{currentTitle}} <a-icon type="down" />
+      </a>
+      <a-menu slot="overlay" @click="onClick">
+        <a-menu-item key="1">
+          广州分部
+        </a-menu-item>
+        <a-menu-item key="2">
+          上海分部
+        </a-menu-item>
+        <a-menu-item key="3">
+          易宝软件有限公司
+        </a-menu-item>
+      </a-menu>
+    </a-dropdown>
+    <a-menu class="menu-box" v-model="current" mode="horizontal">
+      <a-menu-item key="mail1">工作台 </a-menu-item>
+      <a-menu-item key="app2">人事管理</a-menu-item>
+      <a-menu-item key="app3">组织管理</a-menu-item>
+      <a-menu-item key="app4">审批管理</a-menu-item>
+    </a-menu>
+    <section class="icon-box">
+      <a-icon class="icon"  type="search" />
+      <a-icon class="icon" type="question-circle" />
+      <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+    </section>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      currentTitle: '易宝软件有限公司',
+      current: ['mail1'],
+    };
+  },
+  methods: {
+    onClick({ key }) {
+      switch(key) {
+        case '1': 
+        this.currentTitle = '广州分部'
+        break;
+        case '2': 
+        this.currentTitle = '上海分部'
+        break; 
+        case '3': 
+        this.currentTitle = '易宝软件有限公司'
+        break;
+      }
+    },
+    goHome() {
+      this.$message.success('成功跳转首页')
+    },
+  }
+};
+</script>
+```
+:::

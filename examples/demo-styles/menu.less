@@ -1,0 +1,57 @@
+.antd-menu-demo {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    /deep/ .ant-menu-horizontal {
+        border-bottom: 0
+    }
+    /deep/ .ant-menu-item {
+        &:hover {
+            border-bottom-color: transparent
+        }
+    }
+    .logo {
+        width: 124px;
+        height: 40px;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    .menu-box {
+        flex: 1;
+    }
+    .icon-box {
+        display:flex;
+        justify-content:space-between;
+        min-width: 100px;
+        cursor: pointer;
+        .icon {
+            width: 32px;
+            height: 32px;
+            font-size: 25px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+.antd-menu-demo1 {
+    display:flex;
+    flex-direction:column;
+    // align-items: center;
+    justify-content: center;
+    .button-box {
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        .antd-button {
+            width: 40px;
+        }
+    }
+    .collapsed-img-box {
+        cursor: pointer;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+}
