@@ -69,7 +69,8 @@ export default {
 :::
 ### 操作类抽屉行为
 + 点击表单底部「保存」，保存数据并退出抽屉
-+ 当抽屉页面数据改变未保存时
++ 触发保存弹窗：
+当抽屉页面数据改变未保存时
 1. 点击蒙层
 2. 点击关闭
 + 点击表单底部取消，不保存页面内容并退出抽屉
@@ -83,7 +84,7 @@ export default {
       :width="720"
       :visible="visible"
       :body-style="{ paddingBottom: '80px' }"
-      @close="onClose"
+      @close="onSave"
     >
       <a-form :form="form" layout="vertical" hide-required-mark>
         <a-row :gutter="16">
@@ -225,7 +226,7 @@ export default {
           zIndex: 1,
         }"
       >
-        <a-button :style="{ marginRight: '8px' }" type="primary" @click="onClose">
+        <a-button :style="{ marginRight: '8px' }" type="primary" @click="onSave">
           保存
         </a-button>
         <a-button @click="onClose">
@@ -247,8 +248,13 @@ export default {
     showDrawer() {
       this.visible = true;
     },
+    onSave() {
+      this.visible = false;
+      this.$message.success("保存成功")
+    },
     onClose() {
       this.visible = false;
+      this.form.resetFields();
     },
   },
 };
