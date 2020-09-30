@@ -96,7 +96,7 @@ export default {
       format="YYYY-MM-DD HH:mm:ss"
       :disabled-date="disabledDate"
       :disabled-time="disabledDateTime"
-      :show-time="{ defaultValue: new Date() }"
+      :show-time="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
     />
 </template>
 <script>
@@ -105,6 +105,13 @@ export default {
       disabledDate(current) {
       return current && current < new Date()
       },
+      range(start, end) {
+      const result = [];
+      for (let i = start; i < end; i++) {
+        result.push(i);
+      }
+      return result;
+    },
       disabledDateTime() {
         return {
           disabledHours: () => this.range(0, 24).splice(4, 20),
