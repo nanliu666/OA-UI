@@ -93,10 +93,6 @@
             "title": "Transfer 穿梭框"
           },
           {
-            "path": "/treeSelect",
-            "title": "TreeSelect  树型选择控件"
-          },
-          {
             "path": "/upload",
             "title": "Upload 上传"
           }
