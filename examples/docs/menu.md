@@ -62,11 +62,12 @@ export default {
 ```html
 <template>
   <div  class="antd-menu-demo1">
-    <div class="collapsed-img-box" @click="goHome" :style="{width: `${collapsed ? '80px' : '100%'}` }"> 
+    <div class="collapsed-img-box" @click="goHome" :style="{width: `${collapsed ? '80px' : '290px'}` }"> 
       <img v-if="collapsed" src="https://oa-file-dev.bestgrand.com.cn/de0654def8414587835533583e60959c.png" />
       <img v-if='!collapsed' src="https://oa-file-dev.bestgrand.com.cn/c0c6321897074df089d737af1c5eabe4.png">
     </div>
     <a-menu
+      :style="{width: `${collapsed ? '80px' : '290px'}` }"
       :default-selected-keys="['1']"
       mode="inline"
       :inline-collapsed="collapsed"
@@ -116,8 +117,8 @@ export default {
         </a-sub-menu>
       </a-sub-menu>
     </a-menu>
-    <div class="button-box"  :style="{width: `${collapsed ? '80px' : '100%'}` }">
-      <a-button class="antd-button" type="primary"  @click="toggleCollapsed">
+    <div class="button-box"  :style="{width: `${collapsed ? '80px' : '290px'}`, 'justify-content': `${collapsed ? 'center' : 'flex-end'}`}">
+      <a-button class="antd-button" type="link"  @click="toggleCollapsed">
         <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
       </a-button>
     </div>
@@ -176,7 +177,7 @@ export default {
     <section class="icon-box">
       <a-icon class="icon"  type="search" />
       <a-icon class="icon" type="question-circle" />
-      <a-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+      <a-avatar src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601457082080&di=2caff6de00b0ca20bad4804ae0c6ca7f&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201411%2F01%2F20141101171342_xHRH2.jpeg" />
     </section>
   </div>
 </template>
